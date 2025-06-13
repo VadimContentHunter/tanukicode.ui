@@ -1,7 +1,9 @@
 import express, { Request, Response } from 'express';
 import path from 'path';
+import fs from 'fs/promises';
 import { fileURLToPath } from 'url';
 import { EjsRenderer } from './EjsRenderer.js';
+import { SvgSpriteGenerator } from './SvgSpriteGenerator.js';
 
 const app = express();
 const port = 9003;
@@ -12,7 +14,10 @@ const __projectRoot = path.resolve(__dirname, '../app'); // /var/www/browser-gam
 
 const pathAssets = path.join(__projectRoot, 'assets');
 const pathView = path.join(__projectRoot, 'views');
-const ejsRenderer = new EjsRenderer(pathView, path.join(pathView, 'render-files'));
+const ejsRenderer = new EjsRenderer(pathView, path.join(__projectRoot, 'render-views'));
+const generatorSprites = new SvgSpriteGenerator({
+    outputDir: 'public/app/assets/resources/sprites',
+});
 
 app.set('view engine', 'ejs');
 app.set('views', pathView);
@@ -32,19 +37,36 @@ app.get('/', (req: Request, res: Response) => {
 
 app.get('/site', async (req, res) => {
     try {
+        const spriteContent = generatorSprites.generateAndGetContent(
+            [
+                path.join(pathAssets, 'resources', 'icons', 'sun.svg'),
+                path.join(pathAssets, 'resources', 'icons', 'avatar.svg'),
+                path.join(pathAssets, 'resources', 'icons', 'lang.svg'),
+                path.join(pathAssets, 'resources', 'icons', 'notifications.svg'),
+            ],
+            'ui-sprite.svg',
+            'ui-'
+        );
+
         await ejsRenderer.renderMultipleFiles([
             { templateName: 'partials/head', data: { title: 'Заголовок страницы' }, outputFile: 'partials/head.html' },
             { templateName: 'blocks/block1', data: {}, outputFile: 'blocks/block1.html' },
             { templateName: 'blocks/block2', data: {}, outputFile: 'blocks/block2.html' },
             {
                 templateName: 'layout',
-                data: { title: 'Заголовок страницы', headPartial: 'partials/head', blocks: ['blocks/block1', 'blocks/block2'] },
+                data: {
+                    title: 'Заголовок страницы',
+                    svgSprite: spriteContent,
+                    headPartial: 'partials/head',
+                    blocks: ['blocks/block1', 'blocks/block2'],
+                },
                 outputFile: 'layout.html',
             },
         ]);
 
         res.render('layout', {
             title: 'Заголовок страницы',
+            svgSprite: spriteContent,
             headPartial: 'partials/head',
             blocks: ['blocks/block1', 'blocks/block2'],
         });

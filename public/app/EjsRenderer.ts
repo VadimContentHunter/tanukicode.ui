@@ -14,7 +14,7 @@ export class EjsRenderer {
     // Рендер одного файла и сохраняет в outputDir + относительный путь outputFile
     async renderToFile(templateName: string, data: object, outputFile: string) {
         const templatePath = path.join(this.viewsDir, templateName + '.ejs');
-        const html = await ejs.renderFile(templatePath, data, { async: true, root: this.viewsDir });
+        const html = await ejs.renderFile(templatePath, data);
 
         const fullOutputPath = path.join(this.outputDir, outputFile);
         await fs.mkdir(path.dirname(fullOutputPath), { recursive: true });
