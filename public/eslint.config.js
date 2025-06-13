@@ -40,6 +40,7 @@ export default defineConfig([
         rules: {
             ...eslintPluginPrettier.configs.recommended.rules,
             ...eslintConfigPrettier.rules,
+            "array-element-newline": ["error", "consistent"],
             'prefer-const': 'error',
             '@typescript-eslint/no-unused-vars': 'off',
             '@typescript-eslint/no-inferrable-types': 'off',
