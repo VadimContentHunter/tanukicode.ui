@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<%- include(headPartial) %>
+
+    <body>
+        <!-- Вставляем SVG спрайты -->
+        <div style="display:none;">
+            <%- svgSprite %>
+        </div>
+        <!-- Конец SVG спрайтов -->
+
+        <div class="container">
+            <%- include(navMain) %>
+            <main>
+                <%- include(header) %>
+                <% blocks.forEach(function(block) { %>
+                    <%- include(block) %>
+                        <% }); %>
+
+                <%- include(footer) %>
+            </main>
+        </div>
+    </body>
+
+</html>

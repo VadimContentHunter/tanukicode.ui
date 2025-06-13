@@ -3,3 +3,5 @@
 /databases
 /public/node_modules
 /public/dist
+/public/app/render-views
+/public/app/assets/resources

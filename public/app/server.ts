@@ -44,9 +44,19 @@ app.get('/site', async (req, res) => {
                 path.join(pathAssets, 'resources', 'icons', 'lang.svg'),
                 path.join(pathAssets, 'resources', 'icons', 'notifications.svg'),
             ],
-            'ui-sprite.svg',
-            'ui-'
+            'header-sprite.svg',
+            'icons-'
         );
+
+        const dataGeneral = {
+            title: 'Заголовок страницы',
+            svgSprite: spriteContent,
+            navMain: 'partials/main-nav',
+            header: 'partials/header',
+            footer: 'partials/footer',
+            headPartial: 'partials/head',
+            blocks: ['blocks/block1', 'blocks/block2'],
+        };
 
         await ejsRenderer.renderMultipleFiles([
             { templateName: 'partials/head', data: { title: 'Заголовок страницы' }, outputFile: 'partials/head.html' },
@@ -54,22 +64,12 @@ app.get('/site', async (req, res) => {
             { templateName: 'blocks/block2', data: {}, outputFile: 'blocks/block2.html' },
             {
                 templateName: 'layout',
-                data: {
-                    title: 'Заголовок страницы',
-                    svgSprite: spriteContent,
-                    headPartial: 'partials/head',
-                    blocks: ['blocks/block1', 'blocks/block2'],
-                },
+                data: dataGeneral,
                 outputFile: 'layout.html',
             },
         ]);
 
-        res.render('layout', {
-            title: 'Заголовок страницы',
-            svgSprite: spriteContent,
-            headPartial: 'partials/head',
-            blocks: ['blocks/block1', 'blocks/block2'],
-        });
+        res.render('layout', dataGeneral);
     } catch (e) {
         console.error(e);
         res.status(500).send('Ошибка сервера');
