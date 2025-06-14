@@ -1,4 +1,5 @@
 $radius-base: 12px;
+$radius-banner: 24px; // радиус для баннеров и больших блоков
 
 $color-primary: #3772FF; // основной цвет (акценты, активные элементы)
 $color-inactive: #777E90; // базовый цвет текста (неактивный)
@@ -14,6 +15,7 @@ $font-weight-medium: 500;
 
 :root {
     --radius-base: #{$radius-base};
+    --radius-banner: #{$radius-banner};
 
     --color-primary: #{$color-primary};
     --color-primary-hover: #{$color-primary-hover};
@@ -42,8 +44,16 @@ $font-weight-medium: 500;
 }
 
 
-@mixin text-style-large {
-    font-style: normal;
-    font-size: 20px;
-    line-height: 120%;
+@mixin text-style(
+    $font-style: normal,
+    $font-size: 20px,
+    $line-height: 120%,
+    $color: var(--color-inactive),
+    $font-weight: 500,
+) {
+    font-style: $font-style;
+    font-size: $font-size;
+    line-height: $line-height;
+    color: $color;
+    font-weight: $font-weight;
 }
