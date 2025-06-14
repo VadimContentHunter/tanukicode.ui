@@ -7,7 +7,7 @@
 
 .icon {
     position: relative;
-    content: ""; 
+    content: "";
     width: 24px;
     height: 24px;
 
@@ -20,23 +20,13 @@
 }
 
 /************** icon-home **************/
-.icon-home{
+.icon-home {
     background-image: url('/icons/home.svg');
-}
-
-a:hover .icon-home,
-a.active .icon-home {
-    background-image: url('/icons/home-active.svg');
-}
+}   
 
 /************** icon-exchange **************/
 .icon-exchange {
     background-image: url('/icons/exchange.svg');
-}
-
-a:hover .icon-exchange,
-a.active .icon-exchange {
-    background-image: url('/icons/exchange-active.svg');
 }
 
 /************** icon-wallets **************/
@@ -44,19 +34,9 @@ a.active .icon-exchange {
     background-image: url('/icons/wallets.svg');
 }
 
-a:hover .icon-wallets,
-a.active .icon-wallets {
-    background-image: url('/icons/wallets-active.svg');
-}
-
 /************** icon-buy-crypto **************/
 .icon-buy-crypto {
     background-image: url('/icons/buy-crypto.svg');
-}
-
-a:hover .icon-buy-crypto,
-a.active .icon-buy-crypto {
-    background-image: url('/icons/buy-crypto-active.svg');
 }
 
 /************** icon-activities **************/
@@ -64,17 +44,25 @@ a.active .icon-buy-crypto {
     background-image: url('/icons/activities.svg');
 }
 
-a:hover .icon-activities,
-a.active .icon-activities {
-    background-image: url('/icons/activities-active.svg');
-}
-
 /************** icon-hamburger **************/
 .icon-hamburger {
     background-image: url('/icons/hamburger.svg');
 }
 
-a:hover .icon-hamburger,
-a.active .icon-hamburger {
-    background-image: url('/icons/hamburger-active.svg');
+/************** icon-sun **************/
+.icon-sun {
+    background-image: url('/icons/sun.svg');
+}
+
+ul.header-buttons>li:hover .icon-sun {
+    background-image: url('/icons/sun-active.svg');
+}
+
+/************** icon-lang **************/
+.icon-lang {
+    background-image: url('/icons/lang.svg');
+}
+
+ul.header-buttons>li:hover .icon-lang {
+    background-image: url('/icons/lang-active.svg');
 }

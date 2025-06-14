@@ -1,5 +1,14 @@
 @use "./vars" as *;
 
+$active-icons: (
+    '.icon-home': '/icons/home-active.svg',
+    '.icon-exchange': '/icons/exchange-active.svg',
+    '.icon-wallets': '/icons/wallets-active.svg',
+    '.icon-buy-crypto': '/icons/buy-crypto-active.svg',
+    '.icon-activities': '/icons/activities-active.svg',
+    '.icon-hamburger': '/icons/hamburger-active.svg',
+);
+
 .main-nav {
     flex: 1;
     max-width: 260px;
@@ -62,6 +71,8 @@
             span {
                 color: var(--color-primary);
             }
+
+            @include generate-active-icons($active-icons);
         }
     }
 
@@ -98,6 +109,8 @@
             span {
                 color: var(--color-primary);
             }
+
+            @include generate-active-icons($active-icons);
         }
     }
 }

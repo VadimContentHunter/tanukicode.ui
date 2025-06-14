@@ -1,5 +1,7 @@
 @use "./vars" as *;
+@use "./_icons.scss";
 @use "./main-nav";
+@use "./header";
 
 * {
     font-family: "DM Sans", -apple-system, BlinkMacSystemFont,
@@ -22,4 +24,7 @@ main {
     flex-direction: row;
 }
 
+.container-content {
+    padding: 32px 20px;
+}
 

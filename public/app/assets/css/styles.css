@@ -10,6 +10,73 @@
   --font-weight-medium: 500;
 }
 
+.icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.icon {
+  position: relative;
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  -webkit-transition: background-image 0.2s;
+  transition: background-image 0.2s;
+}
+
+/************** icon-home **************/
+.icon-home {
+  background-image: url("/icons/home.svg");
+}
+
+/************** icon-exchange **************/
+.icon-exchange {
+  background-image: url("/icons/exchange.svg");
+}
+
+/************** icon-wallets **************/
+.icon-wallets {
+  background-image: url("/icons/wallets.svg");
+}
+
+/************** icon-buy-crypto **************/
+.icon-buy-crypto {
+  background-image: url("/icons/buy-crypto.svg");
+}
+
+/************** icon-activities **************/
+.icon-activities {
+  background-image: url("/icons/activities.svg");
+}
+
+/************** icon-hamburger **************/
+.icon-hamburger {
+  background-image: url("/icons/hamburger.svg");
+}
+
+/************** icon-sun **************/
+.icon-sun {
+  background-image: url("/icons/sun.svg");
+}
+
+ul.header-buttons > li:hover .icon-sun {
+  background-image: url("/icons/sun-active.svg");
+}
+
+/************** icon-lang **************/
+.icon-lang {
+  background-image: url("/icons/lang.svg");
+}
+
+ul.header-buttons > li:hover .icon-lang {
+  background-image: url("/icons/lang-active.svg");
+}
+
 .main-nav {
   flex: 1;
   max-width: 260px;
@@ -65,6 +132,30 @@
 .main-nav ul.menu-nav li a.active span {
   color: var(--color-primary);
 }
+.main-nav ul.menu-nav li.active a .icon-home,
+.main-nav ul.menu-nav li a.active .icon-home {
+  background-image: url(/icons/home-active.svg);
+}
+.main-nav ul.menu-nav li.active a .icon-exchange,
+.main-nav ul.menu-nav li a.active .icon-exchange {
+  background-image: url(/icons/exchange-active.svg);
+}
+.main-nav ul.menu-nav li.active a .icon-wallets,
+.main-nav ul.menu-nav li a.active .icon-wallets {
+  background-image: url(/icons/wallets-active.svg);
+}
+.main-nav ul.menu-nav li.active a .icon-buy-crypto,
+.main-nav ul.menu-nav li a.active .icon-buy-crypto {
+  background-image: url(/icons/buy-crypto-active.svg);
+}
+.main-nav ul.menu-nav li.active a .icon-activities,
+.main-nav ul.menu-nav li a.active .icon-activities {
+  background-image: url(/icons/activities-active.svg);
+}
+.main-nav ul.menu-nav li.active a .icon-hamburger,
+.main-nav ul.menu-nav li a.active .icon-hamburger {
+  background-image: url(/icons/hamburger-active.svg);
+}
 .main-nav ul.menu-nav a {
   position: relative;
   flex: 1;
@@ -95,10 +186,52 @@
 .main-nav ul.menu-nav a:hover span {
   color: var(--color-primary);
 }
+.main-nav ul.menu-nav a:hover .icon-home {
+  background-image: url(/icons/home-active.svg);
+}
+.main-nav ul.menu-nav a:hover .icon-exchange {
+  background-image: url(/icons/exchange-active.svg);
+}
+.main-nav ul.menu-nav a:hover .icon-wallets {
+  background-image: url(/icons/wallets-active.svg);
+}
+.main-nav ul.menu-nav a:hover .icon-buy-crypto {
+  background-image: url(/icons/buy-crypto-active.svg);
+}
+.main-nav ul.menu-nav a:hover .icon-activities {
+  background-image: url(/icons/activities-active.svg);
+}
+.main-nav ul.menu-nav a:hover .icon-hamburger {
+  background-image: url(/icons/hamburger-active.svg);
+}
 
 header {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+}
+
+header .additional-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+header .additional-nav .header-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+header .additional-nav .auth-section {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+}
+header .additional-nav .auth-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 * {
@@ -118,6 +251,10 @@ main {
 .container {
   display: flex;
   flex-direction: row;
+}
+
+.container-content {
+  padding: 32px 20px;
 }
 
 /*# sourceMappingURL=styles.css.map */
