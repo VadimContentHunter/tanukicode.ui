@@ -40,3 +40,10 @@ $font-weight-medium: 500;
         @include icon-active($selector, $url);
     }
 }
+
+
+@mixin text-style-large {
+    font-style: normal;
+    font-size: 20px;
+    line-height: 120%;
+}

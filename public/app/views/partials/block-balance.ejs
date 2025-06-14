@@ -1,0 +1,43 @@
+<section class="primary-balance">
+    <header class="header-balance">
+        <div class="balance-info">
+            <h2>Total Balance</h2>
+            <div class="balance-currency">
+                <p class="balance-amount">1.91450666 BTC</p>
+                <span class="currency-label" style="background: #FF9F38;">BTC</span>
+            </div>
+            <p class="balance-usd">200967.35 $</p>
+        </div>
+        <div class="balance-actions">
+            <button type="button" class="default-button button-b icon-type get-i" onclick="openModalWith('modalWith')">
+                Withdraw
+            </button>
+            <button type="button" class="default-button button-g icon-type send-i" onclick="openModalDep('modalDep')">
+                Deposit
+            </button>
+        </div>
+    </header>
+
+    <div class="addition-balance">
+        <ul class="balance-list">
+            <% balancesList.forEach(balance=> { %>
+                <li>
+                    <figure class="balance-item">
+                        <img src="<%= balance.imgSrc %>" alt="<%= balance.imgAlt %>" class="balance-image" />
+                        <figcaption class="item-balance-data">
+                            <h3>
+                                <%= balance.title %>
+                            </h3>
+                            <p class="crypto-amount">
+                                <%= balance.cryptoAmount %>
+                            </p>
+                            <p class="fiat-amount">
+                                <%= balance.fiatAmount %>
+                            </p>
+                        </figcaption>
+                    </figure>
+                </li>
+                <% }) %>
+        </ul>
+    </div>
+</section>

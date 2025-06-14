@@ -55,6 +55,25 @@ app.get('/site', async (req, res) => {
         //     'icon-'
         // );
 
+        const balances = {
+            balancesList: [
+                {
+                    imgSrc: '/source/img/balance-b.svg',
+                    imgAlt: 'Asset Balance icon',
+                    title: 'Asset Balance',
+                    cryptoAmount: '1.91450666 BTC',
+                    fiatAmount: '~ 200967.35 $',
+                },
+                {
+                    imgSrc: '/source/img/balance-a.svg',
+                    imgAlt: 'Exchange Balance icon',
+                    title: 'Exchange Balance',
+                    cryptoAmount: '1.91450666 BTC',
+                    fiatAmount: '~ 200967.35 $',
+                },
+            ],
+        };
+
         const footerNavSections = [
             {
                 title: 'About',
@@ -113,20 +132,32 @@ app.get('/site', async (req, res) => {
         };
 
         const dataGeneral = {
+            // для head
             title: 'Заголовок страницы',
+            headPartial: 'partials/head',
+
+            // для общего layout
             svgSprite: spritesContent ?? '',
+
+            // для главного меню
             navMain: 'partials/main-nav',
             activeLabel: mainMenu.activeLabel,
             menuItems: mainMenu.menuItems,
             // avatarSrc: avatar.avatarSrc,
             // avatarId: avatar.avatarId,
+
+            // для header
             headerButtons: avatar.headerButtons,
             // header: 'partials/header',
             header: 'partials/header-auth',
+
+            // для footer
             footer: 'partials/footer',
             footerNavSections: footerNavSections,
-            headPartial: 'partials/head',
-            blocks: [],
+
+            // Данные для баланса
+            balancesList: balances.balancesList,
+            blocks: ['partials/block-balance'],
         };
 
         await ejsRenderer.renderMultipleFiles([
