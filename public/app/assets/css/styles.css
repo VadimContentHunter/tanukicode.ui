@@ -1,11 +1,13 @@
 :root {
   --radius-base: 12px;
   --color-primary: #3772FF;
+  --color-primary-hover: #195AF5;
   --color-inactive: #777E90;
   --color-bg-light: #E0E9FD;
   --color-divider: rgba(31, 33, 40, 0.0784313725);
   --color-white: #FFFFFF;
   --color-bg-base: #F7F9FD;
+  --color-ui-active: #191B21;
   --font-size-base: 16px;
   --font-weight-medium: 500;
 }
@@ -237,11 +239,7 @@ header .additional-nav .profile-section img {
 header .additional-nav .auth-section {
   display: flex;
   flex-direction: row;
-}
-header .additional-nav .auth-section img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  gap: 30px;
 }
 
 * {
@@ -256,6 +254,9 @@ main {
   flex: 1;
   height: 100vh;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container {
@@ -263,14 +264,35 @@ main {
   flex-direction: row;
 }
 
-.container-content {
+.content-container {
+  max-width: 1348px;
   padding: 32px 20px;
+  width: 100%;
 }
 
 .default-button {
   border-radius: var(--radius-base);
   height: 48px;
   padding: 0 24px;
+  font-weight: var(--font-weight-medium);
+  display: flex;
+  align-items: center;
+}
+
+.button-text {
+  padding: 0;
+  color: var(--color-inactive);
+}
+.button-text:hover {
+  color: var(--color-ui-active);
+}
+
+.button-accent {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+.button-accent:hover {
+  background-color: var(--color-primary-hover);
 }
 
 /*# sourceMappingURL=styles.css.map */

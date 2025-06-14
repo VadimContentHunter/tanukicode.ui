@@ -12,12 +12,14 @@
         <div class="container">
             <%- include(navMain) %>
             <main>
-                <%- include(header) %>
-                <% blocks.forEach(function(block) { %>
+                <div class="content-container">
+                    <%- include(header) %>
+                    <% blocks.forEach(function(block) { %>
                     <%- include(block) %>
-                        <% }); %>
+                    <% }); %>
 
-                <%- include(footer) %>
+                    <%- include(footer) %>
+                </div>
             </main>
         </div>
     </body>
