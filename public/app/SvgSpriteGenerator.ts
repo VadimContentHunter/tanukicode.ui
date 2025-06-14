@@ -53,7 +53,8 @@ export class SvgSpriteGenerator {
                     return null;
                 }
 
-                const content = fs.readFileSync(resolvedPath, 'utf-8');
+                let content = fs.readFileSync(resolvedPath, 'utf-8');
+                content = this.patchFillAttributes(content);
                 const baseName = path.basename(resolvedPath, '.svg');
                 let id = prefix + baseName;
 
@@ -67,7 +68,7 @@ export class SvgSpriteGenerator {
                 const viewBox = this.extractViewBox(content) || this.fallbackViewBox;
                 const inner = this.extractSvgContent(content);
 
-                return `<symbol id="${id}" viewBox="${viewBox}" fill="none">${inner}</symbol>`;
+                return `<symbol id="${id}" viewBox="${viewBox}" fill="inherit">${inner}</symbol>`;
             })
             .filter(Boolean);
 
@@ -119,6 +120,10 @@ export class SvgSpriteGenerator {
     public getSpriteContent(spriteName: string): string | null {
         const outFile = this.getSpritePath(spriteName);
         return outFile ? fs.readFileSync(outFile, 'utf-8') : null;
+    }
+
+    private patchFillAttributes(svg: string): string {
+        return svg.replace(/(<path[^>]*?)\sfill=(["'])(?!none)(#[^"']+|[a-zA-Z]+)\2/gi, '$1 fill="inherit"');
     }
 
     /**
