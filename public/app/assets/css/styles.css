@@ -22,31 +22,31 @@
   gap: 56px;
 }
 
-.header-nav {
+.main-nav .header-nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 24px;
   align-items: center;
 }
-.header-nav .logo {
+.main-nav .header-nav .logo {
   height: 34px;
   display: flex;
   justify-content: flex-start;
 }
 
-.action-nav {
+.main-nav .action-nav {
   width: 48px;
   height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.action-nav:hover {
+.main-nav .action-nav:hover {
   cursor: pointer;
 }
 
-ul.menu-nav {
+.main-nav ul.menu-nav {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -54,18 +54,18 @@ ul.menu-nav {
   flex-direction: column;
   gap: 4px;
 }
-ul.menu-nav li {
+.main-nav ul.menu-nav li {
   display: flex;
 }
-ul.menu-nav li.active a,
-ul.menu-nav li a.active {
+.main-nav ul.menu-nav li.active a,
+.main-nav ul.menu-nav li a.active {
   background-color: var(--color-bg-light);
 }
-ul.menu-nav li.active a span,
-ul.menu-nav li a.active span {
+.main-nav ul.menu-nav li.active a span,
+.main-nav ul.menu-nav li a.active span {
   color: var(--color-primary);
 }
-ul.menu-nav a {
+.main-nav ul.menu-nav a {
   position: relative;
   flex: 1;
   border-radius: var(--radius-base);
@@ -76,7 +76,7 @@ ul.menu-nav a {
   justify-content: flex-end;
   align-items: center;
 }
-ul.menu-nav a span {
+.main-nav ul.menu-nav a span {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -85,15 +85,20 @@ ul.menu-nav a span {
   color: var(--color-inactive);
   font-weight: var(--font-weight-medium);
 }
-ul.menu-nav a .icon {
+.main-nav ul.menu-nav a .icon {
   fill: var(--color-inactive);
 }
-ul.menu-nav a:hover {
+.main-nav ul.menu-nav a:hover {
   cursor: pointer;
   background-color: var(--color-white);
 }
-ul.menu-nav a:hover span {
+.main-nav ul.menu-nav a:hover span {
   color: var(--color-primary);
+}
+
+header {
+  display: flex;
+  flex-direction: row;
 }
 
 * {
