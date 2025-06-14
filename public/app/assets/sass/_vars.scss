@@ -24,3 +24,15 @@ $font-weight-medium: 500;
     --font-weight-medium: #{$font-weight-medium};
 
 }
+
+@mixin icon-active($selector, $url) {
+    #{$selector} {
+        background-image: url(#{$url});
+    }
+}
+
+@mixin generate-active-icons($icons) {
+    @each $selector, $url in $icons {
+        @include icon-active($selector, $url);
+    }
+}
