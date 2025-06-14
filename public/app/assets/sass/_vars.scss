@@ -1,9 +1,12 @@
 $radius-base: 12px;
 
-$color-primary: #3772FF; // основной цвет (акценты, активные элементы)
-$color-inactive: #777E90; // базовый цвет текста (неактивный)
-$color-bg-light: #E0E9FD; // светлый фон (для активных или других блоков)
-$color-divider: #1f212814;
+// Цвета
+$color-text-default: #777E90; // Базовый цвет неактивного текста и элементов
+$color-accent: #3772FF; // Акцентный цвет (тексты, иконки, кнопки)
+$color-bg-active: #E0E9FD; // Светлый активный фон
+$color-divider: #1f212814; // Цвет разделителей (линий)
+$color-white: #FFF; // Белый (фон инпутов, наведение и т.п.)
+$color-bg-base: #F7F9FD; // Базовый фон всего интерфейса
 
 $font-size-base: 16px;
 $font-weight-medium: 500;
@@ -11,10 +14,12 @@ $font-weight-medium: 500;
 :root {
     --radius-base: #{$radius-base};
 
-    --color-primary: #{$color-primary};
-    --color-inactive: #{$color-inactive};
-    --color-bg-light: #{$color-bg-light};
+    --color-text-default: #{$color-text-default};
+    --color-accent: #{$color-accent};
+    --color-bg-active: #{$color-bg-active};
     --color-divider: #{$color-divider};
+    --color-white: #{$color-white};
+    --color-bg-base: #{$color-bg-base};
 
     --font-size-base: #{$font-size-base};
     --font-weight-medium: #{$font-weight-medium};
