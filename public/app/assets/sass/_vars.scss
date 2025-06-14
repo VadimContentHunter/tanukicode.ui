@@ -1,0 +1,22 @@
+$radius-base: 12px;
+
+$color-primary: #3772FF; // основной цвет (акценты, активные элементы)
+$color-inactive: #777E90; // базовый цвет текста (неактивный)
+$color-bg-light: #E0E9FD; // светлый фон (для активных или других блоков)
+$color-divider: #1f212814;
+
+$font-size-base: 16px;
+$font-weight-medium: 500;
+
+:root {
+    --radius-base: #{$radius-base};
+
+    --color-primary: #{$color-primary};
+    --color-inactive: #{$color-inactive};
+    --color-bg-light: #{$color-bg-light};
+    --color-divider: #{$color-divider};
+
+    --font-size-base: #{$font-size-base};
+    --font-weight-medium: #{$font-weight-medium};
+
+}

@@ -16,7 +16,7 @@ const pathAssets = path.join(__projectRoot, 'assets');
 const pathView = path.join(__projectRoot, 'views');
 const ejsRenderer = new EjsRenderer(pathView, path.join(__projectRoot, 'render-views'));
 const generatorSprites = new SvgSpriteGenerator({
-    outputDir: 'public/app/assets/resources/sprites',
+    outputDir: path.join(pathAssets, 'resources', 'sprites'),
 });
 
 app.set('view engine', 'ejs');
@@ -37,21 +37,38 @@ app.get('/', (req: Request, res: Response) => {
 
 app.get('/site', async (req, res) => {
     try {
-        const spriteContent = generatorSprites.generateAndGetContent(
+        const spritesContent = generatorSprites.generateAndGetContent(
             [
                 path.join(pathAssets, 'resources', 'icons', 'sun.svg'),
                 path.join(pathAssets, 'resources', 'icons', 'avatar.svg'),
                 path.join(pathAssets, 'resources', 'icons', 'lang.svg'),
                 path.join(pathAssets, 'resources', 'icons', 'notifications.svg'),
+                path.join(pathAssets, 'resources', 'icons', 'hamburger.svg'),
+                path.join(pathAssets, 'resources', 'icons', 'home.svg'),
+                path.join(pathAssets, 'resources', 'icons', 'exchange.svg'),
+                path.join(pathAssets, 'resources', 'icons', 'buy-crypto.svg'),
+                path.join(pathAssets, 'resources', 'icons', 'activities.svg'),
+                path.join(pathAssets, 'resources', 'icons', 'wallets.svg'),
             ],
-            'header-sprite.svg',
-            'icons-'
+            'sprites.svg',
+            'icon-'
         );
+
+        const mainMenu = {
+            activeLabel: 'Home',
+            menuItems: [
+                { label: 'Home', href: '/home', icon: 'icon-home' },
+                { label: 'Главная', href: '/main', icon: 'icon-home' },
+                { label: 'Профиль', href: '/profile', icon: 'icon-home' },
+            ],
+        };
 
         const dataGeneral = {
             title: 'Заголовок страницы',
-            svgSprite: spriteContent,
+            svgSprite: spritesContent ?? '',
             navMain: 'partials/main-nav',
+            activeLabel: mainMenu.activeLabel,
+            menuItems: mainMenu.menuItems,
             header: 'partials/header',
             footer: 'partials/footer',
             headPartial: 'partials/head',

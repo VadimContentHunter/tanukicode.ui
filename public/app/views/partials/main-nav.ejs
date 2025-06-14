@@ -1,3 +1,26 @@
 <nav class="main-nav">
-
+    <div class="header-nav">
+        <a href="/" class="logo">
+            <img src="/resources/icons/favicon.ico" alt="Logo" />
+        </a>
+        <div class="action-nav">
+            <svg class="icon">
+                <use xlink:href="#icon-hamburger"></use>
+            </svg>
+        </div>
+    </div>
+    <ul class="menu-nav">
+        <% menuItems.forEach(item=> { %>
+            <li class="<%= item.label === activeLabel ? 'active' : '' %>">
+                <a href="<%= item.href %>">
+                    <span>
+                        <%= item.label %>
+                    </span>
+                    <svg class="icon">
+                        <use xlink:href="#<%= item.icon %>"></use>
+                    </svg>
+                </a>
+            </li>
+        <% }) %>
+    </ul>
 </nav>
