@@ -1,33 +1,18 @@
-<header>
-    <div class="navigation-header">
-        <a href="/trading" class="item">
-            <p>Trade</p>
-        </a>
-        <a href="/profile/buy-crypto" class="item">
-            <p>Buy crypto</p>
-        </a>
-        <a href="/profile/affiliate" class="item">
-            <p>Rewards</p>
-        </a>
-        <a href="/profile/transactions" class="item">
-            <p>Activities</p>
-        </a>
-    </div>
-    <div class="additional-header">
-        <div class="action-header">
-            <div class="item ds-theme">
-                <div class="action-icon theme-type theme-ld"></div>
-            </div>
-            <div class="item ds-lang">
-                <div class="action-icon     -i"></div>
-            </div>
-            <div class="item ds-notif">
-                <div class="action-icon notif-i"></div>
-            </div>
-        </div>
+<header class="container-content">
+    <nav class="header-nav">
+    </nav>
 
-        <div class="auth-user ds-user active">
-            <img src="../assets/img/profile/avatar.svg" id="my_profile_photo">
-        </div>
-    </div>
+    <nav class="additional-nav">
+        <ul class="header-buttons">
+            <% headerButtons.forEach(item=> { %>
+                <li>
+                    <div class="icon <%= item.icon %>"></div>
+                </li>
+                <% }) %>
+
+            <li class="auth-section">
+                <img src="<%= avatarSrc %>" id="<%= avatarId %>">
+            </li>
+        </ul>
+    </nav>
 </header>

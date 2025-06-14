@@ -64,17 +64,9 @@
   background-image: url("/icons/sun.svg");
 }
 
-ul.header-buttons > li:hover .icon-sun {
-  background-image: url("/icons/sun-active.svg");
-}
-
 /************** icon-lang **************/
 .icon-lang {
   background-image: url("/icons/lang.svg");
-}
-
-ul.header-buttons > li:hover .icon-lang {
-  background-image: url("/icons/lang-active.svg");
 }
 
 .main-nav {
@@ -221,6 +213,15 @@ header .additional-nav .header-buttons {
   flex-direction: row;
   align-items: center;
   gap: 30px;
+}
+header .additional-nav ul > li:hover {
+  cursor: pointer;
+}
+header .additional-nav ul > li:hover .icon-sun {
+  background-image: url(/icons/sun-active.svg);
+}
+header .additional-nav ul > li:hover .icon-lang {
+  background-image: url(/icons/lang-active.svg);
 }
 header .additional-nav .auth-section {
   width: 48px;

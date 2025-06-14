@@ -66,12 +66,22 @@ app.get('/site', async (req, res) => {
             ],
         };
 
+        const avatar = {
+            avatarSrc: '/imgs/avatar.svg',
+            avatarId: 'my_profile_photo',
+
+            headerButtons: [{ icon: 'icon-sun' }, { icon: 'icon-lang' }],
+        };
+
         const dataGeneral = {
             title: 'Заголовок страницы',
             svgSprite: spritesContent ?? '',
             navMain: 'partials/main-nav',
             activeLabel: mainMenu.activeLabel,
             menuItems: mainMenu.menuItems,
+            avatarSrc: avatar.avatarSrc,
+            avatarId: avatar.avatarId,
+            headerButtons: avatar.headerButtons,
             header: 'partials/header',
             footer: 'partials/footer',
             headPartial: 'partials/head',

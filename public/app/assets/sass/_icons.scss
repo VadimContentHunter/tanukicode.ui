@@ -22,7 +22,7 @@
 /************** icon-home **************/
 .icon-home {
     background-image: url('/icons/home.svg');
-}   
+}
 
 /************** icon-exchange **************/
 .icon-exchange {
@@ -54,15 +54,7 @@
     background-image: url('/icons/sun.svg');
 }
 
-ul.header-buttons>li:hover .icon-sun {
-    background-image: url('/icons/sun-active.svg');
-}
-
 /************** icon-lang **************/
 .icon-lang {
     background-image: url('/icons/lang.svg');
-}
-
-ul.header-buttons>li:hover .icon-lang {
-    background-image: url('/icons/lang-active.svg');
 }
