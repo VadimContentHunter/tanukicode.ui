@@ -37,29 +37,32 @@ app.get('/', (req: Request, res: Response) => {
 
 app.get('/site', async (req, res) => {
     try {
-        const spritesContent = generatorSprites.generateAndGetContent(
-            [
-                path.join(pathAssets, 'resources', 'icons', 'sun.svg'),
-                path.join(pathAssets, 'resources', 'icons', 'avatar.svg'),
-                path.join(pathAssets, 'resources', 'icons', 'lang.svg'),
-                path.join(pathAssets, 'resources', 'icons', 'notifications.svg'),
-                path.join(pathAssets, 'resources', 'icons', 'hamburger.svg'),
-                path.join(pathAssets, 'resources', 'icons', 'home.svg'),
-                path.join(pathAssets, 'resources', 'icons', 'exchange.svg'),
-                path.join(pathAssets, 'resources', 'icons', 'buy-crypto.svg'),
-                path.join(pathAssets, 'resources', 'icons', 'activities.svg'),
-                path.join(pathAssets, 'resources', 'icons', 'wallets.svg'),
-            ],
-            'sprites.svg',
-            'icon-'
-        );
+        const spritesContent = '';
+        // const spritesContent = generatorSprites.generateAndGetContent(
+        //     [
+        //         path.join(pathAssets, 'resources', 'icons', 'sun.svg'),
+        //         path.join(pathAssets, 'resources', 'icons', 'avatar.svg'),
+        //         path.join(pathAssets, 'resources', 'icons', 'lang.svg'),
+        //         path.join(pathAssets, 'resources', 'icons', 'notifications.svg'),
+        //         path.join(pathAssets, 'resources', 'icons', 'hamburger.svg'),
+        //         path.join(pathAssets, 'resources', 'icons', 'home.svg'),
+        //         path.join(pathAssets, 'resources', 'icons', 'exchange.svg'),
+        //         path.join(pathAssets, 'resources', 'icons', 'buy-crypto.svg'),
+        //         path.join(pathAssets, 'resources', 'icons', 'activities.svg'),
+        //         path.join(pathAssets, 'resources', 'icons', 'wallets.svg'),
+        //     ],
+        //     'sprites.svg',
+        //     'icon-'
+        // );
 
         const mainMenu = {
             activeLabel: 'Home',
             menuItems: [
                 { label: 'Home', href: '/home', icon: 'icon-home' },
-                { label: 'Главная', href: '/main', icon: 'icon-home' },
-                { label: 'Профиль', href: '/profile', icon: 'icon-home' },
+                { label: 'Exchange', href: '/trading', icon: 'icon-exchange' },
+                { label: 'Wallets', href: '/profile/wallet', icon: 'icon-wallets' },
+                { label: 'Buy crypto', href: '/profile/buy-crypto', icon: 'icon-buy-crypto' },
+                { label: 'Activities', href: '/profile/transactions', icon: 'icon-activities' },
             ],
         };
 
@@ -72,13 +75,13 @@ app.get('/site', async (req, res) => {
             header: 'partials/header',
             footer: 'partials/footer',
             headPartial: 'partials/head',
-            blocks: ['blocks/block1', 'blocks/block2'],
+            blocks: [],
         };
 
         await ejsRenderer.renderMultipleFiles([
             { templateName: 'partials/head', data: { title: 'Заголовок страницы' }, outputFile: 'partials/head.html' },
-            { templateName: 'blocks/block1', data: {}, outputFile: 'blocks/block1.html' },
-            { templateName: 'blocks/block2', data: {}, outputFile: 'blocks/block2.html' },
+            // { templateName: 'blocks/block1', data: {}, outputFile: 'blocks/block1.html' },
+            // { templateName: 'blocks/block2', data: {}, outputFile: 'blocks/block2.html' },
             {
                 templateName: 'layout',
                 data: dataGeneral,

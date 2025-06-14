@@ -1,0 +1,80 @@
+.icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+
+.icon {
+    position: relative;
+    content: ""; 
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    -webkit-transition: background-image .2s;
+    transition: background-image .2s;
+}
+
+/************** icon-home **************/
+.icon-home{
+    background-image: url('/icons/home.svg');
+}
+
+a:hover .icon-home,
+a.active .icon-home {
+    background-image: url('/icons/home-active.svg');
+}
+
+/************** icon-exchange **************/
+.icon-exchange {
+    background-image: url('/icons/exchange.svg');
+}
+
+a:hover .icon-exchange,
+a.active .icon-exchange {
+    background-image: url('/icons/exchange-active.svg');
+}
+
+/************** icon-wallets **************/
+.icon-wallets {
+    background-image: url('/icons/wallets.svg');
+}
+
+a:hover .icon-wallets,
+a.active .icon-wallets {
+    background-image: url('/icons/wallets-active.svg');
+}
+
+/************** icon-buy-crypto **************/
+.icon-buy-crypto {
+    background-image: url('/icons/buy-crypto.svg');
+}
+
+a:hover .icon-buy-crypto,
+a.active .icon-buy-crypto {
+    background-image: url('/icons/buy-crypto-active.svg');
+}
+
+/************** icon-activities **************/
+.icon-activities {
+    background-image: url('/icons/activities.svg');
+}
+
+a:hover .icon-activities,
+a.active .icon-activities {
+    background-image: url('/icons/activities-active.svg');
+}
+
+/************** icon-hamburger **************/
+.icon-hamburger {
+    background-image: url('/icons/hamburger.svg');
+}
+
+a:hover .icon-hamburger,
+a.active .icon-hamburger {
+    background-image: url('/icons/hamburger-active.svg');
+}
