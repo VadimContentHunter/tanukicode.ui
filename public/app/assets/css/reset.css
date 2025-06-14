@@ -57,3 +57,9 @@ body {
     line-height: 1.5;
     color: #333;
 }
+
+/* input:not([type="image" i], [type="range" i], [type="checkbox" i], [type="radio" i]) {}
+
+input[type="email" i] {}
+
+input:not([type="file" i], [type="image" i], [type="checkbox" i], [type="radio" i]) {} */

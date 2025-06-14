@@ -55,6 +55,45 @@ app.get('/site', async (req, res) => {
         //     'icon-'
         // );
 
+        const footerNavSections = [
+            {
+                title: 'About',
+                links: [
+                    { label: 'Fee Rate', href: 'fees' },
+                    {
+                        label: 'Careers',
+                        href: 'https://docs.google.com/forms/d/1MWVL6ztsvlxUmt9k3mnKZ6VA9unHeh8Ux4PKx6LXK0I/viewform?edit_requested=true',
+                        target: '_blank',
+                    },
+                ],
+            },
+            {
+                title: 'Service',
+                links: [{ label: 'Buy crypto', href: '../profile/buy-crypto' }],
+            },
+            {
+                title: 'Legal',
+                links: [
+                    { label: 'AML&CFT', href: 'aml-kyc-policy', target: '_blank' },
+                    { label: 'Privacy policy', href: 'privacy-notice', target: '_blank' },
+                    { label: 'Terms of service', href: 'terms', target: '_blank' },
+                ],
+            },
+            {
+                title: 'Trade crypto',
+                links: [
+                    { label: 'BTC/USDT', href: '../trading?pair=BTC' },
+                    { label: 'ETH/USDT', href: '../trading?pair=ETH' },
+                    { label: 'BNB/USDT', href: '../trading?pair=BNB' },
+                    { label: 'TRX/USDT', href: '../trading?pair=TRX' },
+                ],
+            },
+            {
+                title: 'Contact Us',
+                links: [],
+            },
+        ];
+
         const mainMenu = {
             activeLabel: 'Home',
             menuItems: [
@@ -85,6 +124,7 @@ app.get('/site', async (req, res) => {
             // header: 'partials/header',
             header: 'partials/header-auth',
             footer: 'partials/footer',
+            footerNavSections: footerNavSections,
             headPartial: 'partials/head',
             blocks: [],
         };
