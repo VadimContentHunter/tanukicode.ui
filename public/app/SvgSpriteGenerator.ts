@@ -67,7 +67,7 @@ export class SvgSpriteGenerator {
                 const viewBox = this.extractViewBox(content) || this.fallbackViewBox;
                 const inner = this.extractSvgContent(content);
 
-                return `<symbol id="${id}" viewBox="${viewBox}">${inner}</symbol>`;
+                return `<symbol id="${id}" viewBox="${viewBox}" fill="none">${inner}</symbol>`;
             })
             .filter(Boolean);
 
