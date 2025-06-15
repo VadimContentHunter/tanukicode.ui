@@ -15,8 +15,8 @@
 
     <div class="body-modal-content">
         <% profileSettingsData.tabs.forEach(tab=> { %>
-            <section class="tab-content"
-            <%=profileSettingsData.activeTabId === tab.id ? 'style="display:block;"' : 'style="display:none;"' %>
+            <section class="tab-content" style=
+            <%= profileSettingsData.activeTabId === tab.id ? "display:block;" : style="display:none;" %>
             >
                 <%- include(tab.path, tab.data || {}) %>
             </section>
