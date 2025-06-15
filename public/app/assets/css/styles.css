@@ -799,6 +799,12 @@ footer .footer-information .information-table > form > input {
   color: var(--color-ui-active);
   font-weight: 700;
 }
+.profile-settings .head--profile-settings button .icon-close {
+  transition: transform 0.3s ease;
+}
+.profile-settings .head--profile-settings button:hover .icon-close {
+  transform: rotate(90deg);
+}
 
 .profile-settings .head--profile-settings--navigate {
   display: flex;
@@ -835,6 +841,58 @@ footer .footer-information .information-table > form > input {
   display: flex;
   align-items: center;
   gap: 16px;
+}
+
+.account-setting .fill-account {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.profile-settings .form-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 24px;
+  grid-row-gap: 32px;
+}
+
+.profile-settings .form-item-default {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.profile-settings .form-item-default label {
+  font-style: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-inactive);
+  font-weight: 500;
+}
+.profile-settings .form-item-default input {
+  background: var(--color-white);
+  border: 1px solid var(--color-ui-muted);
+  width: 100%;
+  border-radius: var(--radius-base);
+  padding: 16px 16px;
+  display: flex;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 100%;
+  color: var(--color-ui-active);
+  font-weight: 700;
+}
+.profile-settings .form-item-default input:focus {
+  outline: none;
+  border: 1px solid var(--color-primary);
+}
+.profile-settings .form-item-default input[disabled] {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-ui-muted);
+  font-style: normal;
+  font-size: 14px;
+  line-height: 100%;
+  color: var(--color-inactive);
+  font-weight: 500;
 }
 
 * {

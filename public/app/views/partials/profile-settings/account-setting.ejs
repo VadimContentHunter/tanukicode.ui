@@ -17,52 +17,45 @@
     <form class="fill-account" onsubmit="return false;">
         <ul class="form-list">
             <li>
-                <label for="username_input">Username</label>
-                <input id="username_input" value="<%= username || '' %>" type="text" class="default-input">
-            </li>
-
-            <li>
-                <p>Email</p>
-                <div class="input-type-fill">
-                    <p>
-                        <%= email || '' %>
-                    </p>
+                <div class="form-item-default">
+                    <label for="username_input">Username</label>
+                    <input id="username_input" name="username" value="<%= username || '' %>" type="text">
                 </div>
             </li>
 
             <li>
-                <p>Account status</p>
-                <div class="input-type-fill not_verified">
-                    <p>
-                        <%= accountStatus || 'Default' %>
-                    </p>
+                <div class="form-item-default">
+                    <label for="email_input">Email</label>
+                    <input id="email_input" name="email" value="<%= email || '' %>" type="email">
                 </div>
             </li>
 
             <li>
-                <p>2FA</p>
-                <div class="input-type-fill not_verified">
-                    <p>
-                        <%= twoFAStatus || 'Disabled' %>
-                    </p>
+                <div class="form-item-default">
+                    <label for="account_status_input">Account status</label>
+                    <input id="account_status_input" name="accountStatus" value="<%= accountStatus || 'Default' %>" type="text" disabled>
                 </div>
             </li>
 
             <li>
-                <p>ID verification</p>
-                <div class="input-type-fill not_verified">
-                    <p>
-                        <%= idVerification || 'Not verified' %>
-                    </p>
+                <div class="form-item-default">
+                    <label for="twofa_status_input">2FA</label>
+                    <input id="twofa_status_input" name="twoFAStatus" value="<%= twoFAStatus || 'Disabled' %>" type="text" disabled>
+                </div>
+            </li>
+
+            <li>
+                <div class="form-item-default">
+                    <label for="id_verification_input">ID verification</label>
+                    <input id="id_verification_input" name="idVerification" value="<%= idVerification || 'Not verified' %>" type="text" disabled>
                 </div>
             </li>
         </ul>
 
         <div class="actions">
-            <button type="submit" class="default-button button-b" id="update_username">
+            <button type="submit" class="default-button button-accent" id="update_username">
                 <p>Update Profile</p>
             </button>
         </div>
     </form>
-
 </div>

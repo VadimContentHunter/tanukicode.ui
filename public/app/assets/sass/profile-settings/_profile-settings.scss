@@ -21,6 +21,16 @@
     h2 {
         @include text-style(normal, 24px, 100%, var(--color-ui-active), 700);
     }
+
+    button {
+        & .icon-close {
+            transition: transform 0.3s ease;
+        }
+
+        &:hover .icon-close {
+            transform: rotate(90deg);
+        }
+    }
 }
 
 .profile-settings .head--profile-settings--navigate {

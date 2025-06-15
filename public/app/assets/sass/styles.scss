@@ -11,6 +11,7 @@
 @use "./modal-wrappers";
 @use "./profile-settings/profile-settings";
 @use './profile-settings/account-setting';
+@use './profile-settings/_form-profile-settings.scss';
 
 * {
     font-family: "DM Sans", -apple-system, BlinkMacSystemFont,

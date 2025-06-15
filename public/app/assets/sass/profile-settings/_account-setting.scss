@@ -34,4 +34,8 @@
     }
 }
 
-.account-setting .avatar-account {}
+.account-setting .fill-account {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
