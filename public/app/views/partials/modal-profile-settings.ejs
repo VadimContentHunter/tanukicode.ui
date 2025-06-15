@@ -1,0 +1,26 @@
+<div class="modal-content">
+    <header class="head-modal">
+        <h1>Account Settings</h1>
+        <button type="button" class="hide-modal"></button>
+    </header>
+
+    <nav class="head-modal-navigate">
+        <% profileSettingsData.tabs.forEach(tab=> { %>
+            <button class="item tab-item <%= profileSettingsData.activeTabId === tab.id ? 'active' : '' %>" data-tab-id="<%= tab.id %>"
+                type="button">
+                <%= tab.title %>
+            </button>
+            <% }) %>
+    </nav>
+
+    <div class="body-modal-content">
+        <% profileSettingsData.tabs.forEach(tab=> { %>
+            <section class="tab-content"
+            <%=profileSettingsData.activeTabId === tab.id ? 'style="display:block;"' : 'style="display:none;"' %>
+            >
+                <%- include(tab.path, tab.data || {}) %>
+            </section>
+            <% }) %>
+    </div>
+
+</div>

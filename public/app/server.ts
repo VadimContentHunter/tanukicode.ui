@@ -56,7 +56,10 @@ app.get('/site', async (req, res) => {
         //     'icon-'
         // );
 
-        let jsonData = fs.readFileSync(path.join(pathConfig, 'profileMenuItems.json'), 'utf-8');
+        let jsonData = fs.readFileSync(path.join(pathConfig, 'profileSettingsData.json'), 'utf-8');
+        const profileSettingsData = JSON.parse(jsonData);
+
+        jsonData = fs.readFileSync(path.join(pathConfig, 'profileMenuItems.json'), 'utf-8');
         const profileMenuItems = JSON.parse(jsonData);
 
         jsonData = fs.readFileSync(path.join(pathConfig, 'assets.json'), 'utf-8');
@@ -100,7 +103,8 @@ app.get('/site', async (req, res) => {
             // модульные окна
             profileMenuItems: profileMenuItems,
             'modal-header-menu': 'partials/modal-header-menu',
-            // profileMenuItems: profileMenuItems,
+
+            profileSettingsData: profileSettingsData,
             'modal-profile-settings': 'partials/modal-profile-settings',
 
             // для footer
