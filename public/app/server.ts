@@ -55,6 +55,51 @@ app.get('/site', async (req, res) => {
         //     'icon-'
         // );
 
+        const profileMenuItems = [
+            {
+                type: 'button',
+                iconClass: 'icon-account',
+                title: 'Account',
+                desc: 'Important account details',
+                action: "openModal('profileTab')", // можешь использовать для onclick, если надо
+            },
+            {
+                type: 'button',
+                iconClass: 'icon-referrals',
+                title: 'Referrals',
+                desc: 'Invite your friends and earn rewards',
+                action: "openModal('referralsTab')",
+            },
+            {
+                type: 'button',
+                iconClass: 'icon-2fa',
+                title: '2FA security',
+                desc: 'Setup 2FA for more security',
+                action: "openModal('2faTab')",
+            },
+            {
+                type: 'button',
+                iconClass: 'icon-verification',
+                title: 'ID Verification',
+                desc: 'Verify to increase your limits',
+                action: "openModal('verfTab')",
+            },
+            {
+                type: 'button',
+                iconClass: 'icon-voucher',
+                title: 'Voucher',
+                desc: 'Enjoy special bonus',
+                action: "openModalPromo('modalPromo')",
+            },
+            {
+                type: 'link',
+                iconClass: 'icon-logout',
+                title: 'Log out',
+                desc: 'Already rich? No? Stay here',
+                href: '../api/auth/logout',
+            },
+        ];
+
         const assets = [
             {
                 id: 1,
@@ -231,6 +276,8 @@ app.get('/site', async (req, res) => {
             avatarSrc: avatar.avatarSrc,
             avatarId: avatar.avatarId,
             headerButtons: avatar.headerButtons,
+            profileMenuItems: profileMenuItems,
+            'header-menu': 'partials/header-menu',
             header: 'partials/header',
             // header: 'partials/header-auth',
 

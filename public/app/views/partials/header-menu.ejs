@@ -1,0 +1,30 @@
+<nav class="profile-navigation" aria-label="Profile navigation">
+    <% profileMenuItems.forEach(item=> { %>
+        <% if (item.type==='button' ) { %>
+            <button type="button" class="button-menu-item"
+                aria-expanded="false">
+                <i class="icon <%= item.iconClass %>"></i>
+                <div class="profile-nav-content">
+                    <h2>
+                        <%= item.title %>
+                    </h2>
+                    <p>
+                        <%= item.desc %>
+                    </p>
+                </div>
+            </button>
+        <% } else if (item.type==='link' ) { %>
+                <a href="<%= item.href %>" class="button-menu-item" role="link">
+                    <i class="icon <%= item.iconClass %>"></i>
+                    <div class="profile-nav-content">
+                        <h2>
+                            <%= item.title %>
+                        </h2>
+                        <p>
+                            <%= item.desc %>
+                        </p>
+                    </div>
+                </a>
+        <% } %>
+    <% }); %>
+</nav>

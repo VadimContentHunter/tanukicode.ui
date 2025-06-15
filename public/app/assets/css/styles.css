@@ -236,6 +236,7 @@
 }
 
 .content-container > header .additional-nav {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -633,6 +634,12 @@ footer .footer-information .information-table > form > input {
 
 .asset-items .button-muted {
   background-color: var(--color-white, #fff);
+}
+
+.modal-menus-wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 * {
