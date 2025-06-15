@@ -11,6 +11,7 @@ $color-bg-base: #F7F9FD; // основной цвет фона
 $color-primary-hover: #195AF5; // цвет при наведении на активные элементы
 $color-positive: #4FBF67; // цвет для положительных значений (например, доход)
 $color-negative: #E32D2D; // цвет для отрицательных значений (например, убыток)
+$color-shadow: #1f1f1f3d; // цвет тени (для теней, например, у кнопок)
 
 $font-size-base: 16px;
 $font-weight-medium: 500;
@@ -29,6 +30,7 @@ $font-weight-medium: 500;
     --color-ui-active: #{$color-ui-active};
     --color-positive: #{$color-positive};
     --color-negative: #{$color-negative};
+    --color-shadow: #{$color-shadow};
 
     --font-size-base: #{$font-size-base};
     --font-weight-medium: #{$font-weight-medium};

@@ -13,7 +13,7 @@
     },
     {
         "type": "button",
-        "iconClass": "icon-2fa",
+        "iconClass": "icon-security",
         "title": "2FA security",
         "desc": "Setup 2FA for more security"
     },
@@ -31,7 +31,7 @@
     },
     {
         "type": "link",
-        "iconClass": "icon-logout",
+        "iconClass": "icon-out",
         "title": "Log out",
         "desc": "Already rich? No? Stay here",
         "href": "../api/auth/logout"

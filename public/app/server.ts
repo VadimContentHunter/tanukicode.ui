@@ -79,6 +79,9 @@ app.get('/site', async (req, res) => {
             title: 'Заголовок страницы',
             headPartial: 'partials/head',
 
+            // для модальных оберток
+            modalWrappers: 'partials/modal-wrappers',
+
             // для общего layout
             svgSprite: spritesContent ?? '',
 
