@@ -1,5 +1,5 @@
 {
-    "activeTabId": "profile",
+    "activeTabId": "referrals",
 
     "tabs": [
         {
@@ -13,6 +13,20 @@
                 "accountStatus": "Default",
                 "twoFAStatus": "Disabled",
                 "idVerification": "Not verified"
+            }
+        },
+        {
+            "id": "referrals",
+            "title": "Referrals",
+            "path": "./profile-settings/referrals-setting.ejs",
+            "data": {
+                "referralLink": "https://null/signup?ref=1",
+                "totalRewards": "0",
+                "totalRewardsCurrency": "USDT",
+                "inviterRewards": "0.00",
+                "inviterRewardsCurrency": "USDT",
+                "rewardNote": "You’re earning 15% of the trading fees your referrals pay.",
+                "totalInvited": 0
             }
         }
     ]

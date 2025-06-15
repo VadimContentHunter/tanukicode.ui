@@ -19,7 +19,7 @@
     <div class="body--profile-settings--content">
         <% profileSettingsData.tabs.forEach(tab=> { %>
             <div class="tab-content"
-                <%=profileSettingsData.activeTabId===tab.id ? style="display:block;" : style="display:none;" %>
+                <%=profileSettingsData.activeTabId===tab.id ? 'style=display:block;' : 'style=display:none;' %>
             >
                 <%- include(tab.path, tab.data || {}) %>
             </div>

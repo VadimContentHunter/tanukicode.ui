@@ -1,8 +1,8 @@
-<section  class="account-setting">
-    <div class="avatar-account">
-        <div class="avatar-img">
+<section class="account-setting">
+    <section class="avatar-account">
+        <figure  class="avatar-img">
             <img src="<%= avatarSrc || '' %>" alt="User avatar" class="avatar-img">
-        </div>
+        </figure>
         <div class="action-avatar">
             <label class="default-button button-accent-outline">
                 <input type="file" accept="image/png,image/jpeg" id="profile_photo_input" hidden>
@@ -12,7 +12,7 @@
                 <p>Delete avatar</p>
             </button>
         </div>
-    </div>
+    </section>
 
     <form class="fill-account" onsubmit="return false;">
         <ul class="form-list">
@@ -33,21 +33,24 @@
             <li>
                 <div class="form-item-default">
                     <label for="account_status_input">Account status</label>
-                    <input id="account_status_input" name="accountStatus" value="<%= accountStatus || 'Default' %>" type="text" disabled>
+                    <input id="account_status_input" name="accountStatus" value="<%= accountStatus || 'Default' %>"
+                        type="text" disabled>
                 </div>
             </li>
 
             <li>
                 <div class="form-item-default">
                     <label for="twofa_status_input">2FA</label>
-                    <input id="twofa_status_input" name="twoFAStatus" value="<%= twoFAStatus || 'Disabled' %>" type="text" disabled>
+                    <input id="twofa_status_input" name="twoFAStatus" value="<%= twoFAStatus || 'Disabled' %>"
+                        type="text" disabled>
                 </div>
             </li>
 
             <li>
                 <div class="form-item-default">
                     <label for="id_verification_input">ID verification</label>
-                    <input id="id_verification_input" name="idVerification" value="<%= idVerification || 'Not verified' %>" type="text" disabled>
+                    <input id="id_verification_input" name="idVerification"
+                        value="<%= idVerification || 'Not verified' %>" type="text" disabled>
                 </div>
             </li>
         </ul>

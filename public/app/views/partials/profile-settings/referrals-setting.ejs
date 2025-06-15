@@ -1,0 +1,35 @@
+<section class="referrals-setting">
+
+    <article class="card-invite">
+        <header class="content-invite">
+            <h2>Invite your friends to TanukiCode and Earn 15% on Friends' trading fees</h2>
+            <p>Your referral link</p>
+        </header>
+        <div class="referal-link">
+            <code><%= referralLink %></code>
+            <button class="copy-referal"></button>
+        </div>
+    </article>
+
+    <section class="reward-data">
+        <h2>Total Rewards</h2>
+        <div class="reward-value">
+            <strong><%= totalRewards %></strong>
+            <span><%= totalRewardsCurrency %></span>
+        </div>
+    </section>
+
+    <section class="inviter-reward">
+        <header class="top-inviter">
+            <h2>Inviter Rewards</h2>
+            <h2><span><%= inviterRewards %></span> <%= inviterRewardsCurrency %></h2>
+        </header>
+        <p><%= rewardNote %></p>
+    </section>
+
+    <section class="total-invited">
+        <h2>Total Invited</h2>
+        <p><%= totalInvited %></p>
+    </section>
+    
+</section>
