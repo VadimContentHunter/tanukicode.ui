@@ -226,13 +226,13 @@ app.get('/site', async (req, res) => {
             navMain: 'partials/main-nav',
             activeLabel: mainMenu.activeLabel,
             menuItems: mainMenu.menuItems,
-            // avatarSrc: avatar.avatarSrc,
-            // avatarId: avatar.avatarId,
 
             // для header
+            avatarSrc: avatar.avatarSrc,
+            avatarId: avatar.avatarId,
             headerButtons: avatar.headerButtons,
-            // header: 'partials/header',
-            header: 'partials/header-auth',
+            header: 'partials/header',
+            // header: 'partials/header-auth',
 
             // для footer
             footer: 'partials/footer',
