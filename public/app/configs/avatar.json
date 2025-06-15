@@ -1,0 +1,6 @@
+{
+    "avatarSrc": "/imgs/avatar.svg",
+    "avatarId": "my_profile_photo",
+
+    "headerButtons": [{ "icon": "icon-sun" }, { "icon": "icon-lang" }]
+}

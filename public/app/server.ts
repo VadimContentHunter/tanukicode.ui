@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express';
 import path from 'path';
-import fs from 'fs/promises';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { EjsRenderer } from './EjsRenderer.js';
 import { SvgSpriteGenerator } from './SvgSpriteGenerator.js';
@@ -14,6 +14,7 @@ const __projectRoot = path.resolve(__dirname, '../app'); // /var/www/browser-gam
 
 const pathAssets = path.join(__projectRoot, 'assets');
 const pathView = path.join(__projectRoot, 'views');
+const pathConfig = path.join(__projectRoot, 'configs');
 const ejsRenderer = new EjsRenderer(pathView, path.join(__projectRoot, 'render-views'));
 const generatorSprites = new SvgSpriteGenerator({
     outputDir: path.join(pathAssets, 'resources', 'sprites'),
@@ -55,209 +56,23 @@ app.get('/site', async (req, res) => {
         //     'icon-'
         // );
 
-        const profileMenuItems = [
-            {
-                type: 'button',
-                iconClass: 'icon-account',
-                title: 'Account',
-                desc: 'Important account details',
-                action: "openModal('profileTab')", // можешь использовать для onclick, если надо
-            },
-            {
-                type: 'button',
-                iconClass: 'icon-referrals',
-                title: 'Referrals',
-                desc: 'Invite your friends and earn rewards',
-                action: "openModal('referralsTab')",
-            },
-            {
-                type: 'button',
-                iconClass: 'icon-2fa',
-                title: '2FA security',
-                desc: 'Setup 2FA for more security',
-                action: "openModal('2faTab')",
-            },
-            {
-                type: 'button',
-                iconClass: 'icon-verification',
-                title: 'ID Verification',
-                desc: 'Verify to increase your limits',
-                action: "openModal('verfTab')",
-            },
-            {
-                type: 'button',
-                iconClass: 'icon-voucher',
-                title: 'Voucher',
-                desc: 'Enjoy special bonus',
-                action: "openModalPromo('modalPromo')",
-            },
-            {
-                type: 'link',
-                iconClass: 'icon-logout',
-                title: 'Log out',
-                desc: 'Already rich? No? Stay here',
-                href: '../api/auth/logout',
-            },
-        ];
+        let jsonData = fs.readFileSync(path.join(pathConfig, 'profileMenuItems.json'), 'utf-8');
+        const profileMenuItems = JSON.parse(jsonData);
 
-        const assets = [
-            {
-                id: 1,
-                name: 'Bitcoin',
-                symbol: 'BTC',
-                icon: '/imgs/cryptoicons/btc.svg',
-                price: '$105543.98',
-                gain: '0.186%',
-            },
-            {
-                id: 2,
-                name: 'Ethereum',
-                symbol: 'ETH',
-                icon: '/imgs/cryptoicons/eth.svg',
-                price: '$2541.49',
-                gain: '-0.806%',
-            },
-            {
-                id: 3,
-                name: 'Tether',
-                symbol: 'USDT',
-                icon: '/imgs/cryptoicons/btc.svg',
-                price: '$1.00',
-                gain: '0.005%',
-            },
-            {
-                id: 4,
-                name: 'Binance Coin',
-                symbol: 'BNB',
-                icon: '/imgs/cryptoicons/eth.svg',
-                price: '$312.45',
-                gain: '-1.215%',
-            },
-            {
-                id: 5,
-                name: 'Ripple',
-                symbol: 'XRP',
-                icon: '/imgs/cryptoicons/btc.svg',
-                price: '$0.74',
-                gain: '2.03%',
-            },
-            {
-                id: 6,
-                name: 'Cardano',
-                symbol: 'ADA',
-                icon: '/imgs/cryptoicons/eth.svg',
-                price: '$0.35',
-                gain: '-0.92%',
-            },
-            {
-                id: 7,
-                name: 'Solana',
-                symbol: 'SOL',
-                icon: '/imgs/cryptoicons/btc.svg',
-                price: '$24.16',
-                gain: '1.54%',
-            },
-            {
-                id: 8,
-                name: 'Polkadot',
-                symbol: 'DOT',
-                icon: '/imgs/cryptoicons/eth.svg',
-                price: '$5.18',
-                gain: '-0.23%',
-            },
-            {
-                id: 9,
-                name: 'Litecoin',
-                symbol: 'LTC',
-                icon: '/imgs/cryptoicons/btc.svg',
-                price: '$89.32',
-                gain: '0.73%',
-            },
-            {
-                id: 10,
-                name: 'Dogecoin',
-                symbol: 'DOGE',
-                icon: '/imgs/cryptoicons/eth.svg',
-                price: '$0.072',
-                gain: '-2.45%',
-            },
-        ];
+        jsonData = fs.readFileSync(path.join(pathConfig, 'assets.json'), 'utf-8');
+        const assets = JSON.parse(jsonData);
 
-        const balances = {
-            balancesList: [
-                {
-                    imgSrc: '/imgs/balance-b.svg',
-                    imgAlt: 'Asset Balance icon',
-                    title: 'Asset Balance',
-                    cryptoAmount: '1.91450666 BTC',
-                    fiatAmount: '~ 200967.35 $',
-                },
-                {
-                    imgSrc: '/imgs/balance-a.svg',
-                    imgAlt: 'Exchange Balance icon',
-                    title: 'Exchange Balance',
-                    cryptoAmount: '2.91450666 BTC',
-                    fiatAmount: '~ 300967.35 $',
-                },
-            ],
-        };
+        jsonData = fs.readFileSync(path.join(pathConfig, 'balances.json'), 'utf-8');
+        const balances = JSON.parse(jsonData);
 
-        const footerNavSections = [
-            {
-                title: 'About',
-                links: [
-                    { label: 'Fee Rate', href: 'fees' },
-                    {
-                        label: 'Careers',
-                        href: 'https://docs.google.com/forms/d/1MWVL6ztsvlxUmt9k3mnKZ6VA9unHeh8Ux4PKx6LXK0I/viewform?edit_requested=true',
-                        target: '_blank',
-                    },
-                ],
-            },
-            {
-                title: 'Service',
-                links: [{ label: 'Buy crypto', href: '../profile/buy-crypto' }],
-            },
-            {
-                title: 'Legal',
-                links: [
-                    { label: 'AML&CFT', href: 'aml-kyc-policy', target: '_blank' },
-                    { label: 'Privacy policy', href: 'privacy-notice', target: '_blank' },
-                    { label: 'Terms of service', href: 'terms', target: '_blank' },
-                ],
-            },
-            {
-                title: 'Trade crypto',
-                links: [
-                    { label: 'BTC/USDT', href: '../trading?pair=BTC' },
-                    { label: 'ETH/USDT', href: '../trading?pair=ETH' },
-                    { label: 'BNB/USDT', href: '../trading?pair=BNB' },
-                    { label: 'TRX/USDT', href: '../trading?pair=TRX' },
-                ],
-            },
-            {
-                title: 'Contact Us',
-                links: [],
-            },
-        ];
+        jsonData = fs.readFileSync(path.join(pathConfig, 'footerNavSections.json'), 'utf-8');
+        const footerNavSections = JSON.parse(jsonData);
 
-        const mainMenu = {
-            activeLabel: 'Home',
-            menuItems: [
-                { label: 'Home', href: '/home', icon: 'icon-home' },
-                { label: 'Exchange', href: '/trading', icon: 'icon-exchange' },
-                { label: 'Wallets', href: '/profile/wallet', icon: 'icon-wallets' },
-                { label: 'Buy crypto', href: '/profile/buy-crypto', icon: 'icon-buy-crypto' },
-                { label: 'Activities', href: '/profile/transactions', icon: 'icon-activities' },
-            ],
-        };
+        jsonData = fs.readFileSync(path.join(pathConfig, 'mainMenu.json'), 'utf-8');
+        const mainMenu = JSON.parse(jsonData);
 
-        const avatar = {
-            avatarSrc: '/imgs/avatar.svg',
-            avatarId: 'my_profile_photo',
-
-            headerButtons: [{ icon: 'icon-sun' }, { icon: 'icon-lang' }],
-        };
+        jsonData = fs.readFileSync(path.join(pathConfig, 'avatar.json'), 'utf-8');
+        const avatar = JSON.parse(jsonData);
 
         const dataGeneral = {
             // для head

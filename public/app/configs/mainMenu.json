@@ -1,0 +1,10 @@
+{
+    "activeLabel": "Home",
+    "menuItems": [
+        { "label": "Home", "href": "/home", "icon": "icon-home" },
+        { "label": "Exchange", "href": "/trading", "icon": "icon-exchange" },
+        { "label": "Wallets", "href": "/profile/wallet", "icon": "icon-wallets" },
+        { "label": "Buy crypto", "href": "/profile/buy-crypto", "icon": "icon-buy-crypto" },
+        { "label": "Activities", "href": "/profile/transactions", "icon": "icon-activities" }
+    ]
+}

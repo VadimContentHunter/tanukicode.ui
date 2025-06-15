@@ -1,0 +1,39 @@
+[
+    {
+        "type": "button",
+        "iconClass": "icon-account",
+        "title": "Account",
+        "desc": "Important account details"
+    },
+    {
+        "type": "button",
+        "iconClass": "icon-referrals",
+        "title": "Referrals",
+        "desc": "Invite your friends and earn rewards"
+    },
+    {
+        "type": "button",
+        "iconClass": "icon-2fa",
+        "title": "2FA security",
+        "desc": "Setup 2FA for more security"
+    },
+    {
+        "type": "button",
+        "iconClass": "icon-verification",
+        "title": "ID Verification",
+        "desc": "Verify to increase your limits"
+    },
+    {
+        "type": "button",
+        "iconClass": "icon-voucher",
+        "title": "Voucher",
+        "desc": "Enjoy special bonus"
+    },
+    {
+        "type": "link",
+        "iconClass": "icon-logout",
+        "title": "Log out",
+        "desc": "Already rich? No? Stay here",
+        "href": "../api/auth/logout"
+    }
+]
