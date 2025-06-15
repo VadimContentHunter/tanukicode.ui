@@ -8,12 +8,10 @@
             <%- svgSprite %>
         </div>
         <!-- Конец SVG спрайтов -->
-
         <div class="container">
             <%- include(navMain) %>
             <main>
                 <div class="content-container">
-                    <%- include(modalWrappers) %>
                     <%- include(header) %>
                     <% blocks.forEach(function(block) { %>
                     <%- include(block) %>
@@ -23,6 +21,9 @@
                 </div>
             </main>
         </div>
-    </body>
 
+        <!-- Модальные окна -->
+        <%- include(modalWrappers) %>
+        <!-- Конец модальных окон -->
+    </body>
 </html>

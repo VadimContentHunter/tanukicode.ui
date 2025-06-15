@@ -1,14 +1,24 @@
 @use "./vars" as *;
 
 .modal-wrappers {
-    position: absolute;
+    position: fixed;
     top: 0;
-    right: 14px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
     z-index: 100;
-    // height: 2px;
+
+    &>* {
+        pointer-events: auto;
+    }
 }
 
 .modal-wrappers .modal-profile-menu {
-    padding: 88px 0;
-    // opacity: 1;
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 88px var(--global-padding-side);
+    z-index: 101;
 }

@@ -40,8 +40,8 @@ main {
     width: 100%;
 
     &>* {
-        margin-left: 26px;
-        margin-right: 26px;
+        margin-left: var(--global-padding-side);
+        margin-right: var(--global-padding-side);
     }
 }
 

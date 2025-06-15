@@ -16,6 +16,8 @@ $color-shadow: #1f1f1f3d; // цвет тени (для теней, наприм�
 $font-size-base: 16px;
 $font-weight-medium: 500;
 
+$global-padding-side: 26px; // отступы по бокам для контента
+
 :root {
     --radius-base: #{$radius-base};
     --radius-banner: #{$radius-banner};
@@ -35,6 +37,7 @@ $font-weight-medium: 500;
     --font-size-base: #{$font-size-base};
     --font-weight-medium: #{$font-weight-medium};
 
+    --global-padding-side: #{$global-padding-side};
 }
 
 @mixin icon-active($selector, $url) {
