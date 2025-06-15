@@ -132,6 +132,11 @@
   background-image: url("/icons/close.svg");
 }
 
+/************** icon-referal **************/
+.icon-referal {
+  background-image: url("/icons/referal.svg");
+}
+
 .main-nav {
   flex: 1;
   max-width: 260px;
@@ -895,40 +900,177 @@ footer .footer-information .information-table > form > input {
   gap: 32px;
 }
 
-.account-setting {
+.referrals-setting {
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
 
-.account-setting .avatar-account {
-  padding-bottom: 32px;
-  border-bottom: 1px solid var(--color-ui-muted);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 24px;
-}
-.account-setting .avatar-account .avatar-img {
-  width: 80px;
-  height: 80px;
-}
-.account-setting .avatar-account .avatar-img > img {
+.card-invite::after, .card-invite::before {
+  position: absolute;
+  content: "";
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  pointer-events: none;
+  border-radius: 16px;
 }
-.account-setting .avatar-account .action-avatar {
+
+.card-invite {
+  z-index: 0;
+  margin-bottom: 12px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.card-invite::before {
+  top: 6px;
+  z-index: -1;
+  background: rgba(108, 93, 211, 0.6);
+  max-width: calc(100% - 16px);
+}
+.card-invite::after {
+  top: 12px;
+  z-index: -2;
+  background: #6C5DD3;
+  mix-blend-mode: normal;
+  opacity: 0.2;
+  max-width: calc(100% - 32px);
+}
+.card-invite .content-invite {
+  width: 100%;
+  border-radius: var(--radius-base);
+  padding: 32px;
+  background: radial-gradient(100% 397.22% at 0% 0%, #D080FF 0%, #6C5DD3 100%);
+  display: flex;
+  flex-direction: column;
+}
+.card-invite .content-invite h2 {
+  margin-bottom: 16px;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--color-white);
+  font-weight: 700;
+}
+.card-invite .content-invite h3 {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--color-white);
+  font-weight: 500;
+}
+.card-invite .content-invite .referal-link {
+  margin-top: 4px;
+  padding: 16px 24px;
+  border-radius: var(--radius-base);
+  border: 1px solid var(--color-white);
   display: flex;
   align-items: center;
   gap: 16px;
 }
+.card-invite .content-invite .referal-link code {
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 100%;
+  color: var(--color-white);
+  font-weight: 400;
+}
+.card-invite .content-invite .referal-link button:hover {
+  cursor: pointer;
+}
 
-.account-setting .fill-account {
+.referrals-setting .reward-data {
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--color-ui-muted);
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 8px;
+}
+.referrals-setting .reward-data h2 {
+  font-style: normal;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--color-ui-active);
+  font-weight: 700;
+}
+.referrals-setting .reward-data .reward-value {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.referrals-setting .reward-data .reward-value strong {
+  font-style: normal;
+  font-size: 36px;
+  line-height: 120%;
+  color: var(--color-ui-active);
+  font-weight: 700;
+}
+.referrals-setting .reward-data .reward-value span {
+  padding: 8px 16px;
+  border-radius: var(--radius-banner);
+  background: #26A17B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 100%;
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+.referrals-setting .inviter-reward {
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--color-ui-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.referrals-setting .inviter-reward header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.referrals-setting .inviter-reward header h2 {
+  font-style: normal;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--color-ui-active);
+  font-weight: 700;
+}
+.referrals-setting .inviter-reward p {
+  font-style: normal;
+  font-size: 16px;
+  line-height: 21px;
+  color: var(--color-inactive);
+  font-weight: 400;
+}
+
+.referrals-setting .total-invited {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.referrals-setting .total-invited h2 {
+  font-style: normal;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--color-ui-active);
+  font-weight: 700;
+}
+.referrals-setting .total-invited p {
+  font-style: normal;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--color-ui-active);
+  font-weight: 500;
 }
 
 * {
