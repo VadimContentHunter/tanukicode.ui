@@ -9,10 +9,12 @@
             <p class="balance-usd">200967.35 $</p>
         </div>
         <div class="balance-actions">
-            <button type="button" class="default-button button-b icon-type get-i" onclick="openModalWith('modalWith')">
+            <button type="button" class="default-button button-accent">
+                <i class="icon icon-withdraw"></i>
                 Withdraw
             </button>
-            <button type="button" class="default-button button-g icon-type send-i" onclick="openModalDep('modalDep')">
+            <button type="button" class="default-button button-muted ">
+                <i class="icon icon-deposit"></i>
                 Deposit
             </button>
         </div>
@@ -22,20 +24,18 @@
         <ul class="balance-list">
             <% balancesList.forEach(balance=> { %>
                 <li>
-                    <figure class="balance-item">
-                        <img src="<%= balance.imgSrc %>" alt="<%= balance.imgAlt %>" class="balance-image" />
-                        <figcaption class="item-balance-data">
-                            <h3>
-                                <%= balance.title %>
-                            </h3>
-                            <p class="crypto-amount">
-                                <%= balance.cryptoAmount %>
-                            </p>
-                            <p class="fiat-amount">
-                                <%= balance.fiatAmount %>
-                            </p>
-                        </figcaption>
-                    </figure>
+                    <img src="<%= balance.imgSrc %>" alt="<%= balance.imgAlt %>" class="balance-image" />
+                    <div class="item-balance-data">
+                        <h3>
+                            <%= balance.title %>
+                        </h3>
+                        <h2>
+                            <%= balance.cryptoAmount %>
+                        </h2>
+                        <p class="fiat-amount">
+                            <%= balance.fiatAmount %>
+                        </p>
+                    </div>
                 </li>
                 <% }) %>
         </ul>

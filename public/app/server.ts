@@ -58,18 +58,18 @@ app.get('/site', async (req, res) => {
         const balances = {
             balancesList: [
                 {
-                    imgSrc: '/source/img/balance-b.svg',
+                    imgSrc: '/imgs/balance-b.svg',
                     imgAlt: 'Asset Balance icon',
                     title: 'Asset Balance',
                     cryptoAmount: '1.91450666 BTC',
                     fiatAmount: '~ 200967.35 $',
                 },
                 {
-                    imgSrc: '/source/img/balance-a.svg',
+                    imgSrc: '/imgs/balance-a.svg',
                     imgAlt: 'Exchange Balance icon',
                     title: 'Exchange Balance',
-                    cryptoAmount: '1.91450666 BTC',
-                    fiatAmount: '~ 200967.35 $',
+                    cryptoAmount: '2.91450666 BTC',
+                    fiatAmount: '~ 300967.35 $',
                 },
             ],
         };
