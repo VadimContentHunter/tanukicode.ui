@@ -94,10 +94,14 @@ app.get('/site', async (req, res) => {
             avatarSrc: avatar.avatarSrc,
             avatarId: avatar.avatarId,
             headerButtons: avatar.headerButtons,
-            profileMenuItems: profileMenuItems,
-            'header-menu': 'partials/header-menu',
             header: 'partials/header',
             // header: 'partials/header-auth',
+
+            // модульные окна
+            profileMenuItems: profileMenuItems,
+            'modal-header-menu': 'partials/modal-header-menu',
+            // profileMenuItems: profileMenuItems,
+            'modal-profile-settings': 'partials/modal-profile-settings',
 
             // для footer
             footer: 'partials/footer',
