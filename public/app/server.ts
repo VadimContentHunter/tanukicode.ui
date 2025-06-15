@@ -55,6 +55,89 @@ app.get('/site', async (req, res) => {
         //     'icon-'
         // );
 
+        const assets = [
+            {
+                id: 1,
+                name: 'Bitcoin',
+                symbol: 'BTC',
+                icon: '/imgs/cryptoicons/btc.svg',
+                price: '$105543.98',
+                gain: '0.186%',
+            },
+            {
+                id: 2,
+                name: 'Ethereum',
+                symbol: 'ETH',
+                icon: '/imgs/cryptoicons/eth.svg',
+                price: '$2541.49',
+                gain: '-0.806%',
+            },
+            {
+                id: 3,
+                name: 'Tether',
+                symbol: 'USDT',
+                icon: '/imgs/cryptoicons/btc.svg',
+                price: '$1.00',
+                gain: '0.005%',
+            },
+            {
+                id: 4,
+                name: 'Binance Coin',
+                symbol: 'BNB',
+                icon: '/imgs/cryptoicons/eth.svg',
+                price: '$312.45',
+                gain: '-1.215%',
+            },
+            {
+                id: 5,
+                name: 'Ripple',
+                symbol: 'XRP',
+                icon: '/imgs/cryptoicons/btc.svg',
+                price: '$0.74',
+                gain: '2.03%',
+            },
+            {
+                id: 6,
+                name: 'Cardano',
+                symbol: 'ADA',
+                icon: '/imgs/cryptoicons/eth.svg',
+                price: '$0.35',
+                gain: '-0.92%',
+            },
+            {
+                id: 7,
+                name: 'Solana',
+                symbol: 'SOL',
+                icon: '/imgs/cryptoicons/btc.svg',
+                price: '$24.16',
+                gain: '1.54%',
+            },
+            {
+                id: 8,
+                name: 'Polkadot',
+                symbol: 'DOT',
+                icon: '/imgs/cryptoicons/eth.svg',
+                price: '$5.18',
+                gain: '-0.23%',
+            },
+            {
+                id: 9,
+                name: 'Litecoin',
+                symbol: 'LTC',
+                icon: '/imgs/cryptoicons/btc.svg',
+                price: '$89.32',
+                gain: '0.73%',
+            },
+            {
+                id: 10,
+                name: 'Dogecoin',
+                symbol: 'DOGE',
+                icon: '/imgs/cryptoicons/eth.svg',
+                price: '$0.072',
+                gain: '-2.45%',
+            },
+        ];
+
         const balances = {
             balancesList: [
                 {
@@ -157,7 +240,12 @@ app.get('/site', async (req, res) => {
 
             // Данные для баланса
             balancesList: balances.balancesList,
-            blocks: ['partials/block-balance'],
+
+            // Данные для активов
+            assets: assets,
+
+            // список блоков для рендеринга
+            blocks: ['partials/block-balance', 'partials/block-assets'],
         };
 
         await ejsRenderer.renderMultipleFiles([

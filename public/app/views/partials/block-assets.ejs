@@ -1,0 +1,53 @@
+<section class="asset-items">
+    <% assets.forEach(asset=> { %>
+        <article>
+            <header>
+                <div class="asset-image">
+                    <img src="<%= asset.icon %>" alt="<%= asset.name %> icon">
+                </div>
+                <div class="asset-info">
+                    <div class="top-asset-info">
+                        <h2>
+                            <%= asset.name %>
+                        </h2>
+                        <p>24h</p>
+                    </div>
+                    <p class="asset-symbol">
+                        <%= asset.symbol %>
+                    </p>
+                </div>
+            </header>
+
+            <div class="body-asset">
+                <div class="price-info">
+                    <div class="price-asset">
+                        <strong>
+                            <%= asset.price %>
+                        </strong>
+                    </div>
+                    <div class="gain-asset <%= asset.gain.startsWith('-') ? 'negative' : 'positive' %>">
+                        <i class="icon"></i>
+                        <p class="gain">
+                            <%= asset.gain %>
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="chart-info" data-coin="<%= asset.id %>" wire:ignore>
+                    <canvas width="256" height="72"></canvas>
+                </div>
+            </div>
+
+            <div class="view-asset">
+                <a class="default-button button-accent" href="trading?currency=<%= asset.symbol %>">
+                    <span>Trade</span>
+                </a>
+            </div>
+        </article>
+    <% }) %>
+
+    <a href="trading" class="default-button button-muted">
+        <span>Discover more asset</span>
+    </a>
+</section>

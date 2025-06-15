@@ -1,9 +1,12 @@
+@use "sass:color";
+
 @use "./vars" as *;
 @use "./_icons.scss";
 @use "./main-nav";
 @use "./header";
 @use "./footer";
 @use "./block-balance";
+@use "./block-assets";
 
 * {
     font-family: "DM Sans", -apple-system, BlinkMacSystemFont,
@@ -48,6 +51,7 @@ main {
 
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
 }
 
@@ -77,6 +81,6 @@ main {
 
     &:hover {
         cursor: pointer;
-        background-color: lighten($color-ui-muted, 50%);
+        background-color: color.scale($color-ui-muted, $lightness: 50%);
     }
 }

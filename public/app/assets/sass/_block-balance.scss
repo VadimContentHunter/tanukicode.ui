@@ -92,7 +92,7 @@
                 }
 
                 .fiat-amount {
-                    @include text-style(normal, 16px, 20px, #4FBF67, 500);
+                    @include text-style(normal, 16px, 20px, var(--color-positive), 500);
                 }
             }
         }
