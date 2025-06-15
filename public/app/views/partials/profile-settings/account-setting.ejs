@@ -1,67 +1,68 @@
-<section class="tab-content">
-    <div class="account-setting">
-        <div class="avatar-account">
-            <div class="avatar-setting">
-                <img src="<%= avatarSrc || '' %>" alt="User avatar">
-            </div>
-            <div class="action-avatar">
-                <label class="default-button button-f">
-                    <input type="file" accept="image/png,image/jpeg" id="profile_photo_input" hidden>
-                    <p>Upload New</p>
-                </label>
-                <button type="button" id="remove_profile_photo" class="default-button button-e">
-                    <p>Delete avatar</p>
-                </button>
-            </div>
+<div class="account-setting">
+    <div class="avatar-account">
+        <div class="avatar-img">
+            <img src="<%= avatarSrc || '' %>" alt="User avatar" class="avatar-img">
         </div>
+        <div class="action-avatar">
+            <label class="default-button button-accent-outline">
+                <input type="file" accept="image/png,image/jpeg" id="profile_photo_input" hidden>
+                <p>Upload New</p>
+            </label>
+            <button type="button" id="remove_profile_photo" class="default-button button-inactive-alt">
+                <p>Delete avatar</p>
+            </button>
+        </div>
+    </div>
 
-        <form class="fill-account" onsubmit="return false;">
-            <div class="item">
+    <form class="fill-account" onsubmit="return false;">
+        <ul class="form-list">
+            <li>
                 <label for="username_input">Username</label>
                 <input id="username_input" value="<%= username || '' %>" type="text" class="default-input">
-            </div>
+            </li>
 
-            <div class="item">
+            <li>
                 <p>Email</p>
                 <div class="input-type-fill">
                     <p>
                         <%= email || '' %>
                     </p>
                 </div>
-            </div>
+            </li>
 
-            <div class="item">
+            <li>
                 <p>Account status</p>
                 <div class="input-type-fill not_verified">
                     <p>
                         <%= accountStatus || 'Default' %>
                     </p>
                 </div>
-            </div>
+            </li>
 
-            <div class="item">
+            <li>
                 <p>2FA</p>
                 <div class="input-type-fill not_verified">
                     <p>
                         <%= twoFAStatus || 'Disabled' %>
                     </p>
                 </div>
-            </div>
+            </li>
 
-            <div class="item">
+            <li>
                 <p>ID verification</p>
                 <div class="input-type-fill not_verified">
                     <p>
                         <%= idVerification || 'Not verified' %>
                     </p>
                 </div>
-            </div>
-        </form>
+            </li>
+        </ul>
 
-        <div class="action-modal">
-            <button type="button" class="default-button button-b" id="update_username">
+        <div class="actions">
+            <button type="submit" class="default-button button-b" id="update_username">
                 <p>Update Profile</p>
             </button>
         </div>
-    </div>
-</section>
+    </form>
+
+</div>

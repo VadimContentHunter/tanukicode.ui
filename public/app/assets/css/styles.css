@@ -807,6 +807,36 @@ footer .footer-information .information-table > form > input {
   overflow-x: auto;
   padding-bottom: 6px;
 }
+.account-setting {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.account-setting .avatar-account {
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--color-ui-muted);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+}
+.account-setting .avatar-account .avatar-img {
+  width: 80px;
+  height: 80px;
+}
+.account-setting .avatar-account .avatar-img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.account-setting .avatar-account .action-avatar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 * {
   font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -885,6 +915,16 @@ main {
   background-color: var(--color-primary-hover);
 }
 
+.button-accent-outline {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+.button-accent-outline:hover {
+  cursor: pointer;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
 .button-muted {
   background-color: var(--color-ui-muted);
   color: var(--color-ui-active);
@@ -909,6 +949,16 @@ main {
   color: var(--color-ui-active);
   border: 1px solid var(--color-white);
   background-color: var(--color-white);
+}
+
+.button-inactive-alt {
+  color: var(--color-inactive);
+  border: 1px solid var(--color-white);
+  background-color: var(--color-white);
+}
+.button-inactive-alt:hover {
+  cursor: pointer;
+  color: var(--color-ui-active);
 }
 
 /*# sourceMappingURL=styles.css.map */
