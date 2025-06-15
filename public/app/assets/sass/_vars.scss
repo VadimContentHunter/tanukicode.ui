@@ -12,6 +12,7 @@ $color-primary-hover: #195AF5; // цвет при наведении на акт
 $color-positive: #4FBF67; // цвет для положительных значений (например, доход)
 $color-negative: #E32D2D; // цвет для отрицательных значений (например, убыток)
 $color-shadow: #1f1f1f3d; // цвет тени (для теней, например, у кнопок)
+$color-overlay-dark: #191b21a3; // темный оверлей (для затемнения фона при открытии модальных окон)
 
 $font-size-base: 16px;
 $font-weight-medium: 500;
@@ -33,6 +34,7 @@ $global-padding-side: 26px; // отступы по бокам для конте�
     --color-positive: #{$color-positive};
     --color-negative: #{$color-negative};
     --color-shadow: #{$color-shadow};
+    --color-overlay-dark: #{$color-overlay-dark};
 
     --font-size-base: #{$font-size-base};
     --font-weight-medium: #{$font-weight-medium};

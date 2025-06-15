@@ -1,19 +1,21 @@
-<div class="modal-content">
-    <header class="head-modal">
-        <h1>Account Settings</h1>
-        <button type="button" class="hide-modal"></button>
+<div class="profile-settings">
+    <header class="head--profile-settings">
+        <h2>Account Settings</h2>
+        <button type="button" class="icon-button button-active">
+            <i class="icon icon-close"></i>
+        </button>
     </header>
 
-    <nav class="head-modal-navigate">
+    <nav class="head--profile-settings--navigate">
         <% profileSettingsData.tabs.forEach(tab=> { %>
-            <button class="item tab-item <%= profileSettingsData.activeTabId === tab.id ? 'active' : '' %>" data-tab-id="<%= tab.id %>"
+            <button class="ui-button <%= profileSettingsData.activeTabId === tab.id ? 'button-active' : 'button-inactive' %>" data-tab-id="<%= tab.id %>"
                 type="button">
                 <%= tab.title %>
             </button>
             <% }) %>
     </nav>
 
-    <div class="body-modal-content">
+    <div class="body--profile-settings--content">
         <% profileSettingsData.tabs.forEach(tab=> { %>
             <section class="tab-content" style=
             <%= profileSettingsData.activeTabId === tab.id ? "display:block;" : style="display:none;" %>

@@ -71,7 +71,7 @@
             p {
                 text-transform: uppercase;
                 padding: 8px 16px;
-                border-radius: 20px;
+                border-radius: var(--radius-banner);
                 background-color: var(--color-bg-base);
                 @include text-style(normal, 12px, 100%, var(--color-inactive), 700);
             }

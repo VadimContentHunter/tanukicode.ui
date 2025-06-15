@@ -7,7 +7,7 @@
             "title": "Account",
             "path": "./profile-settings/account-setting.ejs",
             "data": {
-                "avatarSrc": "../assets/img/profile/avatar.svg",
+                "avatarSrc": "/imgs/avatar.svg",
                 "username": "TanukiCode",
                 "email": "tanukicode@gmail.com",
                 "accountStatus": "Default",

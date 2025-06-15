@@ -1,0 +1,38 @@
+@use "./vars" as *;
+
+.profile-settings {
+    background-color: var(--color-bg-base);
+    max-width: 640px;
+    width: 100%;
+    border-radius: var(--radius-base);
+    padding: 32px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.profile-settings .head--profile-settings {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+        @include text-style(normal, 24px, 100%, var(--color-ui-active), 700);
+    }
+}
+
+.profile-settings .head--profile-settings--navigate {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+
+    &>button {
+        // transition: background .2s;
+    }
+}
+
+.profile-settings .body--profile-settings--content {}

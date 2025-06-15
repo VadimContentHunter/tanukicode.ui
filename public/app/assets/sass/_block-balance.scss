@@ -35,7 +35,7 @@
 
             &>span {
                 padding: 8px 16px;
-                border-radius: 20px;
+                border-radius: var(--radius-banner);
 
                 @include text-style($font-size: 16px, $font-weight: 700, $color: var(--color-white), $line-height: 100%);
             }

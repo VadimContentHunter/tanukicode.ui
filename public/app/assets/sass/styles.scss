@@ -1,7 +1,7 @@
 @use "sass:color";
 
 @use "./vars" as *;
-@use "./_icons.scss";
+@use "./icons.scss";
 @use "./main-nav";
 @use "./header";
 @use "./footer";
@@ -9,6 +9,7 @@
 @use "./block-assets";
 @use "./header-menus";
 @use "./modal-wrappers";
+@use "./profile-settings";
 
 * {
     font-family: "DM Sans", -apple-system, BlinkMacSystemFont,
@@ -57,6 +58,27 @@ main {
     gap: 8px;
 }
 
+.ui-button {
+    padding: 6px 14px;
+    border-radius: var(--radius-banner);
+    text-align: center;
+    cursor: pointer;
+
+    @include text-style(normal, 14px, 18px, var(--color-ui-active), 500);
+}
+
+.icon-button {
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    // &>.icon{
+    //     width: 18px;
+    //     height: 18px;
+    // }
+}
+
+
 .button-text {
     padding: 0;
     color: var(--color-inactive);
@@ -84,5 +106,23 @@ main {
     &:hover {
         cursor: pointer;
         background-color: color.scale($color-ui-muted, $lightness: 50%);
+    }
+}
+
+.button-active {
+    border: 1px solid var(--color-bg-light);
+    background-color: var(--color-bg-light);
+    color: var(--color-primary);
+}
+
+.button-inactive {
+    color: var(--color-inactive);
+    border: 1px solid var(--color-ui-muted);
+
+    &:hover {
+        cursor: pointer;
+        color: var(--color-ui-active);
+        border: 1px solid var(--color-white);
+        background-color: var(--color-white);
     }
 }
