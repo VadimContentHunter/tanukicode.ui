@@ -20,7 +20,7 @@
 
     &:hover {
         cursor: pointer;
-    
+
         .view-asset {
             opacity: 1;
         }
@@ -69,6 +69,7 @@
             }
 
             p {
+                text-transform: uppercase;
                 padding: 8px 16px;
                 border-radius: 20px;
                 background-color: var(--color-bg-base);
@@ -165,6 +166,6 @@
     }
 }
 
-.asset-items .button-muted{
+.asset-items .button-muted {
     background-color: var(--color-white, #fff);
 }
