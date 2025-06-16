@@ -1,0 +1,60 @@
+@use "./vars" as *;
+
+.lang-curr-modal {
+    position: absolute;
+    top: 44px;
+    right: 0;
+
+    border-radius: var(--radius-base);
+    background: var(--color-bg-base);
+    border: 1px solid var(--color-ui-muted);
+    -webkit-box-shadow: 0 16px 32px -8px var(--color-shadow);
+    box-shadow: 0 16px 32px -8px var(--color-shadow);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.modal-main-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .lang-data {
+        padding: 24px;
+        border-right: 1px solid var(--color-ui-muted);
+
+        @include flex-gap(16px, column);
+
+        .item {
+            width: 144px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+
+            /* gap: 16px; */
+
+            & span {
+                transition: .2s;
+    
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+
+                @include text-style(normal, 16px, 100%, var(--color-inactive), 500);
+            }
+
+            &.active {
+                span {
+                    color: var(--color-primary);
+                }
+
+            }
+        }
+    }
+
+    // .currency-data {}
+}

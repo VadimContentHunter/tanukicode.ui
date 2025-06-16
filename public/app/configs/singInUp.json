@@ -1,4 +1,6 @@
 {
     "singInTitle": "Sign In now and get down your trading Fees to Zero!",
-    "singUpTitle": "Sign Up now and get down your trading Fees to Zero!"
+    "singUpTitle": "Sign Up now and get down your trading Fees to Zero!",
+    "singUpTitleForm": "Sign up to <span>TanukiCode</span>",
+    "singInTitleForm": "Sign in to <span>TanukiCode</span>"
 }

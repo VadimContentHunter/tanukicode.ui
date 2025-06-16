@@ -49,11 +49,11 @@ app.get('/signin', async (req, res) => {
         // для Спрайтов
         svgSprite: spritesContent ?? '',
 
-        // для модальных оберток
-        modalWrappers: '',
+        modalLang: 'partials/modal-header-lang',
 
         // для signin
         mainText: singInUp.singInTitle,
+        titleForm: singInUp.singInTitleForm,
 
         // форма для signin
         blockForm: 'partials/signin-form',
@@ -83,11 +83,11 @@ app.get('/signup', async (req, res) => {
         // для Спрайтов
         svgSprite: spritesContent ?? '',
 
-        // для модальных оберток
-        modalWrappers: '',
+        modalLang: 'partials/modal-header-lang',
 
         // для signup
         mainText: singInUp.singUpTitle,
+        titleForm: singInUp.singUpTitleForm,
 
         // форма для signup
         blockForm: 'partials/signup-form',

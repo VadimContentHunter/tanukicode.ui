@@ -4,6 +4,7 @@
 @use "./icons.scss";
 @use './_buttons.scss';
 @use './form.scss';
+@use "./modal-header-lang";
 
 .responsive-wrapper {
     width: 100%;
@@ -47,6 +48,10 @@
 
         .head-auth-action {
             @include flex-gap(24px, row);
+
+            .icon {
+                cursor: pointer;
+            }
         }
     }
 

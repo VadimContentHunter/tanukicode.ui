@@ -25,21 +25,7 @@
                             <div class="icon icon-lang-white"></div>
                         </div>
 
-                        <!-- <nav class="modal-header lang-curr-modal">
-                            <div class="modal-main-content">
-                                <div class="lang-data">
-                                    <a href="/" class="item active">
-                                        <div class="icon-lang">
-                                            <img src="/imgs/flags/lang/en.svg" alt="English flag">
-                                        </div>
-                                        <p>English</p>
-                                    </a>
-                                </div>
-                                <div class="currency-data">
-                                    <a href="#" class="item active">USD</a>
-                                </div>
-                            </div>
-                        </nav> -->
+                        <%- include(modalLang) %>
                     </header>
 
                     <section class="body-auth-info">
@@ -83,7 +69,7 @@
                 <main class="auth-main">
                     <section class="auth-content">
                         <header class="head-auth-content">
-                            <h1>Sign in to <span>TanukiCode</span></h1>
+                            <h1><%- titleForm %></h1>
                         </header>
 
                         <%- include(blockForm) %>
@@ -91,11 +77,6 @@
                 </main>
             </div>
         </div>
-
-        <!-- Модальные окна -->
-        <% if (modalWrappers) { %>
-            <%- include(modalWrappers) %>
-                <% } %>
     </body>
 
 </html>
