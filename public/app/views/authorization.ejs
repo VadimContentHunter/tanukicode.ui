@@ -77,6 +77,12 @@
                 </main>
             </div>
         </div>
+
+        <!-- Подключение JS-файлов -->
+        <% (typeof bodyScripts !== 'undefined' ? headScripts : []).forEach(function(src) { %>
+            <script src="<%= src %>"></script>
+        <% }); %>
+
     </body>
 
 </html>

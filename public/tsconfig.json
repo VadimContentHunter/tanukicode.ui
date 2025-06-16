@@ -103,7 +103,7 @@
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
   "include": ["app/**/*"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules","app/assets/js/**/*"],
   "lib": ["esnext"],
   // "files": [
   //   "types/express-session-augment.d.ts"

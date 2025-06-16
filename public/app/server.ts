@@ -57,6 +57,9 @@ app.get('/signin', async (req, res) => {
 
         // форма для signin
         blockForm: 'partials/signin-form',
+
+        // scripts
+        scripts: ['/js/test.js'],
     };
 
     await ejsRenderer.renderMultipleFiles([
@@ -91,6 +94,9 @@ app.get('/signup', async (req, res) => {
 
         // форма для signup
         blockForm: 'partials/signup-form',
+
+        // scripts
+        scripts: ['/js/test.js'],
     };
 
     await ejsRenderer.renderMultipleFiles([
@@ -148,6 +154,7 @@ app.get('/site', async (req, res) => {
         const dataGeneral = {
             // для head
             title: 'Заголовок страницы',
+            headScripts: ['/js/toggleDisplay.js'],
             headPartial: 'partials/head',
 
             // для модальных оберток
@@ -194,6 +201,9 @@ app.get('/site', async (req, res) => {
                 'partials/block-information',
                 'partials/block-advantages',
             ],
+
+            // scripts
+            bodyScripts: ['/js/main.js'],
         };
 
         const tab_2fa = profileSettingsData.tabs[3].data;

@@ -6,9 +6,10 @@ import eslintPluginPrettier from 'eslint-plugin-prettier';
 import { defineConfig } from 'eslint/config';
 
 export default defineConfig([
-    // Общие настройки: игнор, плагины, глобальные переменные и парсер
     {
-        ignores: ['node_modules', 'dist', 'eslint.config.js'],
+        ignores: ['node_modules', 'dist', 'eslint.config.js', './app/assets/js/**'],
+    },
+    {
         plugins: {
             js,
             prettier: eslintPluginPrettier,
@@ -40,7 +41,7 @@ export default defineConfig([
         rules: {
             ...eslintPluginPrettier.configs.recommended.rules,
             ...eslintConfigPrettier.rules,
-            "array-element-newline": ["error", "consistent"],
+            'array-element-newline': ['error', 'consistent'],
             'prefer-const': 'error',
             '@typescript-eslint/no-unused-vars': 'off',
             '@typescript-eslint/no-inferrable-types': 'off',

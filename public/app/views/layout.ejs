@@ -25,5 +25,10 @@
         <!-- Модальные окна -->
         <%- include(modalWrappers) %>
         <!-- Конец модальных окон -->
+
+        <!-- Подключение JS-файлов -->
+        <% (typeof bodyScripts !== 'undefined' ? bodyScripts : []).forEach(function(src) { %>
+            <script src="<%= src %>"></script>
+        <% }); %>
     </body>
 </html>

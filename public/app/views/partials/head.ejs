@@ -5,5 +5,8 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="icon" href="/resources/icons/favicon.ico" type="image/x-icon">
-    <!-- <script src="/javascripts/script.js"></script> -->
+    <!-- Подключение JS-файлов -->
+    <% (typeof headScripts !== 'undefined' ? headScripts : []).forEach(function(src) { %>
+        <script src="<%= src %>"></script>
+    <% }); %>
 </head>
