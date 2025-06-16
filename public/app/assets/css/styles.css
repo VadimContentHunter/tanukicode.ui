@@ -818,7 +818,7 @@ footer .footer-information .information-table > form > input {
   overflow-x: auto;
   padding-bottom: 6px;
 }
-.profile-settings .form-list {
+.profile-settings .form-list-default {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 24px;
@@ -1071,6 +1071,25 @@ footer .footer-information .information-table > form > input {
   line-height: 120%;
   color: var(--color-ui-active);
   font-weight: 500;
+}
+
+.password-setting {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.password-setting h2 {
+  font-style: normal;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--color-ui-active);
+  font-weight: 700;
+}
+
+.password-setting .fill-password {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 * {

@@ -1,6 +1,5 @@
 {
-    "activeTabId": "referrals",
-
+    "activeTabId": "password",
     "tabs": [
         {
             "id": "profile",
@@ -27,6 +26,17 @@
                 "inviterRewardsCurrency": "USDT",
                 "rewardNote": "You’re earning 15% of the trading fees your referrals pay.",
                 "totalInvited": 0
+            }
+        },
+        {
+            "id": "password",
+            "title": "Password",
+            "path": "./profile-settings/password-setting.ejs",
+            "data": {
+                "formTitle": "Change password",
+                "newPasswordLabel": "New password",
+                "confirmPasswordLabel": "Confirm new password",
+                "submitButtonText": "Save"
             }
         }
     ]
