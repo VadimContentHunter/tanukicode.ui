@@ -15,17 +15,17 @@
                 <!-- Левая часть: информация -->
                 <aside class="auth-info">
 
-                    <header class="item auth-item-info head-auth-info">
+                    <header class="head-auth-info">
                         <a href="/" class="logo-auth-info">
                             <img src="/icons/favicon.ico" alt="TanukiCode logo">
                         </a>
 
                         <div class="head-auth-action">
-                            <button class="item theme-l-i" aria-label="Toggle theme"></button>
-                            <button class="item ds-lang lang-l-i" aria-label="Select language"></button>
+                            <div class="icon icon-sun-white"></div>
+                            <div class="icon icon-lang-white"></div>
                         </div>
 
-                        <nav class="modal-header lang-curr-modal">
+                        <!-- <nav class="modal-header lang-curr-modal">
                             <div class="modal-main-content">
                                 <div class="lang-data">
                                     <a href="/" class="item active">
@@ -39,42 +39,42 @@
                                     <a href="#" class="item active">USD</a>
                                 </div>
                             </div>
-                        </nav>
+                        </nav> -->
                     </header>
 
                     <section class="body-auth-info">
-                        <h1>We make it easy to buy and sell cryptocurrency</h1>
+                        <h2>We make it easy to buy and sell cryptocurrency</h2>
                         <p>Crypto Asset Exchange</p>
                     </section>
 
-                    <footer class="item">
+                    <footer class="footer-auth-info">
                         <div class="footer-head-info">
                             <figure class="footer-image">
-                                <img src="source/img/footer-image.png" alt="Promotional Illustration">
+                                <img src="/imgs/footer-image.png" alt="Promotional Illustration">
                             </figure>
-                            <h2><% mainText %></h2>
+                            <h2><%- mainText %></h2>
                         </div>
 
                         <section class="footer-time-info">
                             <h2>Event end time</h2>
-                            <div class="time-info">
-                                <div class="item">
+                            <ul class="time-info">
+                                <li>
                                     <p>d</p>
                                     <h3 class="e-m-days">12</h3>
-                                </div>
-                                <div class="item">
+                                </li>
+                                <li>
                                     <p>h</p>
                                     <h3 class="e-m-hours">5</h3>
-                                </div>
-                                <div class="item">
+                                </li>
+                                <li>
                                     <p>m</p>
                                     <h3 class="e-m-minutes">45</h3>
-                                </div>
-                                <div class="item">
+                                </li>
+                                <li>
                                     <p>s</p>
                                     <h3 class="e-m-seconds">29</h3>
-                                </div>
-                            </div>
+                                </li>
+                            </ul>
                         </section>
                     </footer>
                 </aside>

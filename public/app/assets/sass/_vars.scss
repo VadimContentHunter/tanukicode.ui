@@ -55,8 +55,7 @@ $global-padding-side: 26px; // отступы по бокам для конте�
 }
 
 
-@mixin text-style(
-    $font-style: normal,
+@mixin text-style($font-style: normal,
     $font-size: 20px,
     $line-height: 120%,
     $color: var(--color-inactive),
@@ -67,4 +66,25 @@ $global-padding-side: 26px; // отступы по бокам для конте�
     line-height: $line-height;
     color: $color;
     font-weight: $font-weight;
+}
+
+@mixin flex-gap($gap: 0px, $dir: row) {
+    display: flex;
+    flex-direction: $dir;
+    gap: $gap;
+}
+
+@mixin flex-container($gap: 0px, // промежуток между элементами
+    $dir: row, // направление flex: row | column | row-reverse | column-reverse
+    $justify: flex-start, // justify-content
+    $align: stretch, // align-items
+    $wrap: nowrap, // перенос строк: nowrap | wrap | wrap-reverse
+
+) {
+    display: flex;
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+    gap: $gap;
+    justify-content: $justify;
+    align-items: $align;
 }
