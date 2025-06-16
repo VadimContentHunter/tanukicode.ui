@@ -1,5 +1,5 @@
 {
-    "activeTabId": "2fa",
+    "activeTabId": "id-setting",
     "tabs": [
         {
             "id": "profile",
@@ -64,6 +64,42 @@
                         "img": "/imgs/lion.svg"
                     }
                 ]
+            }
+        },
+        {
+            "id": "id-setting",
+            "title": "ID Verification",
+            "path": "./profile-settings/id-setting.ejs",
+            "data": {
+                "countries": [
+                    { "code": "af", "name": "Afghanistan" },
+                    { "code": "ax", "name": "Åland Islands" },
+                    { "code": "al", "name": "Albania" },
+                    { "code": "nl", "name": "Netherlands" },
+                    { "code": "dz", "name": "Algeria" },
+                    { "code": "as", "name": "American Samoa" },
+                    { "code": "ad", "name": "Andorra" },
+                    { "code": "ao", "name": "Angola" },
+                    { "code": "ai", "name": "Anguilla" },
+                    { "code": "aq", "name": "Antarctica" },
+                    { "code": "ag", "name": "Antigua and Barbuda" },
+                    { "code": "ar", "name": "Argentina" },
+                    { "code": "am", "name": "Armenia" },
+                    { "code": "aw", "name": "Aruba" },
+                    { "code": "au", "name": "Australia" },
+                    { "code": "at", "name": "Austria" },
+                    { "code": "az", "name": "Azerbaijan" },
+                    { "code": "bs", "name": "Bahamas" },
+                    { "code": "bh", "name": "Bahrain" },
+                    { "code": "bd", "name": "Bangladesh" }
+                ],
+                "selectedCountry": "nl",
+                "documentTypes": [
+                    { "value": "Passport", "label": "Passport" },
+                    { "value": "Government - Issued ID card", "label": "Government - Issued ID card" },
+                    { "value": "Driver’s license", "label": "Driver’s license" }
+                ],
+                "selectedDocumentType": "Passport"
             }
         }
     ]

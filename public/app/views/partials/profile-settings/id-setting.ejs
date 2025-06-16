@@ -1,0 +1,112 @@
+<form class="fill-account">
+    <ul class="form-list-default">
+        <li>
+            <div class="form-item-default">
+                <label for="kyc_first_name">First name</label>
+                <input type="text" id="kyc_first_name" class="default-input" value="">
+            </div>
+        </li>
+
+        <li>
+            <div class="form-item-default">
+                <label for="kyc_last_name">Last name</label>
+                <input type="text" id="kyc_last_name" class="default-input" value="">
+            </div>
+        </li>
+
+        <li>
+            <div class="form-item-default">
+                <label for="country_name">Country</label>
+                <div class="default-select user country search-enable">
+                    <input type="hidden" name="country_name" value="<%= selectedCountry %>">
+                    <div class="head-select" id="country_name">
+                        <p>
+                            <% const country=countries.find(c=> c.code === selectedCountry);
+                                %>
+                                <%= country ? country.name : '' %>
+                        </p>
+                    </div>
+
+                    <div class="body-select" hidden>
+                        <div class="search-select">
+                            <input type="text" placeholder="Search">
+                        </div>
+
+                        <ul class="content-select" role="listbox">
+                            <% countries.forEach(country=> { %>
+                                <li class="item" role="option" tabindex="0" data-option="<%= country.code %>">
+                                    <%= country.name %>
+                                </li>
+                            <% }) %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="form-item-default">
+                <label for="kyc_date">Date of birth</label>
+                <input id="kyc_date" type="date" class="default-input" value="">
+            </div>
+        </li>
+
+        <li>
+            <div class="form-item-default">
+                <label for="selected_id_type">Document Type</label>
+                <div class="default-select user document_type">
+                    <input type="hidden" name="selected_id_type" value="<%= selectedDocumentType %>">
+                    <div class="head-select" id="selected_id_type">
+                        <p>
+                            <%= selectedDocumentType %>
+                        </p>
+                    </div>
+
+                    <div class="body-select" hidden>
+                        <div class="search-select">
+                            <input type="text" placeholder="Search">
+                        </div>
+
+                        <ul class="content-select" role="listbox">
+                            <% documentTypes.forEach(doc=> { %>
+                                <li class="item" role="option" tabindex="0" data-option="<%= doc.value %>">
+                                    <%= doc.label %>
+                                </li>
+                                <% }) %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="form-item-default">
+                <label for="kyc_id_number">Document ID</label>
+                <input type="text" id="kyc_id_number" class="default-input" value="">
+            </div>
+        </li>
+
+        <li>
+            <div class="form-item-default upload-file">
+                <label for="image_document">Document Photo</label>
+                <label class="upload-content">
+                    <input type="file" accept="image/png, image/jpeg" id="image_document">
+                    <div class="data-upload">
+                        <div class="upload-icon"></div>
+                        <div class="item success-upload">
+                            <p></p>
+                            <button type="button" class="remove-upload" aria-label="Remove uploaded file"></button>
+                        </div>
+                    </div>
+                </label>
+                <p class="upload-info">
+                    The maximum file size is up to <strong>10 MB</strong> in <strong>.jpg/.jpeg/.png</strong> format.
+                </p>
+            </div>
+        </li>
+    </ul>
+
+    <div class="action-modal" id="SubmitVerif">
+        <button type="submit" class="default-button button-b">Verify</button>
+    </div>
+</form>

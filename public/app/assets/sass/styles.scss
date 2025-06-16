@@ -15,6 +15,7 @@
 @use './profile-settings/referrals-setting';
 @use './profile-settings/password-setting';
 @use './profile-settings/t2fa-setting';
+@use './profile-settings/_id-setting.scss';
 
 * {
     font-family: "DM Sans", -apple-system, BlinkMacSystemFont,
