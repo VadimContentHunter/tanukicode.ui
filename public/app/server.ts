@@ -37,53 +37,71 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.get('/signin', async (req, res) => {
+    const jsonData = fs.readFileSync(path.join(pathConfig, 'singInUp.json'), 'utf-8');
+    const singInUp = JSON.parse(jsonData);
+
     const spritesContent = '';
     const dataGeneral = {
         // для head
         title: 'Заголовок страницы',
-        headPartial: 'partials/head',
+        headPartial: 'partials/head-auth',
 
         // для Спрайтов
         svgSprite: spritesContent ?? '',
 
         // для модальных оберток
         modalWrappers: '',
+
+        // для signin
+        mainText: singInUp.singInTitle,
+
+        // форма для signin
+        blockForm: 'partials/signin-form',
     };
 
     await ejsRenderer.renderMultipleFiles([
         {
-            templateName: 'signin',
+            templateName: 'authorization',
             data: dataGeneral,
             outputFile: 'signin.html',
         },
     ]);
 
-    res.render('signin', dataGeneral);
+    res.render('authorization', dataGeneral);
 });
 
 app.get('/signup', async (req, res) => {
+    const jsonData = fs.readFileSync(path.join(pathConfig, 'singInUp.json'), 'utf-8');
+    const singInUp = JSON.parse(jsonData);
+
     const spritesContent = '';
     const dataGeneral = {
         // для head
         title: 'Заголовок страницы',
-        headPartial: 'partials/head',
+        headPartial: 'partials/head-auth',
 
         // для Спрайтов
         svgSprite: spritesContent ?? '',
 
         // для модальных оберток
         modalWrappers: '',
+
+        // для signup
+        mainText: singInUp.singUpTitle,
+
+        // форма для signup
+        blockForm: 'partials/signup-form',
     };
 
     await ejsRenderer.renderMultipleFiles([
         {
-            templateName: 'signup',
+            templateName: 'authorization',
             data: dataGeneral,
             outputFile: 'signup.html',
         },
     ]);
 
-    res.render('signup', dataGeneral);
+    res.render('authorization', dataGeneral);
 });
 
 app.get('/site', async (req, res) => {
