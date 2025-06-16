@@ -118,7 +118,13 @@ app.get('/site', async (req, res) => {
             assets: assets,
 
             // список блоков для рендеринга
-            blocks: ['partials/block-balance', 'partials/block-assets', 'partials/block-carousel'],
+            blocks: [
+                'partials/block-balance',
+                'partials/block-assets',
+                'partials/block-carousel',
+                'partials/block-information',
+                'partials/block-advantages',
+            ],
         };
 
         await ejsRenderer.renderMultipleFiles([
