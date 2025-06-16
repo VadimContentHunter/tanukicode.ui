@@ -1,0 +1,62 @@
+<section class="twofa">
+    <header class="top-2fa">
+        <article class="qr-scan">
+            <h2>Scan code</h2>
+            <figure class="qr-image">
+                <img src="<%= qrCodeUrl %>" alt="QR code for 2FA" width="215" height="215" />
+            </figure>
+        </article>
+
+        <article class="qr-data">
+            <div class="qr-data--item">
+                <h3>
+                    <%= manualCode %>
+                </h3>
+                <p>
+                    <%= instruction1 %>
+                </p>
+            </div>
+            <div class="qr-data--item">
+                <p>
+                    Use
+                    <a href="https://authenticator.cc" target="_blank" rel="noopener noreferrer">
+                        Google Authenticator
+                    </a>
+                    app to scan the code, then enter the six-digit code provided by the app into the form below.
+                </p>
+            </div>
+            <div class="app-links">
+                <% storeLinks.forEach(link=> { %>
+                    <a href="<%= link.href %>" target="_blank" rel="noopener noreferrer" class="item">
+                        <% if(link.imgDark && link.imgLight) { %>
+                            <img class="app-qr-dark" src="<%= link.imgDark %>" alt="App Store Dark" />
+                            <img class="app-qr-light" src="<%= link.imgLight %>" alt="App Store Light" />
+                            <% } else { %>
+                                <img src="<%= link.img %>" alt="App Store" />
+                                <% } %>
+                    </a>
+                    <% }) %>
+            </div>
+        </article>
+    </header>
+
+    <section class="code-qr">
+        <h2>
+            <%= codeInputLabel %>
+        </h2>
+        <form class="code-qr-content" onsubmit="return false;">
+            <fieldset aria-label="Two-factor authentication code">
+                <legend class="sr-only">2FA Code Inputs</legend>
+                <% for(let i=1; i <=6; i++) { %>
+                    <label for="code_<%= i %>" class="sr-only">Digit <%= i %></label>
+                    <input id="code_<%= i %>" name="code_<%= i %>" type="text" inputmode="numeric" pattern="[0-9]*"
+                        maxlength="1" required />
+                    <% } %>
+            </fieldset>
+
+            <button type="submit" class="default-button button-b" id="connect_google_2fa">
+                <%= submitButtonText %>
+            </button>
+        </form>
+    </section>
+</section>
