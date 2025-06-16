@@ -46,8 +46,6 @@
             "data": {
                 "qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=otpauth://totp/tanukicode@gmail.com%20(null)?secret=NSEKXMFL4MGU3U37JF7LIIOVZ4X4CEN7&size=215x215&ecc=M",
                 "manualCode": "NSEKXMFL4MGU3U37JF7LIIOVZ4X4CEN7",
-                "instruction1": "If you are unable to scan the QR code, please enter this code manually into the app.",
-                "instruction2": "Use the Google Authenticator app to scan the code, then enter the six-digit code provided by the app in the form below.",
                 "storeLinks": [
                     {
                         "href": "https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2",
@@ -65,9 +63,7 @@
                         "href": "https://chrome.google.com/webstore/detail/authenticator/bhghoamapcdpbohphigoooaddinpkbai",
                         "img": "/imgs/lion.svg"
                     }
-                ],
-                "codeInputLabel": "Enter six-digit code",
-                "submitButtonText": "Enable"
+                ]
             }
         }
     ]

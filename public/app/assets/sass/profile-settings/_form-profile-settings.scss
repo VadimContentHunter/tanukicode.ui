@@ -7,6 +7,26 @@
     grid-row-gap: 32px;
 }
 
+.profile-settings .form-list-one-cell {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+
+    input {
+        background: var(--color-white);
+        border: 1px solid var(--color-ui-muted);
+        width: 76px;
+        height: 76px;
+        padding: 6px;
+
+        display: flex;
+        border-radius: var(--radius-base);
+
+        text-align: center;
+        @include text-style(normal, 20px, 26px, var(--color-ui-active), 700);
+    }
+}
+
 .profile-settings .form-item-default {
     display: flex;
     flex-direction: column;

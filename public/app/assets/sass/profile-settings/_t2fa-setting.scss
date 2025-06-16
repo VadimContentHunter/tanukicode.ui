@@ -10,7 +10,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: center;
     gap: 24px;
 
     .qr-scan {
@@ -53,7 +53,7 @@
             flex-direction: column;
             gap: 8px;
 
-            h1 {
+            h3 {
                 word-break: break-word;
                 @include text-style(normal, 20px, 120%, var(--color-ui-active), 700);
             }
@@ -97,4 +97,18 @@
     }
 }
 
-.twofa .code-qr {}
+.twofa .code-qr {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    h2 {
+        @include text-style(normal, 20px, 120%, var(--color-ui-active), 700);
+    }
+
+    .code-qr-content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+}

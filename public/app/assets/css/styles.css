@@ -825,6 +825,27 @@ footer .footer-information .information-table > form > input {
   grid-row-gap: 32px;
 }
 
+.profile-settings .form-list-one-cell {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+.profile-settings .form-list-one-cell input {
+  background: var(--color-white);
+  border: 1px solid var(--color-ui-muted);
+  width: 76px;
+  height: 76px;
+  padding: 6px;
+  display: flex;
+  border-radius: var(--radius-base);
+  text-align: center;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 26px;
+  color: var(--color-ui-active);
+  font-weight: 700;
+}
+
 .profile-settings .form-item-default {
   display: flex;
   flex-direction: column;
@@ -1102,7 +1123,7 @@ footer .footer-information .information-table > form > input {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: center;
   gap: 24px;
 }
 .twofa .top-2fa .qr-scan {
@@ -1143,7 +1164,7 @@ footer .footer-information .information-table > form > input {
   flex-direction: column;
   gap: 8px;
 }
-.twofa .top-2fa .qr-data .qr-data--item h1 {
+.twofa .top-2fa .qr-data .qr-data--item h3 {
   word-break: break-word;
   font-style: normal;
   font-size: 20px;
@@ -1184,6 +1205,24 @@ footer .footer-information .information-table > form > input {
   height: 100%;
   object-fit: scale-down;
   object-position: center;
+}
+
+.twofa .code-qr {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.twofa .code-qr h2 {
+  font-style: normal;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--color-ui-active);
+  font-weight: 700;
+}
+.twofa .code-qr .code-qr-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 * {
