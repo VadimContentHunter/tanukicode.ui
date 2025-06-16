@@ -177,59 +177,56 @@ app.get('/site', async (req, res) => {
             ],
         };
 
-        const partHead = {
-            title: 'Заголовок страницы',
-            headPartial: 'partials/head',
-        };
-
-        const partModalWrappers = {
-            modalWrappers: 'partials/modal-wrappers',
-            profileMenuItems: profileMenuItems,
-            'modal-header-menu': 'partials/modal-header-menu',
-            profileSettingsData: profileSettingsData,
-            'modal-profile-settings': 'partials/modal-profile-settings',
-        };
-
-        const partNavMain = {
-            navMain: 'partials/main-nav',
-            activeLabel: mainMenu.activeLabel,
-            menuItems: mainMenu.menuItems,
-        };
-
-        const partHeader = {
-            avatarSrc: avatar.avatarSrc,
-            avatarId: avatar.avatarId,
-            headerButtons: avatar.headerButtons,
-            header: 'partials/header',
-        };
-
-        const partModalHeaderMenu = {
-            profileMenuItems: profileMenuItems,
-            'modal-header-menu': 'partials/modal-header-menu',
-        };
-
-        const partModalProfileSettings = {
-            profileSettingsData: profileSettingsData,
-            'modal-profile-settings': 'partials/modal-profile-settings',
-        };
-
-        const partFooter = {
-            footer: 'partials/footer',
-            footerNavSections: footerNavSections,
-        };
+        const tab_2fa = profileSettingsData.tabs[3].data;
+        const tab_account = profileSettingsData.tabs[0].data;
+        const tab_id = profileSettingsData.tabs[4].data;
+        const tab_password = profileSettingsData.tabs[2].data;
+        const tab_referrals = profileSettingsData.tabs[1].data;
 
         await ejsRenderer.renderMultipleFiles([
-            { templateName: 'partials/head', data: partHead, outputFile: 'partials/head.html' },
-            { templateName: 'partials/modal-wrappers', data: partModalWrappers, outputFile: 'partials/modal-wrappers.html' },
-            { templateName: 'partials/main-nav', data: partNavMain, outputFile: 'partials/main-nav.html' },
-            { templateName: 'partials/header', data: partHeader, outputFile: 'partials/header.html' },
-            { templateName: 'partials/modal-header-menu', data: partModalHeaderMenu, outputFile: 'partials/modal-header-menu.html' },
+            { templateName: 'partials/head', data: dataGeneral, outputFile: 'partials/head.html' },
+            { templateName: 'partials/modal-wrappers', data: dataGeneral, outputFile: 'partials/modal-wrappers.html' },
+            { templateName: 'partials/main-nav', data: dataGeneral, outputFile: 'partials/main-nav.html' },
+            { templateName: 'partials/header', data: dataGeneral, outputFile: 'partials/header.html' },
+            { templateName: 'partials/modal-header-menu', data: dataGeneral, outputFile: 'partials/modal-header-menu.html' },
             {
                 templateName: 'partials/modal-profile-settings',
-                data: partModalProfileSettings,
+                data: dataGeneral,
                 outputFile: 'partials/modal-profile-settings.html',
             },
-            { templateName: 'partials/footer', data: partFooter, outputFile: 'partials/footer.html' },
+
+            { templateName: 'partials/footer', data: dataGeneral, outputFile: 'partials/blocks/footer.html' },
+            { templateName: 'partials/block-balance', data: dataGeneral, outputFile: 'partials/blocks/block-balance.html' },
+            { templateName: 'partials/block-assets', data: dataGeneral, outputFile: 'partials/blocks/block-assets.html' },
+            { templateName: 'partials/block-carousel', data: dataGeneral, outputFile: 'partials/blocks/block-carousel.html' },
+            { templateName: 'partials/block-information', data: dataGeneral, outputFile: 'partials/blocks/block-information.html' },
+            { templateName: 'partials/block-advantages', data: dataGeneral, outputFile: 'partials/blocks/block-advantages.html' },
+
+            {
+                templateName: 'partials/profile-settings/2fa-setting',
+                data: tab_2fa,
+                outputFile: 'partials/profile-settings/2fa-setting.html',
+            },
+            {
+                templateName: 'partials/profile-settings/account-setting',
+                data: tab_account,
+                outputFile: 'partials/profile-settings/account-setting.html',
+            },
+            {
+                templateName: 'partials/profile-settings/id-setting',
+                data: tab_id,
+                outputFile: 'partials/profile-settings/id-setting.html',
+            },
+            {
+                templateName: 'partials/profile-settings/password-setting',
+                data: tab_password,
+                outputFile: 'partials/profile-settings/password-setting.html',
+            },
+            {
+                templateName: 'partials/profile-settings/referrals-setting',
+                data: tab_referrals,
+                outputFile: 'partials/profile-settings/referrals-setting.html',
+            },
             {
                 templateName: 'layout',
                 data: dataGeneral,
