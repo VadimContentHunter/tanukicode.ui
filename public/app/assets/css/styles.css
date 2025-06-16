@@ -155,6 +155,230 @@
   background-image: url("/icons/plus.svg");
 }
 
+.default-button {
+  border-radius: var(--radius-base);
+  height: 48px;
+  padding: 0 24px;
+  font-weight: var(--font-weight-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ui-button {
+  padding: 6px 14px;
+  border-radius: var(--radius-banner);
+  text-align: center;
+  cursor: pointer;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--color-ui-active);
+  font-weight: 500;
+}
+
+.icon-button {
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.button-text {
+  padding: 0;
+  color: var(--color-inactive);
+}
+.button-text:hover {
+  cursor: pointer;
+  color: var(--color-ui-active);
+}
+
+.button-accent {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+.button-accent:hover {
+  cursor: pointer;
+  background-color: var(--color-primary-hover);
+}
+
+.button-accent-outline {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+.button-accent-outline:hover {
+  cursor: pointer;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.button-muted {
+  background-color: var(--color-ui-muted);
+  color: var(--color-ui-active);
+}
+.button-muted:hover {
+  cursor: pointer;
+  background-color: rgba(131.338028169, 137.5211267606, 159.161971831, 0.0784313725);
+}
+
+.button-active {
+  border: 1px solid var(--color-bg-light);
+  background-color: var(--color-bg-light);
+  color: var(--color-primary);
+}
+
+.button-inactive {
+  color: var(--color-inactive);
+  border: 1px solid var(--color-ui-muted);
+}
+.button-inactive:hover {
+  cursor: pointer;
+  color: var(--color-ui-active);
+  border: 1px solid var(--color-white);
+  background-color: var(--color-white);
+}
+
+.button-inactive-alt {
+  color: var(--color-inactive);
+  border: 1px solid var(--color-white);
+  background-color: var(--color-white);
+}
+.button-inactive-alt:hover {
+  cursor: pointer;
+  color: var(--color-ui-active);
+}
+
+.form-list-default {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-column-gap: 24px;
+  grid-row-gap: 32px;
+}
+
+.form-list-one-cell {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+.form-list-one-cell input {
+  background: var(--color-white);
+  border: 1px solid var(--color-ui-muted);
+  width: 76px;
+  height: 76px;
+  padding: 6px;
+  display: flex;
+  border-radius: var(--radius-base);
+  text-align: center;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 26px;
+  color: var(--color-ui-active);
+  font-weight: 700;
+}
+
+.form-item-select, .form-item-default {
+  min-height: 53px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.form-item-select label, .form-item-default label {
+  font-style: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-inactive);
+  font-weight: 500;
+}
+
+.form-item-select .default-select .head-select, .form-item-default input {
+  background: var(--color-white);
+  border: 1px solid var(--color-ui-muted);
+  width: 100%;
+  border-radius: var(--radius-base);
+  padding: 16px 16px;
+  display: flex;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 100%;
+  color: var(--color-ui-active);
+  font-weight: 700;
+}
+.form-item-select .default-select [disabled].head-select, .form-item-default input[disabled] {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-ui-muted);
+  font-style: normal;
+  font-size: 14px;
+  line-height: 100%;
+  color: var(--color-inactive);
+  font-weight: 500;
+}
+
+.form-item-default input:focus {
+  outline: none;
+  border: 1px solid var(--color-primary);
+}
+
+.form-item-select .default-select .head-select {
+  position: relative;
+  min-height: 53px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.form-item-select .default-select .head-select > p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.form-item-select .default-select .head-select > .icon {
+  position: absolute;
+  right: 16px;
+}
+.form-item-check {
+  width: 100%;
+  max-width: fit-content;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.form-item-check input[type=checkbox] {
+  display: none;
+}
+.form-item-check input[type=checkbox]:checked + .check::before {
+  background-image: url("/icons/check-on.svg");
+}
+.form-item-check .check {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 8px;
+}
+.form-item-check .check span {
+  white-space: unset;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-inactive);
+  font-weight: 500;
+}
+.form-item-check .check span > a {
+  color: var(--color-primary);
+}
+.form-item-check .check::before {
+  content: "";
+  position: relative;
+  width: 22px;
+  height: 22px;
+  background-image: url("/icons/check-bg.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  flex: none;
+  transition: 0.2s;
+}
+
 .main-nav {
   flex: 1;
   max-width: 260px;
@@ -836,93 +1060,6 @@ footer .footer-information .information-table > form > input {
   overflow-x: auto;
   padding-bottom: 6px;
 }
-.profile-settings .form-list-default {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 24px;
-  grid-row-gap: 32px;
-}
-
-.profile-settings .form-list-one-cell {
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
-}
-.profile-settings .form-list-one-cell input {
-  background: var(--color-white);
-  border: 1px solid var(--color-ui-muted);
-  width: 76px;
-  height: 76px;
-  padding: 6px;
-  display: flex;
-  border-radius: var(--radius-base);
-  text-align: center;
-  font-style: normal;
-  font-size: 20px;
-  line-height: 26px;
-  color: var(--color-ui-active);
-  font-weight: 700;
-}
-
-.profile-settings .form-item-select, .profile-settings .form-item-default {
-  min-height: 53px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.profile-settings .form-item-select label, .profile-settings .form-item-default label {
-  font-style: normal;
-  font-size: 12px;
-  line-height: 16px;
-  color: var(--color-inactive);
-  font-weight: 500;
-}
-
-.profile-settings .form-item-select .default-select .head-select, .profile-settings .form-item-default input {
-  background: var(--color-white);
-  border: 1px solid var(--color-ui-muted);
-  width: 100%;
-  border-radius: var(--radius-base);
-  padding: 16px 16px;
-  display: flex;
-  font-style: normal;
-  font-size: 14px;
-  line-height: 100%;
-  color: var(--color-ui-active);
-  font-weight: 700;
-}
-.profile-settings .form-item-select .default-select [disabled].head-select, .profile-settings .form-item-default input[disabled] {
-  background: var(--color-bg-light);
-  border: 1px solid var(--color-ui-muted);
-  font-style: normal;
-  font-size: 14px;
-  line-height: 100%;
-  color: var(--color-inactive);
-  font-weight: 500;
-}
-
-.profile-settings .form-item-default input:focus {
-  outline: none;
-  border: 1px solid var(--color-primary);
-}
-
-.profile-settings .form-item-select .default-select .head-select {
-  position: relative;
-  min-height: 53px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-.profile-settings .form-item-select .default-select .head-select > p {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-.profile-settings .form-item-select .default-select .head-select > .icon {
-  position: absolute;
-  right: 16px;
-}
 .account-setting {
   display: flex;
   flex-direction: column;
@@ -1292,99 +1429,6 @@ main {
 .content-container > * {
   margin-left: var(--global-padding-side);
   margin-right: var(--global-padding-side);
-}
-
-.default-button {
-  border-radius: var(--radius-base);
-  height: 48px;
-  padding: 0 24px;
-  font-weight: var(--font-weight-medium);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.ui-button {
-  padding: 6px 14px;
-  border-radius: var(--radius-banner);
-  text-align: center;
-  cursor: pointer;
-  font-style: normal;
-  font-size: 14px;
-  line-height: 18px;
-  color: var(--color-ui-active);
-  font-weight: 500;
-}
-
-.icon-button {
-  padding: 8px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.button-text {
-  padding: 0;
-  color: var(--color-inactive);
-}
-.button-text:hover {
-  cursor: pointer;
-  color: var(--color-ui-active);
-}
-
-.button-accent {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-}
-.button-accent:hover {
-  cursor: pointer;
-  background-color: var(--color-primary-hover);
-}
-
-.button-accent-outline {
-  border: 1px solid var(--color-primary);
-  color: var(--color-primary);
-}
-.button-accent-outline:hover {
-  cursor: pointer;
-  background-color: var(--color-primary);
-  color: var(--color-white);
-}
-
-.button-muted {
-  background-color: var(--color-ui-muted);
-  color: var(--color-ui-active);
-}
-.button-muted:hover {
-  cursor: pointer;
-  background-color: rgba(131.338028169, 137.5211267606, 159.161971831, 0.0784313725);
-}
-
-.button-active {
-  border: 1px solid var(--color-bg-light);
-  background-color: var(--color-bg-light);
-  color: var(--color-primary);
-}
-
-.button-inactive {
-  color: var(--color-inactive);
-  border: 1px solid var(--color-ui-muted);
-}
-.button-inactive:hover {
-  cursor: pointer;
-  color: var(--color-ui-active);
-  border: 1px solid var(--color-white);
-  background-color: var(--color-white);
-}
-
-.button-inactive-alt {
-  color: var(--color-inactive);
-  border: 1px solid var(--color-white);
-  background-color: var(--color-white);
-}
-.button-inactive-alt:hover {
-  cursor: pointer;
-  color: var(--color-ui-active);
 }
 
 /*# sourceMappingURL=styles.css.map */

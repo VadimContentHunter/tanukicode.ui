@@ -2,6 +2,8 @@
 
 @use "./vars" as *;
 @use "./icons.scss";
+@use './_buttons.scss';
+@use './form.scss';
 
 .responsive-wrapper {
     width: 100%;
@@ -12,11 +14,14 @@
 
 .auth {
     height: 100%;
+    min-height: 100vh;
 
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
+    align-items: stretch;
+
 }
 
 .auth-info {
@@ -150,4 +155,50 @@
 
 .auth-main {
     flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    min-width: 500px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .auth-content {
+        max-width: 416px;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        .head-auth-content {
+            h1 {
+                text-align: center;
+                @include text-style(normal, 38px, 52px, var(--color-ui-active), 700);
+            }
+        }
+
+        .auth-fill {
+            @include flex-gap(24px, column);
+
+            button {
+                width: 100%;
+            }
+
+            .message-auth {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &>p {
+                    @include text-style(normal, 14px, 20px, var(--color-inactive), 500);
+
+                    &>a {
+                        color: var(--color-primary);
+                    }
+                }
+            }
+
+        }
+    }
 }
