@@ -1010,7 +1010,6 @@ footer .footer-information .information-table > form > input {
   right: 0px;
   padding: 88px var(--global-padding-side);
   z-index: 101;
-  display: none;
 }
 
 .modal-wrappers .modal-profile-settings {
@@ -1026,10 +1025,15 @@ footer .footer-information .information-table > form > input {
   justify-content: center;
 }
 
-.lang-curr-modal {
+.modal-wrappers .modal-header-lang {
   position: absolute;
-  top: 44px;
-  right: 0;
+  top: 0px;
+  right: 0px;
+  padding: 88px var(--global-padding-side);
+  z-index: 103;
+}
+
+.lang-curr-modal {
   border-radius: var(--radius-base);
   background: var(--color-bg-base);
   border: 1px solid var(--color-ui-muted);

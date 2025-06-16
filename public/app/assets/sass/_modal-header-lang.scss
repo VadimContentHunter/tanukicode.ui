@@ -1,10 +1,6 @@
 @use "./vars" as *;
 
 .lang-curr-modal {
-    position: absolute;
-    top: 44px;
-    right: 0;
-
     border-radius: var(--radius-base);
     background: var(--color-bg-base);
     border: 1px solid var(--color-ui-muted);

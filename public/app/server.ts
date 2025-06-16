@@ -151,6 +151,14 @@ app.get('/site', async (req, res) => {
             headPartial: 'partials/head',
 
             // для модальных оберток
+            profileMenuItems: profileMenuItems,
+            profileSettingsData: profileSettingsData,
+
+            modals: [
+                { class: 'modal-profile-menu', name: 'modal-header-menu' },
+                { class: 'modal-profile-settings', name: 'modal-profile-settings' },
+                { class: 'modal-header-lang', name: 'modal-header-lang' },
+            ],
             modalWrappers: 'partials/modal-wrappers',
 
             // для Спрайтов
@@ -167,13 +175,6 @@ app.get('/site', async (req, res) => {
             headerButtons: avatar.headerButtons,
             header: 'partials/header',
             // header: 'partials/header-auth',
-
-            // модульные окна
-            profileMenuItems: profileMenuItems,
-            'modal-header-menu': 'partials/modal-header-menu',
-
-            profileSettingsData: profileSettingsData,
-            'modal-profile-settings': 'partials/modal-profile-settings',
 
             // для footer
             footer: 'partials/footer',

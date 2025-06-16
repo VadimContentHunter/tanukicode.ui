@@ -21,7 +21,7 @@
     padding: 88px var(--global-padding-side);
     z-index: 101;
 
-    display: none;
+    // display: none;
     // width: 100%;
     // height: 100%;
     // justify-content: flex-end;
@@ -41,4 +41,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.modal-wrappers .modal-header-lang {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 88px var(--global-padding-side);
+    z-index: 103;
 }

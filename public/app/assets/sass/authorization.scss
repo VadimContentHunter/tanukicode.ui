@@ -23,6 +23,13 @@
     flex-wrap: wrap;
     align-items: stretch;
 
+    & .lang-curr-modal {
+        display: none;
+        position: absolute;
+        top: 44px;
+        right: 0;
+    }
+
 }
 
 .auth-info {
