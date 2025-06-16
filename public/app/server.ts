@@ -49,6 +49,15 @@ app.get('/signin', async (req, res) => {
         // для модальных оберток
         modalWrappers: '',
     };
+
+    await ejsRenderer.renderMultipleFiles([
+        {
+            templateName: 'signin',
+            data: dataGeneral,
+            outputFile: 'signin.html',
+        },
+    ]);
+
     res.render('signin', dataGeneral);
 });
 
@@ -65,6 +74,15 @@ app.get('/signup', async (req, res) => {
         // для модальных оберток
         modalWrappers: '',
     };
+
+    await ejsRenderer.renderMultipleFiles([
+        {
+            templateName: 'signup',
+            data: dataGeneral,
+            outputFile: 'signup.html',
+        },
+    ]);
+
     res.render('signup', dataGeneral);
 });
 
@@ -159,10 +177,59 @@ app.get('/site', async (req, res) => {
             ],
         };
 
+        const partHead = {
+            title: 'Заголовок страницы',
+            headPartial: 'partials/head',
+        };
+
+        const partModalWrappers = {
+            modalWrappers: 'partials/modal-wrappers',
+            profileMenuItems: profileMenuItems,
+            'modal-header-menu': 'partials/modal-header-menu',
+            profileSettingsData: profileSettingsData,
+            'modal-profile-settings': 'partials/modal-profile-settings',
+        };
+
+        const partNavMain = {
+            navMain: 'partials/main-nav',
+            activeLabel: mainMenu.activeLabel,
+            menuItems: mainMenu.menuItems,
+        };
+
+        const partHeader = {
+            avatarSrc: avatar.avatarSrc,
+            avatarId: avatar.avatarId,
+            headerButtons: avatar.headerButtons,
+            header: 'partials/header',
+        };
+
+        const partModalHeaderMenu = {
+            profileMenuItems: profileMenuItems,
+            'modal-header-menu': 'partials/modal-header-menu',
+        };
+
+        const partModalProfileSettings = {
+            profileSettingsData: profileSettingsData,
+            'modal-profile-settings': 'partials/modal-profile-settings',
+        };
+
+        const partFooter = {
+            footer: 'partials/footer',
+            footerNavSections: footerNavSections,
+        };
+
         await ejsRenderer.renderMultipleFiles([
-            { templateName: 'partials/head', data: { title: 'Заголовок страницы' }, outputFile: 'partials/head.html' },
-            // { templateName: 'blocks/block1', data: {}, outputFile: 'blocks/block1.html' },
-            // { templateName: 'blocks/block2', data: {}, outputFile: 'blocks/block2.html' },
+            { templateName: 'partials/head', data: partHead, outputFile: 'partials/head.html' },
+            { templateName: 'partials/modal-wrappers', data: partModalWrappers, outputFile: 'partials/modal-wrappers.html' },
+            { templateName: 'partials/main-nav', data: partNavMain, outputFile: 'partials/main-nav.html' },
+            { templateName: 'partials/header', data: partHeader, outputFile: 'partials/header.html' },
+            { templateName: 'partials/modal-header-menu', data: partModalHeaderMenu, outputFile: 'partials/modal-header-menu.html' },
+            {
+                templateName: 'partials/modal-profile-settings',
+                data: partModalProfileSettings,
+                outputFile: 'partials/modal-profile-settings.html',
+            },
+            { templateName: 'partials/footer', data: partFooter, outputFile: 'partials/footer.html' },
             {
                 templateName: 'layout',
                 data: dataGeneral,
