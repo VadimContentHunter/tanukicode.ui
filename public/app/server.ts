@@ -36,6 +36,38 @@ app.get('/', (req: Request, res: Response) => {
     res.send('Hello, world!');
 });
 
+app.get('/signin', async (req, res) => {
+    const spritesContent = '';
+    const dataGeneral = {
+        // для head
+        title: 'Заголовок страницы',
+        headPartial: 'partials/head',
+
+        // для Спрайтов
+        svgSprite: spritesContent ?? '',
+
+        // для модальных оберток
+        modalWrappers: '',
+    };
+    res.render('signin', dataGeneral);
+});
+
+app.get('/signup', async (req, res) => {
+    const spritesContent = '';
+    const dataGeneral = {
+        // для head
+        title: 'Заголовок страницы',
+        headPartial: 'partials/head',
+
+        // для Спрайтов
+        svgSprite: spritesContent ?? '',
+
+        // для модальных оберток
+        modalWrappers: '',
+    };
+    res.render('signup', dataGeneral);
+});
+
 app.get('/site', async (req, res) => {
     try {
         const spritesContent = '';
@@ -85,7 +117,7 @@ app.get('/site', async (req, res) => {
             // для модальных оберток
             modalWrappers: 'partials/modal-wrappers',
 
-            // для общего layout
+            // для Спрайтов
             svgSprite: spritesContent ?? '',
 
             // для главного меню

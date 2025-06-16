@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<%- include(headPartial) %>
+
+    <body>
+        <!-- Вставляем SVG спрайты -->
+        <div style="display: none;">
+            <%- svgSprite %>
+        </div>
+        <!-- Конец SVG спрайтов -->
+
+        <div class="responsive-wrapper">
+            <div class="auth">
+
+                <!-- Левая часть: информация -->
+                <aside class="auth-info">
+
+                    <header class="item auth-item-info head-auth-info">
+                        <a href="/" class="logo-auth-info">
+                            <img src="/icons/favicon.ico" alt="TanukiCode logo">
+                        </a>
+
+                        <div class="head-auth-action">
+                            <button class="item theme-l-i" aria-label="Toggle theme"></button>
+                            <button class="item ds-lang lang-l-i" aria-label="Select language"></button>
+                        </div>
+
+                        <nav class="modal-header lang-curr-modal">
+                            <div class="modal-main-content">
+                                <div class="lang-data">
+                                    <a href="/" class="item active">
+                                        <div class="icon-lang">
+                                            <img src="/imgs/flags/lang/en.svg" alt="English flag">
+                                        </div>
+                                        <p>English</p>
+                                    </a>
+                                </div>
+                                <div class="currency-data">
+                                    <a href="#" class="item active">USD</a>
+                                </div>
+                            </div>
+                        </nav>
+                    </header>
+
+                    <section class="body-auth-info">
+                        <h1>We make it easy to buy and sell cryptocurrency</h1>
+                        <p>Crypto Asset Exchange</p>
+                    </section>
+
+                    <footer class="item">
+                        <div class="footer-head-info">
+                            <figure class="footer-image">
+                                <img src="source/img/footer-image.png" alt="Promotional Illustration">
+                            </figure>
+                            <h2>Sign In now and get down your trading Fees to Zero!</h2>
+                        </div>
+
+                        <section class="footer-time-info">
+                            <h2>Event end time</h2>
+                            <div class="time-info">
+                                <div class="item">
+                                    <p>d</p>
+                                    <h3 class="e-m-days">12</h3>
+                                </div>
+                                <div class="item">
+                                    <p>h</p>
+                                    <h3 class="e-m-hours">5</h3>
+                                </div>
+                                <div class="item">
+                                    <p>m</p>
+                                    <h3 class="e-m-minutes">45</h3>
+                                </div>
+                                <div class="item">
+                                    <p>s</p>
+                                    <h3 class="e-m-seconds">29</h3>
+                                </div>
+                            </div>
+                        </section>
+                    </footer>
+                </aside>
+
+                <!-- Правая часть: форма входа -->
+                <main class="auth-main">
+                    <section class="auth-content">
+                        <header class="head-auth-content">
+                            <h1>Sign in to <span>TanukiCode</span></h1>
+                        </header>
+
+                        <form class="auth-fill" method="POST" action="/login">
+                            <div class="item">
+                                <label for="login_email">Email</label>
+                                <div class="fill-item-auth">
+                                    <input type="email" class="default-input" id="login_email" name="email" required>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <label for="login_password">Password</label>
+                                <div class="fill-item-auth">
+                                    <input type="password" class="default-input" id="login_password" name="password"
+                                        required>
+                                </div>
+                            </div>
+
+                            <section class="auth-action">
+                                <div class="auth-info-top">
+                                    <label class="default-check">
+                                        <input id="reg_checkbox" type="checkbox" name="agree" required>
+                                        <span class="check">
+                                            <p>
+                                                By signing in I agree that I am 18 years of age or older, to the
+                                                <a href="terms">Terms of service</a>.
+                                            </p>
+                                        </span>
+                                    </label>
+                                </div>
+
+                                <button type="submit" class="default-button button-b" id="sign_in">
+                                    <span>Sign in</span>
+                                </button>
+
+                                <div class="message-auth">
+                                    <p>Do you already have an account? <a href="signup">Sign up</a></p>
+                                </div>
+                            </section>
+                        </form>
+                    </section>
+                </main>
+            </div>
+        </div>
+
+        <!-- Модальные окна -->
+        <% if (modalWrappers) { %>
+            <%- include(modalWrappers) %>
+        <% } %>
+    </body>
+
+</html>
