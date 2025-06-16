@@ -137,6 +137,16 @@
   background-image: url("/icons/referal.svg");
 }
 
+/************** icon-arrow-gray **************/
+.icon-arrow-gray {
+  background-image: url("/icons/arrow-gray.svg");
+}
+
+/************** icon-plus **************/
+.icon-plus {
+  background-image: url("/icons/plus.svg");
+}
+
 .main-nav {
   flex: 1;
   max-width: 260px;
@@ -846,19 +856,21 @@ footer .footer-information .information-table > form > input {
   font-weight: 700;
 }
 
-.profile-settings .form-item-default {
+.profile-settings .form-item-select, .profile-settings .form-item-default {
+  min-height: 53px;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-.profile-settings .form-item-default label {
+.profile-settings .form-item-select label, .profile-settings .form-item-default label {
   font-style: normal;
   font-size: 12px;
   line-height: 16px;
   color: var(--color-inactive);
   font-weight: 500;
 }
-.profile-settings .form-item-default input {
+
+.profile-settings .form-item-select .default-select .head-select, .profile-settings .form-item-default input {
   background: var(--color-white);
   border: 1px solid var(--color-ui-muted);
   width: 100%;
@@ -871,11 +883,7 @@ footer .footer-information .information-table > form > input {
   color: var(--color-ui-active);
   font-weight: 700;
 }
-.profile-settings .form-item-default input:focus {
-  outline: none;
-  border: 1px solid var(--color-primary);
-}
-.profile-settings .form-item-default input[disabled] {
+.profile-settings .form-item-select .default-select [disabled].head-select, .profile-settings .form-item-default input[disabled] {
   background: var(--color-bg-light);
   border: 1px solid var(--color-ui-muted);
   font-style: normal;
@@ -885,6 +893,28 @@ footer .footer-information .information-table > form > input {
   font-weight: 500;
 }
 
+.profile-settings .form-item-default input:focus {
+  outline: none;
+  border: 1px solid var(--color-primary);
+}
+
+.profile-settings .form-item-select .default-select .head-select {
+  position: relative;
+  min-height: 53px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.profile-settings .form-item-select .default-select .head-select > p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.profile-settings .form-item-select .default-select .head-select > .icon {
+  position: absolute;
+  right: 16px;
+}
 .account-setting {
   display: flex;
   flex-direction: column;
