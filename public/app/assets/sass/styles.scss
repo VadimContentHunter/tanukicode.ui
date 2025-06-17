@@ -23,6 +23,7 @@
 @use './profile-settings/password-setting';
 @use './profile-settings/t2fa-setting';
 @use './profile-settings/_id-setting.scss';
+@use './media';
 
 * {
     font-family: "DM Sans", -apple-system, BlinkMacSystemFont,

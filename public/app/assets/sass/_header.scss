@@ -5,7 +5,7 @@ $active-icons: (
     '.icon-lang': '/icons/lang-active.svg',
 );
 
-.content-container>header {
+.content-container>header.main-header {
     padding: 32px 0px;
     position: sticky;
     top: 0;
@@ -20,7 +20,7 @@ $active-icons: (
     justify-content: space-between;
 }
 
-.content-container>header .additional-nav {
+.content-container>header.main-header .additional-nav {
     position: relative;
 
     display: flex;

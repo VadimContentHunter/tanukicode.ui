@@ -428,10 +428,19 @@
   width: 100%;
   padding: 32px 20px;
   overflow: hidden;
+  background-color: var(--color-bg-base);
   border-right: 1px solid var(--color-ui-muted);
   display: flex;
   flex-direction: column;
   gap: 56px;
+}
+.main-nav .main-nav-menus {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.main-nav .header-mobile-vers {
+  display: none;
 }
 
 .main-nav .header-nav {
@@ -550,7 +559,7 @@
   background-image: url(/icons/hamburger-active.svg);
 }
 
-.content-container > header {
+.content-container > header.main-header {
   padding: 32px 0px;
   position: sticky;
   top: 0;
@@ -563,39 +572,39 @@
   justify-content: space-between;
 }
 
-.content-container > header .additional-nav {
+.content-container > header.main-header .additional-nav {
   position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.content-container > header .additional-nav .header-buttons {
+.content-container > header.main-header .additional-nav .header-buttons {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 30px;
 }
-.content-container > header .additional-nav ul > li:hover {
+.content-container > header.main-header .additional-nav ul > li:hover {
   cursor: pointer;
 }
-.content-container > header .additional-nav ul > li:hover .icon-sun {
+.content-container > header.main-header .additional-nav ul > li:hover .icon-sun {
   background-image: url(/icons/sun-active.svg);
 }
-.content-container > header .additional-nav ul > li:hover .icon-lang {
+.content-container > header.main-header .additional-nav ul > li:hover .icon-lang {
   background-image: url(/icons/lang-active.svg);
 }
-.content-container > header .additional-nav .profile-section {
+.content-container > header.main-header .additional-nav .profile-section {
   width: 48px;
   height: 48px;
   display: flex;
   flex-direction: row;
 }
-.content-container > header .additional-nav .profile-section img {
+.content-container > header.main-header .additional-nav .profile-section img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.content-container > header .additional-nav .auth-section {
+.content-container > header.main-header .additional-nav .auth-section {
   display: flex;
   flex-direction: row;
   gap: 30px;
@@ -1803,6 +1812,100 @@ footer .footer-information .information-table > form > input {
   gap: 32px;
 }
 
+@media screen and (max-width: 1144px) {
+  .no-active {
+    background: none;
+  }
+  .no-active::before {
+    display: none !important;
+  }
+  .no-active .main-nav-menus {
+    display: none !important;
+  }
+  .content-container > * {
+    margin: 0 16px;
+  }
+  .main-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 300;
+    border-right: none;
+  }
+  .main-nav .header-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 8px 16px;
+    background-color: rgba(247, 249, 253, 0.72);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .main-nav::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-overlay-dark);
+    z-index: 305;
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: all;
+    transition: 0.2s;
+  }
+  .main-nav .main-nav-menus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 32px 20px;
+    width: 100%;
+    height: 100%;
+    z-index: 310;
+    background-color: var(--color-bg-base);
+  }
+  .main-nav .main-nav-menus .header-mobile-vers {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .main-nav .main-nav-menus .header-mobile-vers .header-buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 24px;
+  }
+  .main-nav .main-nav-menus .header-mobile-vers .header-buttons .profile-section {
+    width: 32px;
+    height: 32px;
+  }
+  .main-nav .main-nav-menus .header-mobile-vers .header-buttons .profile-section img {
+    width: 100%;
+    height: 100%;
+  }
+  .main-nav .main-nav-menus .header-mobile-vers button[btn-id=close] {
+    padding: 3px;
+  }
+  main {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  main::-webkit-scrollbar {
+    display: none;
+  }
+  main header.main-header {
+    display: none !important;
+  }
+  main .main-blocks {
+    padding-top: 64px;
+  }
+}
 * {
   font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
