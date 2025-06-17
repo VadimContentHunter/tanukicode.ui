@@ -177,6 +177,7 @@
 }
 
 .ui-button {
+  white-space: nowrap;
   padding: 6px 14px;
   border-radius: var(--radius-banner);
   text-align: center;
@@ -286,13 +287,13 @@
   font-weight: 700;
 }
 
-.form-item-select, .form-item-default {
+.form-item-upload-file, .form-item-select, .form-item-default {
   min-height: 53px;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-.form-item-select label, .form-item-default label {
+.form-item-upload-file label, .form-item-select label, .form-item-default label {
   font-style: normal;
   font-size: 12px;
   line-height: 16px;
@@ -300,7 +301,7 @@
   font-weight: 500;
 }
 
-.form-item-select .default-select .head-select, .form-item-default input {
+.form-item-upload-file .upload-content, .form-item-select .default-select .head-select, .form-item-default input {
   background: var(--color-white);
   border: 1px solid var(--color-ui-muted);
   width: 100%;
@@ -313,7 +314,7 @@
   color: var(--color-ui-active);
   font-weight: 700;
 }
-.form-item-select .default-select [disabled].head-select, .form-item-default input[disabled] {
+.form-item-upload-file [disabled].upload-content, .form-item-select .default-select [disabled].head-select, .form-item-default input[disabled] {
   background: var(--color-bg-light);
   border: 1px solid var(--color-ui-muted);
   font-style: normal;
@@ -387,6 +388,31 @@
   display: flex;
   flex: none;
   transition: 0.2s;
+}
+
+.form-item-upload-file input {
+  display: none;
+}
+.form-item-upload-file .upload-content {
+  height: 200px;
+}
+.form-item-upload-file .upload-content .data-upload {
+  background: var(--color-bg-bas);
+  border: 1px dashed var(--color-inactive);
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-item-upload-file .upload-info {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--color-inactive);
+  font-weight: 500;
+}
+.form-item-upload-file .upload-info span {
+  color: var(--color-primary);
 }
 
 .main-nav {
@@ -1742,6 +1768,12 @@ footer .footer-information .information-table > form > input {
   gap: 32px;
 }
 
+.id-setting .fill-id {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
 * {
   font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -1777,6 +1809,10 @@ main {
   display: flex;
   flex-direction: column;
   gap: 32px;
+}
+
+.full-row-grid {
+  grid-column: 1/-1;
 }
 
 /*# sourceMappingURL=styles.css.map */

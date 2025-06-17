@@ -61,3 +61,7 @@ main {
 .main-blocks {
     @include flex-gap(32px, column);
 }
+
+.full-row-grid {
+    grid-column: 1 / -1
+}

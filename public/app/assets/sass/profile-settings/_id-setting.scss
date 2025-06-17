@@ -2,4 +2,6 @@
 
 .id-setting {}
 
-.id-setting .fill-id {}
+.id-setting .fill-id {
+    @include flex-gap(32px, column);
+}

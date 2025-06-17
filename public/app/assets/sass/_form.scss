@@ -153,3 +153,34 @@
         }
     }
 }
+
+.form-item-upload-file {
+    @extend %baseItem;
+
+    input {
+        display: none;
+    }
+
+    .upload-content {
+        height: 200px;
+        @extend %baseInput;
+
+        .data-upload {
+            background: var(--color-bg-bas);
+            border: 1px dashed var(--color-inactive);
+
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .upload-info {
+        @include text-style(normal, 14px, 18px, var(--color-inactive), 500);
+
+        & span {
+            color: var(--color-primary);
+        }
+    }
+}
