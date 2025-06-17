@@ -1,0 +1,100 @@
+@use "sass:color";
+
+@use "../vars" as *;
+
+.block-information {
+    padding: 40px 0;
+    @include flex-gap(64px, column);
+
+    header {
+        @include flex-gap(24px, column);
+        align-items: center;
+
+        h2 {
+            text-align: center;
+            @include text-style(normal, 48px, 120%, var(--color-ui-active), 700);
+        }
+
+        p {
+            max-width: 510px;
+            width: 100%;
+            text-align: center;
+
+            @include text-style(normal, 16px, 24px, var(--color-inactive), 400);
+        }
+    }
+
+    .main-list {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+        grid-column-gap: 24px;
+        grid-row-gap: 64px;
+
+        .item {
+            cursor: pointer;
+            -webkit-transition: .2s;
+            transition: .2s;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+
+            .item-icon {
+                pointer-events: none;
+                flex: none;
+                width: 100%;
+                height: 110px;
+                border-radius: 12px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &.has-light {
+                    display: none;
+                }
+
+                &.light-ben {
+                    display: flex;
+                }
+
+                & .lottie-player {
+                    width: 100%;
+                    height: 100%;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+
+            .item-description {
+                width: 100%;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+
+                h2 {
+                    @include text-style(normal, 24px, 120%, var(--color-ui-active), 700);
+                }
+
+                p {
+                    max-width: 306px;
+                    width: 100%;
+                    text-align: center;
+
+                    @include text-style(normal, 16px, 24px, var(--color-inactive), 400);
+                }
+            }
+        }
+    }
+}

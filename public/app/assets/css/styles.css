@@ -1023,6 +1023,103 @@ footer .footer-information .information-table > form > input {
   height: 100%;
   object-fit: cover;
 }
+.block-information {
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+.block-information header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+.block-information header h2 {
+  text-align: center;
+  font-style: normal;
+  font-size: 48px;
+  line-height: 120%;
+  color: var(--color-ui-active);
+  font-weight: 700;
+}
+.block-information header p {
+  max-width: 510px;
+  width: 100%;
+  text-align: center;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-inactive);
+  font-weight: 400;
+}
+.block-information .main-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-column-gap: 24px;
+  grid-row-gap: 64px;
+}
+.block-information .main-list .item {
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+.block-information .main-list .item:hover {
+  transform: scale(1.05);
+}
+.block-information .main-list .item .item-icon {
+  pointer-events: none;
+  flex: none;
+  width: 100%;
+  height: 110px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.block-information .main-list .item .item-icon.has-light {
+  display: none;
+}
+.block-information .main-list .item .item-icon.light-ben {
+  display: flex;
+}
+.block-information .main-list .item .item-icon .lottie-player {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.block-information .main-list .item .item-description {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.block-information .main-list .item .item-description h2 {
+  font-style: normal;
+  font-size: 24px;
+  line-height: 120%;
+  color: var(--color-ui-active);
+  font-weight: 700;
+}
+.block-information .main-list .item .item-description p {
+  max-width: 306px;
+  width: 100%;
+  text-align: center;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-inactive);
+  font-weight: 400;
+}
+
 .profile-navigation {
   width: 272px;
   background-color: var(--color-bg-base);

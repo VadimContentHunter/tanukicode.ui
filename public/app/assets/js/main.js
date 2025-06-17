@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '.modal-profile-settings',
         '.modal-profile-menu', // селектор, который открывает модалку
         '.modal-profile-settings button[btn-id="close"]', // кнопка закрытия
-        { innerContentSelector: '.profile-settings'}
+        { innerContentSelector: '.profile-settings' }
     );
 
     // hideOnOutsideClick('.modal-header-lang', '.additional-nav .icon-lang');
@@ -28,6 +28,18 @@ document.addEventListener('DOMContentLoaded', () => {
         navAttr: 'profile-settings-nav-id',
         tabAttr: 'profile-settings-tab-id',
         display: 'flex',
+    });
+
+    document.querySelectorAll('.main-list li').forEach((li) => {
+        const players = li.querySelectorAll('lottie-player');
+
+        li.addEventListener('mouseenter', () => {
+            players.forEach((p) => p.play());
+        });
+
+        li.addEventListener('mouseleave', () => {
+            players.forEach((p) => p.stop());
+        });
     });
 });
 
