@@ -1,103 +1,99 @@
-<section class="carousel">
-    <h2 id="carousel-title" class="visually-hidden">Promotional carousel</h2>
-
-    <nav class="tns-controls" aria-label="Slide navigation">
-        <button data-controls="prev" aria-label="Previous slide"></button>
-        <button data-controls="next" aria-label="Next slide"></button>
+<section class="block-carousel">
+    <nav class="block-carousel-controls" aria-label="Slide navigation">
+        <button data-controls="prev" aria-label="Previous slide">
+            <i class="icon icon-arrow-gray"></i>
+        </button>
+        <button data-controls="next" aria-label="Next slide">
+            <i class="icon icon-arrow-gray"></i>
+        </button>
     </nav>
 
-    <nav class="tns-nav" aria-label="Slide pagination">
-        <button data-nav="0" aria-label="Slide 1" aria-current="true" class="tns-nav-active"></button>
+    <nav class="block-carousel-buttons" aria-label="Slide pagination">
+        <button data-nav="0" aria-label="Slide 1" aria-current="true" class="block-carousel-button-active"></button>
         <button data-nav="1" aria-label="Slide 2"></button>
         <button data-nav="2" aria-label="Slide 3" hidden></button>
         <button data-nav="3" aria-label="Slide 4" hidden></button>
         <button data-nav="4" aria-label="Slide 5" hidden></button>
     </nav>
 
-    <div class="tns-liveregion tns-visually-hidden" aria-live="polite" aria-atomic="true">
-        Slide <span class="current">9 to 12</span> of 5
-    </div>
+    <div class="block-carousel-wrapper">
+        <ul class="block-carousel-list" style="">
 
-    <div class="tns-ovh">
-        <div class="tns-inner">
-            <ul class="slides-carousel" style="">
+            <!-- Пример неактивного слайда -->
+            <li class="" aria-hidden="true">
+                <a href="#" >
+                    <figure>
+                        <img src="imgs/blog/Referral.png" alt="Referral program banner">
+                    </figure>
+                </a>
+            </li>
 
-                <!-- Пример неактивного слайда -->
-                <li class="item-content tns-item" aria-hidden="true">
-                    <a href="#" class="item">
-                        <figure>
-                            <img src="imgs/blog/Referral.png" alt="Referral program banner">
-                        </figure>
-                    </a>
-                </li>
+            <!-- Пример активных слайдов -->
+            <li class=" tns-slide-active" id="tns1-item0">
+                <a href="#" >
+                    <figure>
+                        <img src="imgs/blog/Affilliate.png" alt="Affiliate program banner">
+                    </figure>
+                </a>
+            </li>
 
-                <!-- Пример активных слайдов -->
-                <li class="item-content tns-item tns-slide-active" id="tns1-item0">
-                    <a href="#" class="item">
-                        <figure>
-                            <img src="imgs/blog/Affilliate.png" alt="Affiliate program banner">
-                        </figure>
-                    </a>
-                </li>
+            <li class=" tns-slide-active" id="tns1-item1">
+                <a href="#" >
+                    <figure>
+                        <img src="imgs/blog/Vip.png" alt="VIP services banner">
+                    </figure>
+                </a>
+            </li>
 
-                <li class="item-content tns-item tns-slide-active" id="tns1-item1">
-                    <a href="#" class="item">
-                        <figure>
-                            <img src="imgs/blog/Vip.png" alt="VIP services banner">
-                        </figure>
-                    </a>
-                </li>
+            <li class=" tns-slide-active" id="tns1-item2">
+                <a href="#" >
+                    <figure>
+                        <img src="imgs/blog/Referral.png" alt="Referral program banner">
+                    </figure>
+                </a>
+            </li>
 
-                <li class="item-content tns-item tns-slide-active" id="tns1-item2">
-                    <a href="#" class="item">
-                        <figure>
-                            <img src="imgs/blog/Referral.png" alt="Referral program banner">
-                        </figure>
-                    </a>
-                </li>
+            <li class=" tns-slide-active" id="tns1-item3">
+                <a href="#" >
+                    <figure>
+                        <img src="imgs/blog/App.png" alt="App download banner">
+                    </figure>
+                </a>
+            </li>
 
-                <li class="item-content tns-item tns-slide-active" id="tns1-item3">
-                    <a href="#" class="item">
-                        <figure>
-                            <img src="imgs/blog/App.png" alt="App download banner">
-                        </figure>
-                    </a>
-                </li>
+            <!-- Остальные слайды в том же формате -->
+            <li class=" tns-slide-active" id="tns1-item0">
+                <a href="#" >
+                    <figure>
+                        <img src="imgs/blog/Affilliate.png" alt="Affiliate program banner">
+                    </figure>
+                </a>
+            </li>
 
-                <!-- Остальные слайды в том же формате -->
-                <li class="item-content tns-item tns-slide-active" id="tns1-item0">
-                    <a href="#" class="item">
-                        <figure>
-                            <img src="imgs/blog/Affilliate.png" alt="Affiliate program banner">
-                        </figure>
-                    </a>
-                </li>
+            <li class=" tns-slide-active" id="tns1-item1">
+                <a href="#" >
+                    <figure>
+                        <img src="imgs/blog/Vip.png" alt="VIP services banner">
+                    </figure>
+                </a>
+            </li>
 
-                <li class="item-content tns-item tns-slide-active" id="tns1-item1">
-                    <a href="#" class="item">
-                        <figure>
-                            <img src="imgs/blog/Vip.png" alt="VIP services banner">
-                        </figure>
-                    </a>
-                </li>
+            <li class=" tns-slide-active" id="tns1-item2">
+                <a href="#" >
+                    <figure>
+                        <img src="imgs/blog/Referral.png" alt="Referral program banner">
+                    </figure>
+                </a>
+            </li>
 
-                <li class="item-content tns-item tns-slide-active" id="tns1-item2">
-                    <a href="#" class="item">
-                        <figure>
-                            <img src="imgs/blog/Referral.png" alt="Referral program banner">
-                        </figure>
-                    </a>
-                </li>
+            <li class=" tns-slide-active" id="tns1-item3">
+                <a href="#" >
+                    <figure>
+                        <img src="imgs/blog/App.png" alt="App download banner">
+                    </figure>
+                </a>
+            </li>
 
-                <li class="item-content tns-item tns-slide-active" id="tns1-item3">
-                    <a href="#" class="item">
-                        <figure>
-                            <img src="imgs/blog/App.png" alt="App download banner">
-                        </figure>
-                    </a>
-                </li>
-
-            </ul>
-        </div>
+        </ul>
     </div>
 </section>

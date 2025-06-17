@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --radius-base: 12px;
   --radius-banner: 24px;
@@ -925,6 +926,104 @@ footer .footer-information .information-table > form > input {
   background-color: var(--color-white, #fff);
 }
 
+.block-carousel {
+  position: relative;
+  overflow: hidden;
+  padding: 27px 48px;
+  margin: 12px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.block-carousel .block-carousel-controls {
+  position: absolute;
+  padding: 0px 8px;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.block-carousel .block-carousel-controls > button {
+  pointer-events: all;
+  cursor: pointer;
+  border-radius: 100px;
+  background-color: rgb(227.8, 229.2, 232.8);
+  background-size: 24px 24px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.block-carousel .block-carousel-controls > button[data-controls=prev] {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.block-carousel .block-carousel-controls > button[data-controls=next] {
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+.block-carousel .block-carousel-buttons {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+.block-carousel .block-carousel-buttons > button {
+  cursor: pointer;
+  width: 24px;
+  height: 3px;
+  opacity: 0.5;
+  background: var(--color-inactive);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  display: flex;
+}
+.block-carousel .block-carousel-buttons > button.block-carousel-button-active {
+  width: 40px;
+  opacity: 1;
+}
+
+.block-carousel .block-carousel-wrapper {
+  overflow: hidden;
+  padding: 0px 30px 0px 0px;
+  display: flex;
+  flex-direction: column;
+}
+.block-carousel .block-carousel-wrapper ul.block-carousel-list {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+.block-carousel .block-carousel-wrapper ul.block-carousel-list > li {
+  flex: 0 0 25%;
+  /* каждый слайд — 25% ширины */
+  box-sizing: border-box;
+}
+.block-carousel .block-carousel-wrapper ul.block-carousel-list > li > a {
+  height: 100%;
+  aspect-ratio: 4/2;
+  background: var(--color-inactive);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.block-carousel .block-carousel-wrapper ul.block-carousel-list > li > a figure > img {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .profile-navigation {
   width: 272px;
   background-color: var(--color-bg-base);
