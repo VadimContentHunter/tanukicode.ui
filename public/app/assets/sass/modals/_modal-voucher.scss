@@ -1,0 +1,15 @@
+@use "../vars" as *;
+
+#modal-voucher {
+    .profile-settings{
+        max-width: 416px;
+    }
+
+    .fill-voucher {
+        @include flex-gap(24px, column);
+    }
+
+    .action-modal {
+        width: 100%;
+    }
+}

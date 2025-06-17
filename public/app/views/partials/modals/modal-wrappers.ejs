@@ -1,6 +1,9 @@
 <div class="modal-wrappers">
     <% (modals || []).forEach(modal=> { %>
-        <section class="<%= modal.class %>" style="display: none;">
+        <section
+            class="<%= modal.class %>"
+            <%- (typeof modal.id==="string" ? `id="${modal.id}" ` : "" ) %>
+            style="display: none;">
             <%- include(modal.name) %>
         </section>
     <% }) %>

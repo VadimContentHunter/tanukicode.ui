@@ -154,12 +154,7 @@ app.get('/site', async (req, res) => {
         const dataGeneral = {
             // для head
             title: 'Заголовок страницы',
-            headScripts: [
-                '/js/toggleDisplay.js',
-                '/js/hideOnOutsideClick.js',
-                '/js/setupNavigationButtons.js',
-                '/js/setupProfileNavigation.js',
-            ],
+            headScripts: ['/js/toggleDisplay.js', '/js/hideOnOutsideClick.js', '/js/setupProfileNavigation.js'],
             headPartial: 'partials/head',
 
             // для модальных оберток
@@ -168,8 +163,9 @@ app.get('/site', async (req, res) => {
 
             modals: [
                 { class: 'modal-profile-menu', name: 'modal-header-menu' },
-                { class: 'modal-profile-settings', name: 'modal-profile-settings' },
+                { class: 'modal-profile-settings', name: 'modal-profile-settings', id: 'modal-account-setting' },
                 { class: 'modal-header-lang', name: 'modal-header-lang' },
+                { class: 'modal-profile-settings', name: 'modal-voucher', id: 'modal-voucher' },
             ],
             modalWrappers: 'partials/modals/modal-wrappers',
 
@@ -226,6 +222,7 @@ app.get('/site', async (req, res) => {
             { templateName: 'partials/header-auth', data: dataGeneral, outputFile: 'partials/header-auth.html' },
             { templateName: 'partials/modals/modal-header-menu', data: dataGeneral, outputFile: 'partials/modals/modal-header-menu.html' },
             { templateName: 'partials/modals/modal-header-lang', data: dataGeneral, outputFile: 'partials/modals/modal-header-lang.html' },
+            { templateName: 'partials/modals/modal-voucher', data: dataGeneral, outputFile: 'partials/modals/modal-voucher.html' },
             {
                 templateName: 'partials/modals/modal-profile-settings',
                 data: dataGeneral,

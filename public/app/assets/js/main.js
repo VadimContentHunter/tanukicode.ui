@@ -1,12 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     toggleDisplay('.modal-profile-menu', '#my_profile_photo');
     toggleDisplay('.modal-header-lang', '.additional-nav .icon-lang');
+    toggleDisplay('#modal-voucher', '.profile-navigation button[target="_voucher"]');
+
     hideOnOutsideClick('.modal-profile-menu', '#my_profile_photo', '.profile-navigation .button-menu-item');
     hideOnOutsideClick('.modal-header-lang', '.additional-nav .icon-lang');
     hideOnOutsideClick(
-        '.modal-profile-settings',
+        '#modal-account-setting',
         '.modal-profile-menu', // селектор, который открывает модалку
-        '.modal-profile-settings button[btn-id="close"]', // кнопка закрытия
+        '#modal-account-setting button[btn-id="close"]', // кнопка закрытия
+        { innerContentSelector: '.profile-settings' }
+    );
+    hideOnOutsideClick(
+        '#modal-voucher',
+        '.modal-profile-menu', // селектор, который открывает модалку
+        '#modal-voucher button[btn-id="close"]', // кнопка закрытия
         { innerContentSelector: '.profile-settings' }
     );
 
@@ -15,16 +23,16 @@ document.addEventListener('DOMContentLoaded', () => {
     setupProfileNavigation({
         buttonSelector: '.modal-profile-menu .button-menu-item',
         targetAttr: 'target',
-        mainSelector: '.modal-profile-settings',
+        mainSelector: '#modal-account-setting',
         navAttr: 'profile-settings-nav-id',
         tabAttr: 'profile-settings-tab-id',
         display: 'flex',
     });
 
     setupProfileNavigation({
-        buttonSelector: '.modal-profile-settings .head--profile-settings--navigate button',
+        buttonSelector: '#modal-account-setting .head--profile-settings--navigate button',
         targetAttr: 'profile-settings-nav-id',
-        mainSelector: '.modal-profile-settings',
+        mainSelector: '#modal-account-setting',
         navAttr: 'profile-settings-nav-id',
         tabAttr: 'profile-settings-tab-id',
         display: 'flex',

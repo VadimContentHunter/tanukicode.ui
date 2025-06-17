@@ -300,6 +300,13 @@
   color: var(--color-inactive);
   font-weight: 500;
 }
+.form-item-upload-file p, .form-item-select p, .form-item-default p {
+  font-style: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-inactive);
+  font-weight: 500;
+}
 
 .form-item-upload-file .upload-content, .form-item-select .default-select .head-select, .form-item-default input {
   background: var(--color-white);
@@ -1379,6 +1386,18 @@ footer .footer-information .information-table > form > input {
 }
 .modal-main-content .lang-data .item.active span {
   color: var(--color-primary);
+}
+
+#modal-voucher .profile-settings {
+  max-width: 416px;
+}
+#modal-voucher .fill-voucher {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+#modal-voucher .action-modal {
+  width: 100%;
 }
 
 .profile-settings {

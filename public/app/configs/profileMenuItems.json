@@ -32,7 +32,7 @@
         "iconClass": "icon-voucher",
         "title": "Voucher",
         "desc": "Enjoy special bonus",
-        "target": ""
+        "target": "_voucher"
     },
     {
         "type": "link",
