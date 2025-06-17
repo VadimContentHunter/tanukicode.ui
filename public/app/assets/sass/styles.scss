@@ -55,3 +55,7 @@ main {
         margin-right: var(--global-padding-side);
     }
 }
+
+.main-blocks {
+    @include flex-gap(32px, column);
+}

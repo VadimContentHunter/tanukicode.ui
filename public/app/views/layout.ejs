@@ -13,9 +13,12 @@
             <main>
                 <div class="content-container">
                     <%- include(header) %>
-                    <% blocks.forEach(function(block) { %>
-                    <%- include(block) %>
-                    <% }); %>
+                    
+                    <section class="main-blocks">
+                        <% blocks.forEach(function(block) { %>
+                        <%- include(block) %>
+                        <% }); %>
+                    </section>
 
                     <%- include(footer) %>
                 </div>

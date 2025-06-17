@@ -201,8 +201,8 @@ app.get('/site', async (req, res) => {
             // список блоков для рендеринга
             blocks: [
                 'partials/blocks/block-balance',
-                'partials/blocks/block-assets',
                 'partials/blocks/block-carousel',
+                'partials/blocks/block-assets',
                 'partials/blocks/block-information',
                 'partials/blocks/block-advantages',
             ],
