@@ -15,6 +15,7 @@ const __projectRoot = path.resolve(__dirname, '../app'); // /var/www/browser-gam
 const pathAssets = path.join(__projectRoot, 'assets');
 const pathView = path.join(__projectRoot, 'views');
 const pathConfig = path.join(__projectRoot, 'configs');
+const pathLangs = path.join(__projectRoot, 'langs');
 const ejsRenderer = new EjsRenderer(pathView, path.join(__projectRoot, 'render-views'));
 const generatorSprites = new SvgSpriteGenerator({
     outputDir: path.join(pathAssets, 'resources', 'sprites'),
@@ -34,6 +35,47 @@ app.use('/fonts', express.static(path.join(pathAssets, 'resources', 'fonts')));
 // Маршрут по умолчанию
 app.get('/', (req: Request, res: Response) => {
     res.send('Hello, world!');
+});
+
+app.get('/api/set-language', async (req: Request, res: Response) => {
+    const lang = req.query['lang'] as string;
+    let page = req.query['page'] as string;
+
+    if (!lang || !page) {
+        res.status(400).json({ error: 'Missing lang or page parameter' });
+        return;
+    }
+
+    // Нормализуем page (например, '/' -> 'index', '/about' -> 'about')
+    if (page === '/') page = 'index';
+    else page = page.replace(/^\//, '').replace(/\//g, '_'); // например для '/my/about' -> 'my_about'
+
+    try {
+        const filePath = path.join(pathLangs, `${page}.json`);
+        const file = await fs.promises.readFile(filePath, 'utf-8');
+        const translations = JSON.parse(file);
+
+        const pageTranslations = translations[page];
+        if (!pageTranslations) {
+            res.status(404).json({ error: 'Page not found in translation file' });
+            return;
+        }
+
+        const langTranslations = pageTranslations[lang];
+        if (!langTranslations) {
+            res.status(404).json({ error: 'Language not found in translation file' });
+            return;
+        }
+
+        res.json({
+            [page]: {
+                [lang]: langTranslations,
+            },
+        });
+    } catch (error) {
+        console.error('Error reading translation file:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
 });
 
 app.get('/signin', async (req, res) => {
@@ -154,7 +196,13 @@ app.get('/site', async (req, res) => {
         const dataGeneral = {
             // для head
             title: 'Заголовок страницы',
-            headScripts: ['/js/toggleDisplay.js', '/js/hideOnOutsideClick.js', '/js/setupProfileNavigation.js'],
+            headScripts: [
+                '/js/toggleDisplay.js',
+                '/js/hideOnOutsideClick.js',
+                '/js/setupProfileNavigation.js',
+                '/js/applyLanguageContent.js',
+                '/js/setupLanguageSwitcher.js',
+            ],
             headPartial: 'partials/head',
 
             // для модальных оберток

@@ -1,0 +1,55 @@
+{
+    "site": {
+        "en": {
+            ".main-nav ul.menu-nav a[href='/home'] span": "Home",
+            ".main-nav ul.menu-nav a[href='/trading'] span": "Exchange",
+            ".main-nav ul.menu-nav a[href='/profile/wallet'] span": "Wallets",
+            ".main-nav ul.menu-nav a[href='/profile/buy-crypto'] span": "Buy crypto",
+            ".main-nav ul.menu-nav a[href='/profile/transactions'] span": "Activities",
+
+            ".modal-profile-menu button[target='profile'] h2": "Account",
+            ".modal-profile-menu button[target='profile'] p": "Important account details",
+
+            ".modal-profile-menu button[target='referrals'] h2": "Referrals",
+            ".modal-profile-menu button[target='referrals'] p": "Invite your friends and earn rewards",
+
+            ".modal-profile-menu button[target='t2fa'] h2": "2FA security",
+            ".modal-profile-menu button[target='t2fa'] p": "Setup 2FA for more security",
+
+            ".modal-profile-menu button[target='id-setting'] h2": "ID Verification",
+            ".modal-profile-menu button[target='id-setting'] p": "Verify to increase your limits",
+
+            ".modal-profile-menu button[target='_voucher'] h2": "Voucher",
+            ".modal-profile-menu button[target='_voucher'] p": "Enjoy special bonus",
+
+            ".modal-profile-menu a[href='../api/auth/logout'] h2": "Log out",
+            ".modal-profile-menu a[href='../api/auth/logout'] p": "Already rich? No? Stay here"
+        },
+        "ru": {
+            ".main-nav ul.menu-nav a[href='/home'] span": "Главная",
+            ".main-nav ul.menu-nav a[href='/trading'] span": "Обмен",
+            ".main-nav ul.menu-nav a[href='/profile/wallet'] span": "Кошельки",
+            ".main-nav ul.menu-nav a[href='/profile/buy-crypto'] span": "Купить крипто",
+            ".main-nav ul.menu-nav a[href='/profile/transactions'] span": "Активности",
+
+
+            ".modal-profile-menu button[target='profile'] h2": "Аккаунт",
+            ".modal-profile-menu button[target='profile'] p": "Важные детали аккаунта",
+
+            ".modal-profile-menu button[target='referrals'] h2": "Рефералы",
+            ".modal-profile-menu button[target='referrals'] p": "Приглашайте друзей и получайте бонусы",
+
+            ".modal-profile-menu button[target='t2fa'] h2": "2FA безопасность",
+            ".modal-profile-menu button[target='t2fa'] p": "Настройте 2FA для большей безопасности",
+
+            ".modal-profile-menu button[target='id-setting'] h2": "Верификация личности",
+            ".modal-profile-menu button[target='id-setting'] p": "Пройдите верификацию для увеличения лимитов",
+
+            ".modal-profile-menu button[target='_voucher'] h2": "Ваучер",
+            ".modal-profile-menu button[target='_voucher'] p": "Получите специальный бонус",
+
+            ".modal-profile-menu a[href='../api/auth/logout'] h2": "Выйти",
+            ".modal-profile-menu a[href='../api/auth/logout'] p": "Уже богат? Нет? Оставайтесь здесь"
+        }
+    }
+}

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleDisplay('#modal-voucher', '.profile-navigation button[target="_voucher"]');
 
     hideOnOutsideClick('.modal-profile-menu', '#my_profile_photo', '.profile-navigation .button-menu-item');
-    hideOnOutsideClick('.modal-header-lang', '.additional-nav .icon-lang');
+    hideOnOutsideClick('.modal-header-lang', '.additional-nav .icon-lang', '.modal-header-lang .lang-data button');
     hideOnOutsideClick(
         '#modal-account-setting',
         '.modal-profile-menu', // селектор, который открывает модалку
@@ -48,6 +48,16 @@ document.addEventListener('DOMContentLoaded', () => {
         li.addEventListener('mouseleave', () => {
             players.forEach((p) => p.stop());
         });
+    });
+
+    setupLanguageSwitcher({
+        actionSelector: '.modal-header-lang .lang-data button',
+        langAttr: 'target',
+        url: '/api/set-language',
+        activeClass: 'active',
+        onResponse: (json, lang) => {
+            applyLanguageContent(json, lang);
+        },
     });
 });
 

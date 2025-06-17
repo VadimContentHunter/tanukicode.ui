@@ -1244,6 +1244,10 @@ footer .footer-information .information-table > form > input {
   display: flex;
   flex-direction: column;
 }
+.profile-navigation p,
+.profile-navigation h2 {
+  text-align: left;
+}
 .profile-navigation > .button-menu-item {
   border-bottom: 1px solid var(--color-ui-muted);
   padding: 12px 16px;
@@ -1292,6 +1296,7 @@ footer .footer-information .information-table > form > input {
   transition: 0.2s;
 }
 .profile-navigation .profile-nav-content > p {
+  text-align: left;
   font-style: normal;
   font-size: 12px;
   line-height: 16px;
@@ -1354,24 +1359,26 @@ footer .footer-information .information-table > form > input {
 }
 
 .modal-main-content {
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 .modal-main-content .lang-data {
-  padding: 24px;
-  border-right: 1px solid var(--color-ui-muted);
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 .modal-main-content .lang-data .item {
-  width: 144px;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  /* gap: 16px; */
+  gap: 24px;
 }
 .modal-main-content .lang-data .item span {
   transition: 0.2s;
@@ -1380,11 +1387,14 @@ footer .footer-information .information-table > form > input {
   white-space: nowrap;
   font-style: normal;
   font-size: 16px;
-  line-height: 100%;
+  line-height: 20px;
   color: var(--color-inactive);
   font-weight: 500;
 }
-.modal-main-content .lang-data .item.active span {
+.modal-main-content .lang-data .item.active, .modal-main-content .lang-data .item:hover {
+  cursor: pointer;
+}
+.modal-main-content .lang-data .item.active span, .modal-main-content .lang-data .item:hover span {
   color: var(--color-primary);
 }
 
