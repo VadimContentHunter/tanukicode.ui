@@ -17,8 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
         '#modal-voucher button[btn-id="close"]', // кнопка закрытия
         { innerContentSelector: '.profile-settings' }
     );
-
-    // hideOnOutsideClick('.modal-header-lang', '.additional-nav .icon-lang');
+    hideOnOutsideClick('#nav-main-menu', '#btn-main-menu', '.header-mobile-vers button[btn-id="close"]', {
+        displayNone: false,
+        inactiveClass: 'no-active',
+        innerContentSelector: '.main-nav-menus',
+    });
 
     setupProfileNavigation({
         buttonSelector: '.modal-profile-menu .button-menu-item',
@@ -58,6 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
         onResponse: (json, lang) => {
             applyLanguageContent(json, lang);
         },
+    });
+
+    setupResponsiveToggleClick({
+        triggerSelector: '#btn-main-menu', // по какому элементу клик
+        targetSelector: '#nav-main-menu', // к какому элементу применять классы
     });
 });
 

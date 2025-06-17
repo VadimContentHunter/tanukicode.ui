@@ -202,6 +202,7 @@ app.get('/site', async (req, res) => {
                 '/js/setupProfileNavigation.js',
                 '/js/applyLanguageContent.js',
                 '/js/setupLanguageSwitcher.js',
+                '/js/setupResponsiveToggleClick.js',
             ],
             headPartial: 'partials/head',
 

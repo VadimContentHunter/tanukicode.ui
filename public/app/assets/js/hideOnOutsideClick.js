@@ -1,9 +1,5 @@
 function hideOnOutsideClick(targetSelector, activatorSelector, closeBtnSelector, options = {}) {
-    const {
-        displayNone = true,
-        activeClass = 'active',
-        innerContentSelector = null, // новый параметр: селектор основного содержимого внутри модалки
-    } = options;
+    const { displayNone = true, activeClass = 'active', inactiveClass = 'no-active', innerContentSelector = null } = options;
 
     const target = document.querySelector(targetSelector);
     const activators = Array.from(document.querySelectorAll(activatorSelector));
@@ -25,20 +21,16 @@ function hideOnOutsideClick(targetSelector, activatorSelector, closeBtnSelector,
         let clickedInsideInnerContent = false;
         if (innerContentSelector) {
             const innerContent = target.querySelector(innerContentSelector);
-            clickedInsideInnerContent = innerContent ? innerContent.contains(event.target) : false;
+            clickedInsideInnerContent = innerContent?.contains(event.target) ?? false;
         }
 
-        if (clickedCloseBtn) {
-            if (displayNone) target.style.display = 'none';
-            activators.forEach((el) => el.classList.remove(activeClass));
-            return;
-        }
+        const shouldClose =
+            clickedCloseBtn ||
+            (!clickedActivator && (!clickedInsideTarget || (clickedInsideTarget && innerContentSelector && !clickedInsideInnerContent)));
 
-        // Если клик вне активаторов и:
-        // - клик вне всего target (модалки)
-        // - или клик по фону (по target, но не по innerContent)
-        if (!clickedActivator && (!clickedInsideTarget || (clickedInsideTarget && innerContentSelector && !clickedInsideInnerContent))) {
+        if (shouldClose) {
             if (displayNone) target.style.display = 'none';
+            target.classList.add(inactiveClass);
             activators.forEach((el) => el.classList.remove(activeClass));
         }
     });
