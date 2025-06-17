@@ -15,6 +15,19 @@
 
     }
 
+    .main-nav.collapse {
+        flex: 1;
+        width: 100%;
+
+        .header-nav .logo {
+            display: flex;
+        }
+
+        .menu-nav span {
+            display: flex;
+        }
+    }
+
     .content-container {
         &>* {
             margin: 0 16px;

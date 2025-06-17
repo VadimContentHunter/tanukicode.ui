@@ -30,6 +30,19 @@ $active-icons: (
     .header-mobile-vers {
         display: none;
     }
+
+    &.collapse {
+        flex: 0 1 content;
+        width: auto;
+
+        .header-nav .logo {
+            display: none;
+        }
+
+        .menu-nav span {
+            display: none;
+        }
+    }
 }
 
 .main-nav .header-nav {

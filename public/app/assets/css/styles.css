@@ -442,6 +442,16 @@
 .main-nav .header-mobile-vers {
   display: none;
 }
+.main-nav.collapse {
+  flex: 0 1 content;
+  width: auto;
+}
+.main-nav.collapse .header-nav .logo {
+  display: none;
+}
+.main-nav.collapse .menu-nav span {
+  display: none;
+}
 
 .main-nav .header-nav {
   display: flex;
@@ -1821,6 +1831,16 @@ footer .footer-information .information-table > form > input {
   }
   .no-active .main-nav-menus {
     display: none !important;
+  }
+  .main-nav.collapse {
+    flex: 1;
+    width: 100%;
+  }
+  .main-nav.collapse .header-nav .logo {
+    display: flex;
+  }
+  .main-nav.collapse .menu-nav span {
+    display: flex;
   }
   .content-container > * {
     margin: 0 16px;
