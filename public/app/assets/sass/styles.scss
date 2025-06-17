@@ -8,11 +8,11 @@
 @use "./main-nav";
 @use "./header";
 @use "./footer";
-@use "./block-balance";
-@use "./block-assets";
-@use "./header-menus";
-@use "./modal-wrappers";
-@use "./modal-header-lang";
+@use "./blocks/block-balance";
+@use "./blocks/block-assets";
+@use "./modals/header-menus";
+@use "./modals/modal-wrappers";
+@use "./modals/modal-header-lang";
 @use "./profile-settings/profile-settings";
 @use './profile-settings/account-setting';
 @use './profile-settings/referrals-setting';

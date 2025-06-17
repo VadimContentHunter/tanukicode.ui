@@ -4,7 +4,7 @@
         {
             "id": "profile",
             "title": "Account",
-            "path": "./profile-settings/account-setting.ejs",
+            "path": "../profile-settings/account-setting.ejs",
             "data": {
                 "avatarSrc": "/imgs/avatar.svg",
                 "username": "TanukiCode",
@@ -17,7 +17,7 @@
         {
             "id": "referrals",
             "title": "Referrals",
-            "path": "./profile-settings/referrals-setting.ejs",
+            "path": "../profile-settings/referrals-setting.ejs",
             "data": {
                 "referralLink": "https://null/signup?ref=1",
                 "totalRewards": "0",
@@ -31,7 +31,7 @@
         {
             "id": "password",
             "title": "Password",
-            "path": "./profile-settings/password-setting.ejs",
+            "path": "../profile-settings/password-setting.ejs",
             "data": {
                 "formTitle": "Change password",
                 "newPasswordLabel": "New password",
@@ -42,7 +42,7 @@
         {
             "id": "t2fa",
             "title": "2FA",
-            "path": "./profile-settings/2fa-setting.ejs",
+            "path": "../profile-settings/2fa-setting.ejs",
             "data": {
                 "qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=otpauth://totp/tanukicode@gmail.com%20(null)?secret=NSEKXMFL4MGU3U37JF7LIIOVZ4X4CEN7&size=215x215&ecc=M",
                 "manualCode": "NSEKXMFL4MGU3U37JF7LIIOVZ4X4CEN7",
@@ -69,7 +69,7 @@
         {
             "id": "id-setting",
             "title": "ID Verification",
-            "path": "./profile-settings/id-setting.ejs",
+            "path": "../profile-settings/id-setting.ejs",
             "data": {
                 "countries": [
                     { "code": "af", "name": "Afghanistan" },

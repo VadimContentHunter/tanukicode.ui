@@ -49,7 +49,7 @@ app.get('/signin', async (req, res) => {
         // для Спрайтов
         svgSprite: spritesContent ?? '',
 
-        modalLang: 'partials/modal-header-lang',
+        modalLang: 'partials/modals/modal-header-lang',
 
         // для signin
         mainText: singInUp.singInTitle,
@@ -86,7 +86,7 @@ app.get('/signup', async (req, res) => {
         // для Спрайтов
         svgSprite: spritesContent ?? '',
 
-        modalLang: 'partials/modal-header-lang',
+        modalLang: 'partials/modals/modal-header-lang',
 
         // для signup
         mainText: singInUp.singUpTitle,
@@ -171,7 +171,7 @@ app.get('/site', async (req, res) => {
                 { class: 'modal-profile-settings', name: 'modal-profile-settings' },
                 { class: 'modal-header-lang', name: 'modal-header-lang' },
             ],
-            modalWrappers: 'partials/modal-wrappers',
+            modalWrappers: 'partials/modals/modal-wrappers',
 
             // для Спрайтов
             svgSprite: spritesContent ?? '',
@@ -200,11 +200,11 @@ app.get('/site', async (req, res) => {
 
             // список блоков для рендеринга
             blocks: [
-                'partials/block-balance',
-                'partials/block-assets',
-                'partials/block-carousel',
-                'partials/block-information',
-                'partials/block-advantages',
+                'partials/blocks/block-balance',
+                'partials/blocks/block-assets',
+                'partials/blocks/block-carousel',
+                'partials/blocks/block-information',
+                'partials/blocks/block-advantages',
             ],
 
             // scripts
@@ -219,22 +219,25 @@ app.get('/site', async (req, res) => {
 
         await ejsRenderer.renderMultipleFiles([
             { templateName: 'partials/head', data: dataGeneral, outputFile: 'partials/head.html' },
-            { templateName: 'partials/modal-wrappers', data: dataGeneral, outputFile: 'partials/modal-wrappers.html' },
+            { templateName: 'partials/head-auth', data: dataGeneral, outputFile: 'partials/head-auth.html' },
+            { templateName: 'partials/modals/modal-wrappers', data: dataGeneral, outputFile: 'partials/modals/modal-wrappers.html' },
             { templateName: 'partials/main-nav', data: dataGeneral, outputFile: 'partials/main-nav.html' },
             { templateName: 'partials/header', data: dataGeneral, outputFile: 'partials/header.html' },
-            { templateName: 'partials/modal-header-menu', data: dataGeneral, outputFile: 'partials/modal-header-menu.html' },
+            { templateName: 'partials/header-auth', data: dataGeneral, outputFile: 'partials/header-auth.html' },
+            { templateName: 'partials/modals/modal-header-menu', data: dataGeneral, outputFile: 'partials/modals/modal-header-menu.html' },
+            { templateName: 'partials/modals/modal-header-lang', data: dataGeneral, outputFile: 'partials/modals/modal-header-lang.html' },
             {
-                templateName: 'partials/modal-profile-settings',
+                templateName: 'partials/modals/modal-profile-settings',
                 data: dataGeneral,
-                outputFile: 'partials/modal-profile-settings.html',
+                outputFile: 'partials/modals/modal-profile-settings.html',
             },
+            { templateName: 'partials/footer', data: dataGeneral, outputFile: 'partials/footer.html' },
 
-            { templateName: 'partials/footer', data: dataGeneral, outputFile: 'partials/blocks/footer.html' },
-            { templateName: 'partials/block-balance', data: dataGeneral, outputFile: 'partials/blocks/block-balance.html' },
-            { templateName: 'partials/block-assets', data: dataGeneral, outputFile: 'partials/blocks/block-assets.html' },
-            { templateName: 'partials/block-carousel', data: dataGeneral, outputFile: 'partials/blocks/block-carousel.html' },
-            { templateName: 'partials/block-information', data: dataGeneral, outputFile: 'partials/blocks/block-information.html' },
-            { templateName: 'partials/block-advantages', data: dataGeneral, outputFile: 'partials/blocks/block-advantages.html' },
+            { templateName: 'partials/blocks/block-balance', data: dataGeneral, outputFile: 'partials/blocks/block-balance.html' },
+            { templateName: 'partials/blocks/block-assets', data: dataGeneral, outputFile: 'partials/blocks/block-assets.html' },
+            { templateName: 'partials/blocks/block-carousel', data: dataGeneral, outputFile: 'partials/blocks/block-carousel.html' },
+            { templateName: 'partials/blocks/block-information', data: dataGeneral, outputFile: 'partials/blocks/block-information.html' },
+            { templateName: 'partials/blocks/block-advantages', data: dataGeneral, outputFile: 'partials/blocks/block-advantages.html' },
 
             {
                 templateName: 'partials/profile-settings/2fa-setting',
