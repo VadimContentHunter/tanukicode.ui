@@ -1,7 +1,9 @@
 <nav class="profile-navigation" aria-label="Profile navigation">
     <% profileMenuItems.forEach(item=> { %>
         <% if (item.type==='button' ) { %>
-            <button type="button" class="button-menu-item">
+            <button type="button" class="button-menu-item" 
+            target="<%- typeof item.target === 'string' ? item.target : '' %>"
+            >
                 <i class="icon <%= item.iconClass %>"></i>
                 <div class="profile-nav-content">
                     <h2>

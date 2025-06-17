@@ -154,7 +154,7 @@ app.get('/site', async (req, res) => {
         const dataGeneral = {
             // для head
             title: 'Заголовок страницы',
-            headScripts: ['/js/toggleDisplay.js'],
+            headScripts: ['/js/toggleDisplay.js', '/js/hideOnOutsideClick.js'],
             headPartial: 'partials/head',
 
             // для модальных оберток

@@ -3,31 +3,36 @@
         "type": "button",
         "iconClass": "icon-account",
         "title": "Account",
-        "desc": "Important account details"
+        "desc": "Important account details",
+        "target": "account-setting"
     },
     {
         "type": "button",
         "iconClass": "icon-referrals",
         "title": "Referrals",
-        "desc": "Invite your friends and earn rewards"
+        "desc": "Invite your friends and earn rewards",
+        "target": "referrals-setting"
     },
     {
         "type": "button",
         "iconClass": "icon-security",
         "title": "2FA security",
-        "desc": "Setup 2FA for more security"
+        "desc": "Setup 2FA for more security",
+        "target": "twofa"
     },
     {
         "type": "button",
         "iconClass": "icon-verification",
         "title": "ID Verification",
-        "desc": "Verify to increase your limits"
+        "desc": "Verify to increase your limits",
+        "target": "id-setting"
     },
     {
         "type": "button",
         "iconClass": "icon-voucher",
         "title": "Voucher",
-        "desc": "Enjoy special bonus"
+        "desc": "Enjoy special bonus",
+        "target": ""
     },
     {
         "type": "link",
