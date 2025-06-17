@@ -31,7 +31,8 @@ $active-icons: (
     .header-mobile-vers {
         display: none;
 
-        .icon, .profile-section {
+        .icon,
+        .profile-section {
             cursor: pointer;
         }
     }
@@ -39,6 +40,11 @@ $active-icons: (
     &.collapse {
         flex: 0 1 content;
         width: auto;
+
+        .header-nav .action-nav {
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
 
         .header-nav .logo {
             display: none;

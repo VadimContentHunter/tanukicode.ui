@@ -443,12 +443,17 @@
 .main-nav .header-mobile-vers {
   display: none;
 }
-.main-nav .header-mobile-vers .icon, .main-nav .header-mobile-vers .profile-section {
+.main-nav .header-mobile-vers .icon,
+.main-nav .header-mobile-vers .profile-section {
   cursor: pointer;
 }
 .main-nav.collapse {
   flex: 0 1 content;
   width: auto;
+}
+.main-nav.collapse .header-nav .action-nav {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 .main-nav.collapse .header-nav .logo {
   display: none;
