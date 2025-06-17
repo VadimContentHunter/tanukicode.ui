@@ -871,7 +871,7 @@ footer .footer-information .information-table > form > input {
 }
 .asset-items .body-asset .price-info .price-asset strong {
   font-size: 1.4rem;
-  color: var(--color-primary, #007bff);
+  color: var(--color-ui-active);
 }
 .asset-items .body-asset .price-info .gain-asset {
   display: flex;
@@ -1117,6 +1117,15 @@ footer .footer-information .information-table > form > input {
   overflow-x: auto;
   padding-bottom: 6px;
 }
+.profile-settings .body--profile-settings--content {
+  display: flex;
+  flex-direction: column;
+}
+.profile-settings .body--profile-settings--content .tab-content {
+  display: flex;
+  flex-direction: column;
+}
+
 .account-setting {
   display: flex;
   flex-direction: column;

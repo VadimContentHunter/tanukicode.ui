@@ -40,7 +40,7 @@
             }
         },
         {
-            "id": "2fa",
+            "id": "t2fa",
             "title": "2FA",
             "path": "./profile-settings/2fa-setting.ejs",
             "data": {

@@ -4,21 +4,21 @@
         "iconClass": "icon-account",
         "title": "Account",
         "desc": "Important account details",
-        "target": "account-setting"
+        "target": "profile"
     },
     {
         "type": "button",
         "iconClass": "icon-referrals",
         "title": "Referrals",
         "desc": "Invite your friends and earn rewards",
-        "target": "referrals-setting"
+        "target": "referrals"
     },
     {
         "type": "button",
         "iconClass": "icon-security",
         "title": "2FA security",
         "desc": "Setup 2FA for more security",
-        "target": "twofa"
+        "target": "t2fa"
     },
     {
         "type": "button",

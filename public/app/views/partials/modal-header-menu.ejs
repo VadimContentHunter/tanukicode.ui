@@ -15,7 +15,9 @@
                 </div>
             </button>
         <% } else if (item.type==='link' ) { %>
-                <a href="<%= item.href %>" class="button-menu-item" role="link">
+                <a href="<%= item.href %>" class="button-menu-item" role="link" 
+                target="<%- typeof item.target==='string' ? item.target : '' %>"
+                >
                     <i class="icon <%= item.iconClass %>"></i>
                     <div class="profile-nav-content">
                         <h2>

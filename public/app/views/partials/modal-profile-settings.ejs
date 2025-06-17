@@ -1,7 +1,7 @@
 <div class="profile-settings">
     <header class="head--profile-settings">
         <h2>Account Settings</h2>
-        <button type="button" class="icon-button button-active">
+        <button type="button" class="icon-button button-active" btn-id="close">
             <i class="icon icon-close"></i>
         </button>
     </header>
@@ -10,7 +10,9 @@
         <% profileSettingsData.tabs.forEach(tab=> { %>
             <button
                 class="ui-button <%= profileSettingsData.activeTabId === tab.id ? 'button-active' : 'button-inactive' %>"
-                data-tab-id="<%= tab.id %>" type="button">
+                type="button"
+                profile-settings-nav-id="<%- typeof tab.id==='string' ? tab.id : '' %>"
+            >
                 <%= tab.title %>
             </button>
             <% }) %>
@@ -20,7 +22,8 @@
         <% profileSettingsData.tabs.forEach(tab=> { %>
             <div class="tab-content" <%=profileSettingsData.activeTabId===tab.id ? 'style=display:block;'
                 : 'style=display:none;' %>
-                >
+            profile-settings-tab-id="<%- typeof tab.id==='string' ? tab.id : '' %>"
+            >
                 <%- include(tab.path, tab.data || {}) %>
             </div>
             <% }) %>

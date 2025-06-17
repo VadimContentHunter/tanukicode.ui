@@ -45,4 +45,12 @@
     }
 }
 
-.profile-settings .body--profile-settings--content {}
+.profile-settings .body--profile-settings--content {
+    display: flex;
+    flex-direction: column;
+
+    .tab-content {
+        display: flex;
+        flex-direction: column;
+    }
+}
