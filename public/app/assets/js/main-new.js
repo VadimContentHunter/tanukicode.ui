@@ -12,4 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
             },
         ],
     });
+
+    new ClassToggleMenu({
+        menuSelector: '#nav-main-menu',
+        toggleClass: 'no-active',
+        openButtonSelector: '#btn-main-menu',
+        closeButtonSelector: '.header-mobile-vers button[btn-id="close"]',
+        innerContentSelector: '.main-nav-menus',
+    });
 });
