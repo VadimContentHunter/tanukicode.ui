@@ -117,7 +117,7 @@ class ToggleMenu {
 
     getInnerContentElement() {
         if (!this.#innerContentSelector) return null;
-        return document.querySelector(this.#innerContentSelector);
+        return this.getMenuElement()?.querySelector(this.#innerContentSelector);
     }
 
     _bindTriggers() {
@@ -178,16 +178,8 @@ class ToggleMenu {
         const menu = this.getMenuElement();
         if (!menu) return;
 
-        if (trigger?.toggleClass) {
-            menu.classList.add(trigger.toggleClass);
-        }
-
-        if (trigger?.style) {
-            Object.entries(trigger.style).forEach(([prop, value]) => {
-                menu.style[prop] = value;
-            });
-        } else if (!trigger?.toggleClass) {
-            menu.style.display = 'block';
+        if (trigger instanceof TriggerOptions) {
+            trigger.applyStyleToElement(menu);
         }
     }
 
@@ -195,18 +187,52 @@ class ToggleMenu {
         const menu = this.getMenuElement();
         if (!menu) return;
 
-        menu.style.cssText = '';
+        menu.style = 'display: none';
+    }
 
-        if (trigger && trigger.toggleClass) {
-            menu.classList.remove(trigger.toggleClass);
-        } else {
-            this.#triggers.forEach((t) => {
-                if (t.toggleClass) {
-                    menu.classList.remove(t.toggleClass);
-                }
-            });
-        }
+    /**
+     * Добавляет адаптивный переключатель collapse-класса (на десктопе).
+     * @param {Object} config
+     * @param {string} config.triggerSelector — селектор кнопки
+     * @param {string} config.targetSelector — селектор элемента, которому добавляется collapse
+     * @param {string} [config.collapseClass='collapse']
+     * @param {string} [config.alwaysClass='no-active']
+     * @param {number} [config.breakpoint=1144]
+     */
+    enableResponsiveCollapseToggle({
+        triggerSelector,
+        targetSelector,
+        collapseClass = 'collapse',
+        alwaysClass = 'no-active',
+        breakpoint = 1144,
+    }) {
+        const target = document.querySelector(targetSelector);
+        const triggerElements = document.querySelectorAll(triggerSelector);
+        if (!target || triggerElements.length === 0) return;
 
-        menu.style.display = '';
+        // Убедимся, что alwaysClass всегда на месте
+        target.classList.add(alwaysClass);
+
+        const toggleCollapse = () => {
+            const isMobile = window.innerWidth < breakpoint;
+
+            if (isMobile) {
+                target.classList.remove(collapseClass); // на мобилке всегда удаляем
+            } else {
+                // На десктопе просто переключаем collapse
+                target.classList.toggle(collapseClass);
+            }
+        };
+
+        triggerElements.forEach((el) => {
+            el.addEventListener('click', toggleCollapse);
+        });
+
+        // Удаляем collapse при ресайзе в мобильную ширину
+        window.addEventListener('resize', () => {
+            if (window.innerWidth < breakpoint) {
+                target.classList.remove(collapseClass);
+            }
+        });
     }
 }

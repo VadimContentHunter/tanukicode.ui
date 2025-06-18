@@ -1,37 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // new ProfileMenuToggle({
-    //     menuSelector: '.modal-profile-menu',
-    //     triggers: [
-    //         '#my_profile_photo', // обычный десктопный триггер
-    //         {
-    //             selector: '#mobile-my_profile_photo',
-    //             style: {
-    //                 left: '0',
-    //                 right: 'auto',
-    //             },
-    //         },
-    //         {
-    //             selector: '.header-mobile-vers button[btn-id="close"]',
-    //             type: 'close'
-    //         },
-    //     ],
-    // });
+    document.querySelectorAll('.main-list li').forEach((li) => {
+        const players = li.querySelectorAll('lottie-player');
 
-    // const a = {
-    //     selector: '#my_profile_photo',
-    //     innerContentSelector: null,
-    //     style: { display: block },
-    //     toggleClass: null,
-    //     type: 'open',
-    // };
+        li.addEventListener('mouseenter', () => {
+            players.forEach((p) => p.play());
+        });
 
-    // new ClassToggleMenu({
-    //     menuSelector: '#nav-main-menu',
-    //     toggleClass: 'no-active',
-    //     openButtonSelector: '#btn-main-menu',
-    //     closeButtonSelector: '.header-mobile-vers button[btn-id="close"]',
-    //     innerContentSelector: '.main-nav-menus',
-    // });
+        li.addEventListener('mouseleave', () => {
+            players.forEach((p) => p.stop());
+        });
+    });
 
     new ToggleMenu({
         menuSelector: '.modal-profile-menu', // селектор меню
@@ -46,23 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 type: 'close',
             }),
         ],
-        onOpen(trigger, menuStore) {
-            const menu = this.getMenuElement();
-            if (!menu) return;
-
-            if (trigger instanceof TriggerOptions) {
-                trigger.applyStyleToElement(menu);
-            }
-        },
-        onClose(trigger, clickedInsideInner, menuStore) {
-            const menu = this.getMenuElement();
-            if (!menu) return;
-
-            menu.style = 'display: none';
-        },
     });
 
-    new ToggleMenu({
+    const navMainMenu = new ToggleMenu({
         menuSelector: '#nav-main-menu', // селектор меню
         innerContentSelector: '.main-nav-menus',
         menuStore: new MenuStore({
@@ -79,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }),
         ],
         onOpen(trigger, menuStore) {
-            console.log('Меню открыто через триггер:', trigger);
             const toggleClass = menuStore.getCustomProp('toggleClass');
             const menu = this.getMenuElement();
             if (!(menu instanceof HTMLElement)) return;
@@ -94,32 +57,130 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         },
         onClose(trigger, clickedInsideInner, menuStore) {
-            console.log('Меню закрыто', trigger ? `через триггер ${trigger.selector}` : 'клик вне меню');
-            console.log(menuStore);
             const toggleClass = menuStore.getCustomProp('toggleClass');
             const menu = this.getMenuElement();
             if (!menu) return;
-            if (typeof toggleClass !== "string") {
+            if (typeof toggleClass !== 'string') {
                 return;
             }
 
             if (clickedInsideInner === true) {
-                console.log('Клик был внутри внутреннего контента');
                 menuStore.setOpenState(true);
             } else {
-                console.log('Клик был вне внутреннего контента или innerContentSelector не задан');
                 if (!menu.classList.contains(toggleClass)) {
                     menu.classList.add(toggleClass);
                 }
             }
-
-            // if (menuStore instanceof MenuStore) {
-            //     menuStore.setOpenState(true);
-            // }
-
-            // state.value = false;
-
-            // menu.style.display = 'none';
         },
+    });
+
+    new ToggleMenu({
+        menuSelector: '#modal-voucher', // селектор меню
+        innerContentSelector: '.profile-settings',
+        triggers: [
+            new TriggerOptions({
+                selector: '#modal-voucher button[btn-id="close"]',
+                type: 'close',
+            }),
+            new TriggerOptions({
+                selector: '.profile-navigation button[target="_voucher"]',
+                style: { display: 'flex' },
+            }),
+        ],
+        onClose(trigger, clickedInsideInner, menuStore) {
+            const menu = this.getMenuElement();
+            if (!menu) return;
+
+            if (clickedInsideInner === true) {
+                menuStore.setOpenState(true);
+            } else {
+                menu.style = 'display: none';
+            }
+        },
+    });
+
+    new ToggleMenu({
+        menuSelector: '#modal-account-setting', // селектор меню
+        innerContentSelector: '.profile-settings',
+        triggers: [
+            new TriggerOptions({
+                selector: '#modal-account-setting button[btn-id="close"]',
+                type: 'close',
+            }),
+            new TriggerOptions({
+                selector: '.modal-profile-menu',
+                // style: { display: 'flex' },
+            }),
+        ],
+        onOpen(trigger, menuStore) {},
+        onClose(trigger, clickedInsideInner, menuStore) {
+            const menu = this.getMenuElement();
+            if (!menu) return;
+
+            if (clickedInsideInner === true) {
+                menuStore.setOpenState(true);
+            } else {
+                menu.style = 'display: none';
+            }
+        },
+    });
+
+    setupProfileNavigation({
+        buttonSelector: '.modal-profile-menu .button-menu-item',
+        targetAttr: 'target',
+        mainSelector: '#modal-account-setting',
+        navAttr: 'profile-settings-nav-id',
+        tabAttr: 'profile-settings-tab-id',
+        display: 'flex',
+    });
+
+    setupProfileNavigation({
+        buttonSelector: '#modal-account-setting .head--profile-settings--navigate button',
+        targetAttr: 'profile-settings-nav-id',
+        mainSelector: '#modal-account-setting',
+        navAttr: 'profile-settings-nav-id',
+        tabAttr: 'profile-settings-tab-id',
+        display: 'flex',
+    });
+
+    new ToggleMenu({
+        menuSelector: '.modal-header-lang', // селектор меню
+        triggers: [
+            new TriggerOptions('.additional-nav .icon-lang'),
+            new TriggerOptions({
+                selector: '.header-mobile-vers .icon-lang',
+                style: { left: '0', right: 'auto', display: 'block' },
+            }),
+        ],
+    });
+
+    setupLanguageSwitcher({
+        actionSelector: '.modal-header-lang .lang-data button',
+        langAttr: 'target',
+        url: '/api/set-language',
+        activeClass: 'active',
+        onResponse: (json, lang) => {
+            applyLanguageContent(json, lang);
+        },
+    });
+
+    // new ToggleMenu({
+    //     menuSelector: '#nav-main-menu', // селектор меню
+    //     triggers: [
+    //         new TriggerOptions({
+    //             selector: '#btn-main-menu',
+    //             style: { left: '0', right: 'auto', display: 'block' },
+    //         }),
+    //     ],
+    // });
+
+    // setupResponsiveToggleClick({
+    //     triggerSelector: '#btn-main-menu', // по какому элементу клик
+    //     targetSelector: '#nav-main-menu', // к какому элементу применять классы
+    // });
+
+    setupResponsiveCollapseToggle({
+        triggerSelector: '#btn-main-menu',
+        targetSelector: '#nav-main-menu',
     });
 });
