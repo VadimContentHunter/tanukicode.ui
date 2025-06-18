@@ -1,5 +1,5 @@
 function hideOnOutsideClick(targetSelector, activatorSelector, closeBtnSelector, options = {}) {
-    const { displayNone = true, activeClass = 'active', inactiveClass = 'no-active', innerContentSelector = null } = options;
+    const { displayNone = true, activeClass = '', inactiveClass = '', innerContentSelector = null } = options;
 
     const target = document.querySelector(targetSelector);
     const activators = Array.from(document.querySelectorAll(activatorSelector));
@@ -29,9 +29,13 @@ function hideOnOutsideClick(targetSelector, activatorSelector, closeBtnSelector,
             (!clickedActivator && (!clickedInsideTarget || (clickedInsideTarget && innerContentSelector && !clickedInsideInnerContent)));
 
         if (shouldClose) {
+            if (inactiveClass) target.classList.add(inactiveClass);
+
             if (displayNone) target.style.display = 'none';
-            target.classList.add(inactiveClass);
-            activators.forEach((el) => el.classList.remove(activeClass));
+
+            if (activeClass) {
+                activators.forEach((el) => el.classList.remove(activeClass));
+            }
         }
     });
 }

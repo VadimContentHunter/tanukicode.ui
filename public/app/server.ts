@@ -253,7 +253,7 @@ app.get('/site', async (req, res) => {
             ],
 
             // scripts
-            bodyScripts: ['/js/main.js'],
+            bodyScripts: ['/js/main-new.js'],
         };
 
         const tab_2fa = profileSettingsData.tabs[3].data;

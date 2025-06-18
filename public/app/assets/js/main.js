@@ -1,10 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
     toggleDisplay('.modal-profile-menu', '#my_profile_photo');
+    // toggleDisplay('.modal-profile-menu', '#mobile-my_profile_photo');
+    hideOnOutsideClick('.modal-profile-menu', '#my_profile_photo', '.profile-navigation .button-menu-item');
+
+
+
     toggleDisplay('.modal-header-lang', '.additional-nav .icon-lang');
+    toggleDisplay('.modal-header-lang', '.header-mobile-vers .icon-lang');
     toggleDisplay('#modal-voucher', '.profile-navigation button[target="_voucher"]');
 
-    hideOnOutsideClick('.modal-profile-menu', '#my_profile_photo', '.profile-navigation .button-menu-item');
+    
     hideOnOutsideClick('.modal-header-lang', '.additional-nav .icon-lang', '.modal-header-lang .lang-data button');
+    // setTimeout(() => {
+    //     hideOnOutsideClick('.modal-header-lang', '.additional-nav .icon-lang', '.modal-header-lang .lang-data button');
+    // }, 0);
+    
+    
     hideOnOutsideClick(
         '#modal-account-setting',
         '.modal-profile-menu', // селектор, который открывает модалку
