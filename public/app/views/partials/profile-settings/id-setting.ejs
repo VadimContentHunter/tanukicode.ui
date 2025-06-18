@@ -16,11 +16,12 @@
             </li>
 
             <li>
-                <div class="form-item-select">
+                <!-- select-list-view -->
+                <div class="form-item-select" id="select-country_name">
                     <label for="country_name">Country</label>
                     <div class="default-select">
                         <input type="hidden" name="country_name" value="<%= selectedCountry %>">
-                        <div class="head-select" id="country_name">
+                        <div class="head-select">
                             <p>
                                 <% const country=countries.find(c=> c.code === selectedCountry);
                                     %>
@@ -29,9 +30,9 @@
                             <i class="icon icon-arrow-gray"></i>
                         </div>
 
-                        <div class="body-select" hidden>
+                        <div class="body-select">
                             <div class="search-select">
-                                <input type="text" placeholder="Search">
+                                <input type="text" placeholder="Search" name="country_search">
                                 <i class="icon icon-search"></i>
                             </div>
 
@@ -55,20 +56,21 @@
             </li>
 
             <li>
-                <div class="form-item-select select-search-hidden select-list-view">
-                    <label for="selected_id_type">Document Type</label>
+                <!-- select-list-view -->
+                <div class="form-item-select select-search-hidden" id="select-document_type">
+                    <label for="document_type">Document Type</label>
                     <div class="default-select">
-                        <input type="hidden" name="selected_id_type" value="<%= selectedDocumentType %>">
-                        <div class="head-select" id="selected_id_type">
+                        <input type="hidden" name="document_type" value="<%= selectedDocumentType %>">
+                        <div class="head-select">
                             <p>
                                 <%= selectedDocumentType %>
                             </p>
                             <i class="icon icon-arrow-gray"></i>
                         </div>
 
-                        <div class="body-select" hidden>
+                        <div class="body-select">
                             <div class="search-select">
-                                <input type="text" placeholder="Search">
+                                <input type="text" placeholder="Search" name="document_type_search">
                                 <i class="icon icon-search"></i>
                             </div>
 

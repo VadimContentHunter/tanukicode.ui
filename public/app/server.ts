@@ -203,9 +203,9 @@ app.get('/site', async (req, res) => {
                 '/js/applyLanguageContent.js',
                 '/js/setupLanguageSwitcher.js',
                 '/js/setupResponsiveToggleClick.js',
+                '/js/setupCustomSelect.js',
 
                 '/js/new/ProfileMenuToggle.js',
-                '/js/new/ClassToggleMenu.js',
                 '/js/new/ToggleMenu.js',
             ],
             headPartial: 'partials/head',

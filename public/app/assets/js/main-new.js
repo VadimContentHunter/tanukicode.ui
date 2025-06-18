@@ -164,23 +164,21 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 
-    // new ToggleMenu({
-    //     menuSelector: '#nav-main-menu', // селектор меню
-    //     triggers: [
-    //         new TriggerOptions({
-    //             selector: '#btn-main-menu',
-    //             style: { left: '0', right: 'auto', display: 'block' },
-    //         }),
-    //     ],
-    // });
-
-    // setupResponsiveToggleClick({
-    //     triggerSelector: '#btn-main-menu', // по какому элементу клик
-    //     targetSelector: '#nav-main-menu', // к какому элементу применять классы
-    // });
-
     setupResponsiveCollapseToggle({
         triggerSelector: '#btn-main-menu',
         targetSelector: '#nav-main-menu',
+    });
+
+    document.querySelectorAll('.form-item-select').forEach((container) => {
+        // Генерируем уникальный id для контейнера, если нужно
+        // или используем сам элемент как контейнерSelector (в нашем случае — это элемент, а не селектор строкой)
+
+        setupCustomSelect({
+            containerSelector: container, // передаем сам DOM элемент
+            headerSelector: '.head-select',
+            itemsSelector: '.body-select .content-select .item',
+            inputSelector: 'input[type="hidden"]', // или по name, если нужно
+            openClass: 'select-list-view',
+        });
     });
 });
