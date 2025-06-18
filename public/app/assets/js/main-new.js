@@ -181,4 +181,6 @@ document.addEventListener('DOMContentLoaded', () => {
             openClass: 'select-list-view',
         });
     });
+
+    new Carousel('.block-carousel');
 });

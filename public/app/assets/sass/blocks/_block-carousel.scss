@@ -11,13 +11,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    z-index: 20;
 }
 
 .block-carousel .block-carousel-controls {
     position: absolute;
     padding: 0px 8px;
     width: 100%;
-    z-index: 1;
+    z-index: 10;
     pointer-events: none;
 
     display: flex;
@@ -56,7 +58,7 @@
     right: 0;
     bottom: 0px;
 
-    z-index: 1;
+    z-index: 10;
 
     display: flex;
     justify-content: center;
@@ -75,7 +77,7 @@
         display: flex;
 
         &.block-carousel-button-active {
-            width: 40px;
+            width: 60px;
             opacity: 1;
         }
     }
@@ -84,12 +86,20 @@
 .block-carousel .block-carousel-wrapper {
     overflow: hidden;
     padding: 0px 30px 0px 0px;
+    touch-action: pan-y;
 
     display: flex;
     flex-direction: column;
 
+    z-index: 5;
+
     ul.block-carousel-list {
-        @include flex-gap(8px, row);
+        // @include flex-gap(8px, row);
+        display: flex;
+        flex-direction: row;
+
+        transition: transform 0.3s ease;
+        will-change: transform;
         // height: 122px;
         // width: 100%;
 
@@ -97,6 +107,7 @@
             flex: 0 0 calc(100% / 4);
             /* каждый слайд — 25% ширины */
             box-sizing: border-box;
+            margin-right: 8px;
 
             &>a {
                 height: 100%;

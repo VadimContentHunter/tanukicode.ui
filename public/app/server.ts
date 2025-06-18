@@ -206,6 +206,7 @@ app.get('/site', async (req, res) => {
                 '/js/setupLanguageSwitcher.js',
                 '/js/setupResponsiveToggleClick.js',
                 '/js/setupCustomSelect.js',
+                '/js/setupCarousel.js',
 
                 '/js/new/ProfileMenuToggle.js',
                 '/js/new/ToggleMenu.js',

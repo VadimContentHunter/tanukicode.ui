@@ -24,6 +24,14 @@ $active-icons: (
 
     transition: width 0.3s ease;
 
+    &.no-active {
+        pointer-events: none;
+
+        .header-nav {
+            pointer-events: all;
+        }
+    }
+
     .main-nav-menus {
         @include flex-gap(24px, column);
     }
