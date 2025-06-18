@@ -8,6 +8,7 @@
 @use "./main-nav";
 @use "./header";
 @use "./footer";
+
 @use "./blocks/block-balance";
 @use "./blocks/block-assets";
 @use "./blocks/block-carousel";
@@ -23,7 +24,10 @@
 @use './profile-settings/password-setting';
 @use './profile-settings/t2fa-setting';
 @use './profile-settings/_id-setting.scss';
-@use './media';
+
+@use './_media_1144';
+@use './_media_600';
+
 
 * {
     font-family: "DM Sans", -apple-system, BlinkMacSystemFont,

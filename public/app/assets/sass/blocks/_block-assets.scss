@@ -93,12 +93,13 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    gap: 12px;
 
     .price-info {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 12px;
+        flex-direction: row;
 
         .price-asset strong {
             font-size: 1.4rem;

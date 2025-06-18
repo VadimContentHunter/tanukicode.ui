@@ -125,7 +125,40 @@
         }
 
         .main-blocks {
-            padding-top: 64px;
+            padding-top: 100px;
+        }
+    }
+}
+
+@media screen and (max-width: 1144px) {
+    .primary-balance header.header-balance {
+        flex-direction: column
+    }
+
+    .primary-balance .balance-list {
+        max-width: 100%;
+        display: grid !important;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 16px;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .block-carousel {
+        .block-carousel-wrapper {
+            padding: 0px 12px 0px 0px;
+        }
+
+        .block-carousel-list>li {
+            flex: 0 0 33% !important;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .block-carousel {
+        .block-carousel-list>li {
+            flex: 0 0 50% !important;
         }
     }
 }
