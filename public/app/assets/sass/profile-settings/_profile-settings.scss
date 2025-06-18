@@ -1,6 +1,10 @@
 @use "../vars" as *;
 
 .profile-settings {
+    max-height: 100vh;
+    overflow: hidden;
+    margin: 16px;
+
     background-color: var(--color-bg-base);
     max-width: 640px;
     width: 100%;
@@ -13,39 +17,45 @@
 }
 
 .profile-settings .head--profile-settings {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-gap(32px, column);
 
-    h2 {
-        @include text-style(normal, 24px, 100%, var(--color-ui-active), 700);
-    }
+    .head-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
 
-    button {
-        & .icon-close {
-            transition: transform 0.3s ease;
+        h2 {
+            @include text-style(normal, 24px, 100%, var(--color-ui-active), 700);
         }
 
-        &:hover .icon-close {
-            transform: rotate(90deg);
+        button {
+            & .icon-close {
+                transition: transform 0.3s ease;
+            }
+
+            &:hover .icon-close {
+                transform: rotate(90deg);
+            }
         }
     }
-}
 
-.profile-settings .head--profile-settings--navigate {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    overflow-x: auto;
-    padding-bottom: 6px;
+    .head-navigate {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        overflow-x: auto;
+        padding-bottom: 6px;
 
-    &>button {
-        // transition: background .2s;
+        &>button {
+            // transition: background .2s;
+        }
     }
 }
 
 .profile-settings .body--profile-settings--content {
+    overflow-y: auto;
+
     display: flex;
     flex-direction: column;
 

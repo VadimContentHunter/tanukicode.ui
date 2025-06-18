@@ -1512,6 +1512,9 @@ footer .footer-information .information-table > form > input {
 }
 
 .profile-settings {
+  max-height: 100vh;
+  overflow: hidden;
+  margin: 16px;
   background-color: var(--color-bg-base);
   max-width: 640px;
   width: 100%;
@@ -1524,25 +1527,29 @@ footer .footer-information .information-table > form > input {
 
 .profile-settings .head--profile-settings {
   display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.profile-settings .head--profile-settings .head-title {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-.profile-settings .head--profile-settings h2 {
+.profile-settings .head--profile-settings .head-title h2 {
   font-style: normal;
   font-size: 24px;
   line-height: 100%;
   color: var(--color-ui-active);
   font-weight: 700;
 }
-.profile-settings .head--profile-settings button .icon-close {
+.profile-settings .head--profile-settings .head-title button .icon-close {
   transition: transform 0.3s ease;
 }
-.profile-settings .head--profile-settings button:hover .icon-close {
+.profile-settings .head--profile-settings .head-title button:hover .icon-close {
   transform: rotate(90deg);
 }
-
-.profile-settings .head--profile-settings--navigate {
+.profile-settings .head--profile-settings .head-navigate {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -1550,6 +1557,7 @@ footer .footer-information .information-table > form > input {
   padding-bottom: 6px;
 }
 .profile-settings .body--profile-settings--content {
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
 }
