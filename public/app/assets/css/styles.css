@@ -2019,6 +2019,14 @@ footer .footer-information .information-table > form > input {
     padding-top: 100px;
   }
 }
+@media screen and (max-width: 1400px) {
+  footer .footer-navigation .footer-nav-list {
+    justify-items: center;
+  }
+  footer .footer-navigation .footer-nav-list li {
+    align-items: center;
+  }
+}
 @media screen and (max-width: 1144px) {
   .primary-balance header.header-balance {
     flex-direction: column;
@@ -2041,6 +2049,109 @@ footer .footer-information .information-table > form > input {
 @media screen and (max-width: 800px) {
   .block-carousel .block-carousel-list > li {
     flex: 0 0 50% !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .default-button {
+    height: 40px;
+    padding: 0 16px;
+    font-size: 12px;
+  }
+  .primary-balance {
+    padding: 16px;
+  }
+  .primary-balance .balance-info h3 {
+    font-size: 16px !important;
+    line-height: 120% !important;
+  }
+  .primary-balance .balance-info h2 {
+    font-size: 28px !important;
+  }
+  .primary-balance .balance-info .balance-usd {
+    font-size: 16px !important;
+    line-height: 120% !important;
+  }
+  .primary-balance .balance-actions button {
+    width: 100%;
+  }
+  .block-advantages .main-image {
+    min-width: 100%;
+  }
+  .block-advantages .block-advantages-content {
+    min-width: 100%;
+  }
+  .block-information h2 {
+    font-size: 32px !important;
+    line-height: 120% !important;
+  }
+  .block-information .main-list {
+    grid-template-columns: 1fr 1fr;
+  }
+  .block-information .main-list h2 {
+    font-size: 16px !important;
+    line-height: 120% !important;
+  }
+  .block-information .main-list p {
+    font-size: 12px !important;
+    line-height: 20px !important;
+  }
+  .asset-items .asset-image {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .asset-items .asset-info p {
+    font-size: 12px !important;
+    line-height: 16px !important;
+  }
+  .asset-items .asset-info .top-asset-info h2 {
+    font-size: 14px !important;
+  }
+  .asset-items .asset-info .top-asset-info p {
+    font-size: 10px !important;
+  }
+  .asset-items header {
+    padding: 16px;
+  }
+  .asset-items .body-asset {
+    flex-direction: row;
+    padding: 16px;
+    gap: 16px;
+  }
+  .asset-items .body-asset .price-info {
+    flex-direction: column;
+    gap: 8px;
+    justify-content: space-evenly;
+  }
+  .asset-items .body-asset .price-info strong {
+    font-size: 14px !important;
+    line-height: 18px !important;
+  }
+  .asset-items .body-asset .price-info p {
+    font-size: 12px !important;
+  }
+  .asset-items .body-asset .price-info .icon {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  .asset-items .body-asset .price-info .gain-asset {
+    gap: 4px !important;
+  }
+  .asset-items .body-asset .chart-info {
+    height: 60px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .block-carousel {
+    padding: 16px 0px;
+  }
+  .block-carousel .block-carousel-controls {
+    display: none;
+  }
+  .block-carousel .block-carousel-wrapper {
+    padding: 0px 0px 0px 0px;
+  }
+  .block-carousel .block-carousel-list > li {
+    flex: 0 0 100% !important;
   }
 }
 @media screen and (max-width: 600px) {

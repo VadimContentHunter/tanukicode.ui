@@ -25,8 +25,9 @@
 @use './profile-settings/t2fa-setting';
 @use './profile-settings/_id-setting.scss';
 
-@use './_media_1144';
-@use './_media_600';
+@use './media_1144';
+@use './media_600';
+@use './media-profile-settings';
 
 
 * {
