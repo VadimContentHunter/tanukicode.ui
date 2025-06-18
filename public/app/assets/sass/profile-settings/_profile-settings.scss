@@ -1,7 +1,7 @@
 @use "../vars" as *;
 
 .profile-settings {
-    max-height: 100vh;
+    max-height: calc(100% - 16px);
     overflow: hidden;
     margin: 16px;
 

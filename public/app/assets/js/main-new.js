@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     setupProfileNavigation({
-        buttonSelector: '#modal-account-setting .head--profile-settings--navigate button',
+        buttonSelector: '#modal-account-setting .head--profile-settings button',
         targetAttr: 'profile-settings-nav-id',
         mainSelector: '#modal-account-setting',
         navAttr: 'profile-settings-nav-id',

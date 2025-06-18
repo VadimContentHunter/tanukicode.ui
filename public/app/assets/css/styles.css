@@ -1512,7 +1512,7 @@ footer .footer-information .information-table > form > input {
 }
 
 .profile-settings {
-  max-height: 100vh;
+  max-height: calc(100% - 16px);
   overflow: hidden;
   margin: 16px;
   background-color: var(--color-bg-base);
