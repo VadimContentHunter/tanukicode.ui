@@ -206,6 +206,7 @@ app.get('/site', async (req, res) => {
 
                 '/js/new/ProfileMenuToggle.js',
                 '/js/new/ClassToggleMenu.js',
+                '/js/new/ToggleMenu.js',
             ],
             headPartial: 'partials/head',
 
