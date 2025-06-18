@@ -2,13 +2,6 @@
 @use "./vars" as *;
 
 @media screen and (max-width: 600px) {
-    .default-button {
-        height: 40px;
-        padding: 0 16px;
-        font-size: 12px;
-    }
-
-
     .primary-balance {
         padding: 16px;
 
@@ -30,6 +23,11 @@
         }
 
         .balance-actions {
+            .default-button {
+                padding: 0 16px;
+                font-size: 12px;
+            }
+
             & button {
                 width: 100%;
             }

@@ -1,162 +1,110 @@
 @use "sass:color";
 @use "./vars" as *;
 
-@media screen and (max-width: 600px) {
-    .default-button {
-        height: 40px;
-        padding: 0 16px;
-        font-size: 12px;
-    }
-
-
-    .primary-balance {
+@media screen and (max-width: 1144px) {
+    .profile-settings {
         padding: 16px;
 
+        .head--profile-settings {
+            gap: 24px;
+        }
 
-        .balance-info {
-            h3 {
-                font-size: 16px !important;
-                line-height: 120% !important;
-            }
-
+        .head-title {
             h2 {
-                font-size: 28px !important;
-            }
-
-            .balance-usd {
-                font-size: 16px !important;
+                font-size: 20px !important;
                 line-height: 120% !important;
             }
         }
 
-        .balance-actions {
-            & button {
-                width: 100%;
+        .icon-button {
+            padding: 6px;
+
+            .icon {
+                width: 18px;
+                height: 18px;
             }
         }
     }
+}
 
-    .block-advantages {
-        .main-image {
-            min-width: 100%;
-        }
-
-        .block-advantages-content {
-            min-width: 100%;
-        }
-    }
-
-    .block-information {
+@media screen and (max-width: 600px) {
+    .twofa {
         h2 {
-            font-size: 32px !important;
+            font-size: 16px !important;
             line-height: 120% !important;
         }
 
-        .main-list {
-            grid-template-columns: 1fr 1fr;
+        p {
+            font-size: 14px;
+            line-height: 18px;
+        }
 
-            h2 {
-                font-size: 16px !important;
-                line-height: 120% !important;
-            }
+        .qr-image {
+            max-width: 188px !important;
+        }
 
-            p {
-                font-size: 12px !important;
-                line-height: 20px !important;
+        .code-qr {
+            .code-qr-content {
+                .form-list-one-cell {
+                    gap: 0;
+                    justify-content: space-between;
+
+                    input {
+                        width: 40px;
+                        height: 60px;
+                    }
+                }
             }
         }
     }
 
-    .asset-items {
-        .asset-image {
-            width: 40px !important;
-            ;
-            height: 40px !important;
-            ;
+    .referrals-setting {
+        h2 {
+            font-size: 16px !important;
+            line-height: 120% !important;
         }
 
-        .asset-info {
-            p {
-                font-size: 12px !important;
-                ;
-                line-height: 16px !important;
-                ;
-            }
+        p {
+            font-size: 14px !important;
+            line-height: 18px !important;
+        }
 
-            .top-asset-info {
-                h2 {
-                    font-size: 14px !important;
-                    ;
-                }
+        .content-invite {
+            padding: 16px !important;
+        }
+    }
 
-                p {
-                    font-size: 10px !important;
-                    ;
-                }
+    .profile-settings {
+        .head-navigate {
+            gap: 20px;
+
+            .ui-button {
+                padding: 14px 14px;
             }
         }
+    }
 
-        header {
-            padding: 16px;
-        }
+    .account-setting {
+        .avatar-account {
+            justify-content: center;
 
-        .body-asset {
-            flex-direction: row;
-            padding: 16px;
-            gap: 16px;
-
-            .price-info {
-                flex-direction: column;
+            .action-avatar {
                 gap: 8px;
-                justify-content: space-evenly;
-
-                strong {
-                    font-size: 14px !important;
-                    ;
-                    line-height: 18px !important;
-                    ;
-                }
-
-                p {
-                    font-size: 12px !important;
-                    ;
-                }
-
-                .icon {
-                    width: 16px !important;
-                    ;
-                    height: 16px !important;
-                    ;
-                }
-
-                .gain-asset {
-                    gap: 4px !important;
-                    ;
-                }
-            }
-
-            .chart-info {
-                height: 60px;
             }
         }
 
     }
 }
 
-@media screen and (max-width: 600px) {
-    .block-carousel {
-        padding: 16px 0px;
+@media screen and (max-width: 400px) {
+    .account-setting {
+        .action-avatar {
+            flex: 1;
+            flex-direction: column;
 
-        .block-carousel-controls {
-            display: none;
-        }
-
-        .block-carousel-wrapper {
-            padding: 0px 0px 0px 0px;
-        }
-
-        .block-carousel-list>li {
-            flex: 0 0 100% !important;
+            .default-button {
+                width: 100%;
+            }
         }
     }
 }
