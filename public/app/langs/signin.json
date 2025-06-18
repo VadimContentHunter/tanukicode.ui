@@ -1,0 +1,28 @@
+{
+    "signin": {
+        "en": {
+            ".body-auth-info h2": "We make it easy to buy and sell cryptocurrency",
+            ".body-auth-info p": "Crypto Asset Exchange",
+            ".footer-head-info h2": "Sign In now and get down your trading Fees to Zero!",
+            ".footer-time-info h2": "Event end time",
+            ".head-auth-content h1": "Sign in to <span>TanukiCode</span>",
+            "label[for='login_email']": "Email",
+            "label[for='login_password']": "Password",
+            "label.form-item-check span": "By signing in I agree that I am 18 years of age or older, to the <a href=\"terms\">Terms of service</a>.",
+            "#update_username span": "Sign in",
+            ".message-auth p": "Do you already have an account? <a href=\"signup\">Sign up</a>"
+        },
+        "ru": {
+            ".body-auth-info h2": "Мы упрощаем покупку и продажу криптовалюты",
+            ".body-auth-info p": "Биржа криптоактивов",
+            ".footer-head-info h2": "Войдите сейчас и получите нулевые торговые комиссии!",
+            ".footer-time-info h2": "Время окончания события",
+            ".head-auth-content h1": "Войти в <span>TanukiCode</span>",
+            "label[for='login_email']": "Эл. почта",
+            "label[for='login_password']": "Пароль",
+            "label.form-item-check span": "Авторизуясь, я подтверждаю, что мне 18 лет или больше, и я принимаю <a href=\"terms\">Условия обслуживания</a>.",
+            "#update_username span": "Войти",
+            ".message-auth p": "У вас уже есть аккаунт? <a href=\"signup\">Зарегистрироваться</a>"
+        }
+    }
+}

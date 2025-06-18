@@ -79,9 +79,9 @@
         </div>
 
         <!-- Подключение JS-файлов -->
-        <% (typeof bodyScripts !== 'undefined' ? headScripts : []).forEach(function(src) { %>
+        <% (typeof bodyScripts !=='undefined' ? bodyScripts : []).forEach(function(src) { %>
             <script src="<%= src %>"></script>
-        <% }); %>
+            <% }); %>
 
     </body>
 

@@ -86,6 +86,7 @@ app.get('/signin', async (req, res) => {
     const dataGeneral = {
         // для head
         title: 'Заголовок страницы',
+        headScripts: ['/js/applyLanguageContent.js', '/js/setupLanguageSwitcher.js', '/js/new/ToggleMenu.js'],
         headPartial: 'partials/head-auth',
 
         // для Спрайтов
@@ -101,7 +102,7 @@ app.get('/signin', async (req, res) => {
         blockForm: 'partials/signin-form',
 
         // scripts
-        scripts: ['/js/test.js'],
+        bodyScripts: ['/js/main-auth.js'],
     };
 
     await ejsRenderer.renderMultipleFiles([
@@ -123,6 +124,7 @@ app.get('/signup', async (req, res) => {
     const dataGeneral = {
         // для head
         title: 'Заголовок страницы',
+        headScripts: ['/js/applyLanguageContent.js', '/js/setupLanguageSwitcher.js', '/js/new/ToggleMenu.js'],
         headPartial: 'partials/head-auth',
 
         // для Спрайтов
@@ -138,7 +140,7 @@ app.get('/signup', async (req, res) => {
         blockForm: 'partials/signup-form',
 
         // scripts
-        scripts: ['/js/test.js'],
+        bodyScripts: ['/js/main-auth.js'],
     };
 
     await ejsRenderer.renderMultipleFiles([

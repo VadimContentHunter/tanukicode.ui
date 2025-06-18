@@ -1,0 +1,32 @@
+{
+    "signup": {
+        "en": {
+            ".body-auth-info h2": "We make it easy to buy and sell cryptocurrency",
+            ".body-auth-info p": "Crypto Asset Exchange",
+            ".footer-head-info h2": "Sign Up now and get down your trading Fees to Zero!",
+            ".footer-time-info h2": "Event end time",
+            ".head-auth-content h1": "Sign up to <span>TanukiCode</span>",
+            "label[for='username']": "Username",
+            "label[for='login_email']": "Email",
+            "label[for='password']": "Password",
+            "label[for='re_password']": "Confirm Password",
+            "label.form-item-check span": "By signing up I agree that I am 18 years of age or older, to the <a href=\"terms\">Terms of service</a>.",
+            "#update_username span": "Sign up",
+            ".message-auth p": "Do you already have an account? <a href=\"signin\">Sign in</a>"
+        },
+        "ru": {
+            ".body-auth-info h2": "Мы упрощаем покупку и продажу криптовалюты",
+            ".body-auth-info p": "Биржа криптоактивов",
+            ".footer-head-info h2": "Зарегистрируйтесь сейчас и получите нулевые торговые комиссии!",
+            ".footer-time-info h2": "Время окончания события",
+            ".head-auth-content h1": "Зарегистрироваться на <span>TanukiCode</span>",
+            "label[for='username']": "Имя пользователя",
+            "label[for='login_email']": "Эл. почта",
+            "label[for='password']": "Пароль",
+            "label[for='re_password']": "Подтверждение пароля",
+            "label.form-item-check span": "Регистрируясь, я подтверждаю, что мне 18 лет или больше, и я принимаю <a href=\"terms\">Условия обслуживания</a>.",
+            "#update_username span": "Зарегистрироваться",
+            ".message-auth p": "У вас уже есть аккаунт? <a href=\"signin\">Войти</a>"
+        }
+    }
+}
