@@ -1,0 +1,64 @@
+@use "sass:color";
+@use "./vars" as *;
+
+@media screen and (max-width: 1144px) {
+    .auth {
+        flex-wrap: nowrap !important;
+        align-items: stretch !important;
+        flex-direction: column !important;
+
+        .auth-info {
+            flex: 0;
+            max-width: 100%;
+            min-width: 100%;
+            padding: 24px;
+            gap: 24px;
+
+            .body-auth-info {
+                display: none
+            }
+
+            .footer-auth-info {
+                gap: 16px;
+
+                .footer-head-info {
+                    .footer-image {
+                        display: none
+                    }
+
+                }
+
+                .footer-time-info {
+                    gap: 16px;
+                }
+            }
+        }
+
+        .auth-main {
+            .auth-content .head-auth-content h1 {
+                font-size: 24px;
+                line-height: 31px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .footer-head-info>h2 {
+        font-size: 20px !important;
+        line-height: 120% !important;
+    }
+
+    .footer-time-info>h2 {
+        font-size: 14px !important;
+        line-height: 120% !important;
+    }
+
+    .auth-main {
+        max-width: 100% !important;
+        min-width: 100% !important;
+    }
+
+}
+
+@media screen and (max-width: 400px) {}
