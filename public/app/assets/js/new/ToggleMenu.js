@@ -14,7 +14,6 @@ class TriggerOptions {
 
     _initFromString(selector) {
         this.selector = selector;
-        this.innerContentSelector = null;
         this.style = { ...TriggerOptions.defaultStyle };
         this.toggleClass = null;
         this.type = 'toggle'; // по умолчанию
@@ -22,7 +21,6 @@ class TriggerOptions {
 
     _initFromObject(options) {
         this.selector = options.selector;
-        this.innerContentSelector = options.innerContentSelector ?? null;
         this.style = options.style ? { ...TriggerOptions.defaultStyle, ...options.style } : { ...TriggerOptions.defaultStyle };
         this.toggleClass = options.toggleClass ?? null;
         this.type = this._validateType(options.type);
@@ -34,15 +32,61 @@ class TriggerOptions {
         }
         return 'toggle'; // по умолчанию
     }
+
+    /**
+     * Применяет стили к DOM-элементу
+     * @param {HTMLElement} element
+     */
+    applyStyleToElement(element) {
+        if (!(element instanceof HTMLElement)) return;
+
+        Object.entries(this.style).forEach(([prop, value]) => {
+            element.style[prop] = value;
+        });
+    }
+
+    hasToggleClass() {
+        return typeof this.toggleClass === 'string' && this.toggleClass.trim() !== '';
+    }
+}
+
+class MenuStore {
+    #isOpen = false;
+    #customProps = {};
+
+    constructor({ isOpen = false, ...rest } = {}) {
+        this.#isOpen = isOpen;
+        this.#customProps = rest; // Сохраняем всё остальное
+    }
+
+    setOpenState(value) {
+        if (typeof value !== 'boolean') {
+            console.error('MenuStore: значение должно быть boolean');
+            return;
+        }
+        this.#isOpen = value;
+    }
+
+    getOpenState() {
+        return this.#isOpen;
+    }
+
+    getCustomProp(key) {
+        return this.#customProps[key];
+    }
+
+    setCustomProp(key, value) {
+        this.#customProps[key] = value;
+    }
 }
 
 class ToggleMenu {
     #menuSelector;
     #innerContentSelector;
-    #triggers; // массив объектов TriggerOptions
-    #isOpen = false;
+    #triggers;
+    #menuStore;
 
-    constructor({ menuSelector, triggers, innerContentSelector = null, onOpen = null, onClose = null }) {
+    constructor({ menuSelector, triggers, innerContentSelector = null, onOpen = null, onClose = null, menuStore = new MenuStore() }) {
         if (typeof menuSelector !== 'string') {
             throw new TypeError('menuSelector должен быть строкой');
         }
@@ -58,7 +102,8 @@ class ToggleMenu {
         }
         this.#triggers = triggers.map((t) => new TriggerOptions(t));
 
-        // Присваиваем коллбеки или дефолтные методы
+        this.#menuStore = menuStore;
+
         this._onOpen = typeof onOpen === 'function' ? onOpen.bind(this) : this._defaultOpen.bind(this);
         this._onClose = typeof onClose === 'function' ? onClose.bind(this) : this._defaultClose.bind(this);
 
@@ -81,19 +126,25 @@ class ToggleMenu {
             if (!el) return;
 
             el.addEventListener('click', () => {
+                const store = this.#menuStore;
+                const isOpen = store.getOpenState();
+
                 if (trigger.type === 'open') {
-                    this._onOpen(trigger);
-                    this.#isOpen = true;
+                    if (isOpen) return; // уже открыто — ничего не делать
+                    store.setOpenState(true);
+                    this._onOpen(trigger, store);
                 } else if (trigger.type === 'close') {
-                    this._onClose(trigger);
-                    this.#isOpen = false;
+                    if (!isOpen) return; // уже закрыто — ничего не делать
+                    store.setOpenState(false);
+                    this._onClose(trigger, null, store);
                 } else if (trigger.type === 'toggle') {
-                    if (this.#isOpen) {
-                        this._onClose(trigger);
-                        this.#isOpen = false;
+                    const newState = !isOpen;
+                    store.setOpenState(newState);
+
+                    if (newState) {
+                        this._onOpen(trigger, store);
                     } else {
-                        this._onOpen(trigger);
-                        this.#isOpen = true;
+                        this._onClose(trigger, null, store);
                     }
                 }
             });
@@ -103,41 +154,43 @@ class ToggleMenu {
     _bindOutsideClick() {
         document.addEventListener('click', (event) => {
             const menu = this.getMenuElement();
-            if (!menu || !this.#isOpen) return;
+            if (!menu || !this.#menuStore.getOpenState()) return;
 
-            if (!menu.contains(event.target)) {
-                const clickedOnTrigger = this.#triggers.some((trigger) => {
-                    const el = document.querySelector(trigger.selector);
-                    return el && el.contains(event.target);
-                });
+            const clickedOnTrigger = this.#triggers.some((trigger) => {
+                const el = document.querySelector(trigger.selector);
+                return el && el.contains(event.target);
+            });
+            if (clickedOnTrigger) return;
 
-                if (!clickedOnTrigger) {
-                    this._onClose(null);
-                    this.#isOpen = false;
-                }
+            let clickedInsideInner = null;
+
+            if (this.#innerContentSelector) {
+                const inner = this.getInnerContentElement();
+                clickedInsideInner = inner?.contains(event.target) ?? false;
             }
+
+            this.#menuStore.setOpenState(false);
+            this._onClose(null, clickedInsideInner, this.#menuStore);
         });
     }
 
-    // Дефолтная реализация открытия меню
     _defaultOpen(trigger) {
         const menu = this.getMenuElement();
         if (!menu) return;
 
-        if (trigger.toggleClass) {
+        if (trigger?.toggleClass) {
             menu.classList.add(trigger.toggleClass);
         }
 
-        if (trigger.style) {
+        if (trigger?.style) {
             Object.entries(trigger.style).forEach(([prop, value]) => {
                 menu.style[prop] = value;
             });
-        } else if (!trigger.toggleClass) {
+        } else if (!trigger?.toggleClass) {
             menu.style.display = 'block';
         }
     }
 
-    // Дефолтная реализация закрытия меню
     _defaultClose(trigger) {
         const menu = this.getMenuElement();
         if (!menu) return;
@@ -147,7 +200,6 @@ class ToggleMenu {
         if (trigger && trigger.toggleClass) {
             menu.classList.remove(trigger.toggleClass);
         } else {
-            // Если trigger === null, убираем toggleClass у всех триггеров
             this.#triggers.forEach((t) => {
                 if (t.toggleClass) {
                     menu.classList.remove(t.toggleClass);

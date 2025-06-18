@@ -39,7 +39,7 @@
         top: 0;
         left: 0;
         height: 100%;
-        z-index: 300;
+        z-index: 100;
         border-right: none;
 
         .header-nav {
@@ -64,7 +64,7 @@
             width: 100%;
             height: 100%;
             background: var(--color-overlay-dark);
-            z-index: 305;
+            z-index: 101;
 
             transform: translateX(0);
             opacity: 1;
@@ -79,7 +79,7 @@
             padding: 32px 20px;
             width: 100%;
             height: 100%;
-            z-index: 310;
+            z-index: 102;
             background-color: var(--color-bg-base);
 
             .header-mobile-vers {

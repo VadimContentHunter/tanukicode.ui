@@ -1340,7 +1340,7 @@ footer .footer-information .information-table > form > input {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 100;
+  z-index: 300;
 }
 .modal-wrappers > * {
   pointer-events: auto;
@@ -1351,7 +1351,7 @@ footer .footer-information .information-table > form > input {
   top: 0px;
   right: 0px;
   margin: 88px var(--global-padding-side);
-  z-index: 101;
+  z-index: 301;
 }
 
 .modal-wrappers .modal-profile-settings {
@@ -1361,7 +1361,7 @@ footer .footer-information .information-table > form > input {
   width: 100%;
   height: 100%;
   background-color: var(--color-overlay-dark);
-  z-index: 102;
+  z-index: 302;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1372,7 +1372,7 @@ footer .footer-information .information-table > form > input {
   top: 0px;
   right: 0px;
   margin: 88px var(--global-padding-side);
-  z-index: 103;
+  z-index: 303;
 }
 
 .lang-curr-modal {
@@ -1859,7 +1859,7 @@ footer .footer-information .information-table > form > input {
     top: 0;
     left: 0;
     height: 100%;
-    z-index: 300;
+    z-index: 100;
     border-right: none;
   }
   .main-nav .header-nav {
@@ -1882,7 +1882,7 @@ footer .footer-information .information-table > form > input {
     width: 100%;
     height: 100%;
     background: var(--color-overlay-dark);
-    z-index: 305;
+    z-index: 101;
     transform: translateX(0);
     opacity: 1;
     pointer-events: all;
@@ -1895,7 +1895,7 @@ footer .footer-information .information-table > form > input {
     padding: 32px 20px;
     width: 100%;
     height: 100%;
-    z-index: 310;
+    z-index: 102;
     background-color: var(--color-bg-base);
   }
   .main-nav .main-nav-menus .header-mobile-vers {
