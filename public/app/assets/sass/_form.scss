@@ -44,14 +44,17 @@
     }
 }
 
-%baseInput {
+%baseInputWrapper {
     background: var(--color-white);
     border: 1px solid var(--color-ui-muted);
 
     width: 100%;
     border-radius: var(--radius-base);
     padding: 16px 16px;
+}
 
+%baseInput {
+    @extend %baseInputWrapper;
     display: flex;
 
     @include text-style(normal, 14px, 100%, var(--color-ui-active), 700);
@@ -80,7 +83,21 @@
 .form-item-select {
     @extend %baseItem;
 
-    .default-select {}
+    &.select-search-hidden {
+        .search-select {
+            display: none;
+        }
+    }
+
+    &.select-list-view {
+        .default-select .body-select {
+            display: flex !important;
+        }
+    }
+
+    .default-select {
+        position: relative;
+    }
 
     .default-select .head-select {
         position: relative;
@@ -97,6 +114,8 @@
             text-overflow: ellipsis;
             overflow: hidden;
             white-space: nowrap;
+
+            @include text-style(normal, 14px, 120%, var(--color-ui-active), 700);
         }
 
         &>.icon {
@@ -105,7 +124,65 @@
         }
     }
 
-    .default-select .body-select {}
+    .default-select .body-select {
+        @extend %baseInputWrapper;
+        padding: 0px;
+
+        cursor: pointer;
+        position: absolute;
+        margin-top: 8px;
+        overflow: hidden;
+        z-index: 303;
+
+        display: none;
+        flex-direction: column;
+
+        // &[hidden] {
+        //     display: none;
+        // }
+
+        .search-select {
+            width: 100%;
+            padding: 16px 16px;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            input {
+                width: 100%;
+                height: 100%;
+
+                @include text-style(normal, 16px, 120%, var(--color-inactive), 400);
+            }
+
+        }
+
+        .content-select {
+            max-height: 315px;
+            overflow-y: auto;
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+
+            .item[role="option"] {
+                cursor: pointer;
+                user-select: none;
+                display: flex;
+                align-items: center;
+
+                padding: 16px 16px;
+                width: 100%;
+                height: 100%;
+                @include text-style(normal, 16px, 120%, var(--color-ui-active), 500);
+
+                &:hover {
+                    background: var(--color-bg-light)
+                }
+            }
+        }
+    }
 }
 
 .form-item-check {
