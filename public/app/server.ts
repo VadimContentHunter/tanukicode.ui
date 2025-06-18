@@ -203,6 +203,8 @@ app.get('/site', async (req, res) => {
                 '/js/applyLanguageContent.js',
                 '/js/setupLanguageSwitcher.js',
                 '/js/setupResponsiveToggleClick.js',
+
+                '/js/new/ProfileMenuToggle.js',
             ],
             headPartial: 'partials/head',
 
