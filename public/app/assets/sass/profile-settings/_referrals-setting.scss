@@ -154,7 +154,7 @@
     justify-content: space-between;
 
     h2 {
-        @include text-style(normal, 20px, 120%, var(--color-ui-active), 700);
+        @include text-style(normal, 20px, auto, var(--color-ui-active), 700);
     }
 
     p {

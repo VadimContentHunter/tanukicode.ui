@@ -86,7 +86,7 @@ app.get('/signin', async (req, res) => {
     const dataGeneral = {
         // для head
         title: 'Заголовок страницы',
-        headScripts: ['/js/applyLanguageContent.js', '/js/setupLanguageSwitcher.js', '/js/new/ToggleMenu.js'],
+        headScripts: ['/js/applyLanguageContent.js', '/js/setupLanguageSwitcher.js', '/js/new/ToggleMenu.js', '/js/setupThemeToggle.js'],
         headPartial: 'partials/head-auth',
 
         // для Спрайтов
@@ -124,7 +124,7 @@ app.get('/signup', async (req, res) => {
     const dataGeneral = {
         // для head
         title: 'Заголовок страницы',
-        headScripts: ['/js/applyLanguageContent.js', '/js/setupLanguageSwitcher.js', '/js/new/ToggleMenu.js'],
+        headScripts: ['/js/applyLanguageContent.js', '/js/setupLanguageSwitcher.js', '/js/new/ToggleMenu.js', '/js/setupThemeToggle.js'],
         headPartial: 'partials/head-auth',
 
         // для Спрайтов
@@ -207,6 +207,7 @@ app.get('/site', async (req, res) => {
                 '/js/setupResponsiveToggleClick.js',
                 '/js/setupCustomSelect.js',
                 '/js/setupCarousel.js',
+                '/js/setupThemeToggle.js',
 
                 '/js/new/ProfileMenuToggle.js',
                 '/js/new/ToggleMenu.js',

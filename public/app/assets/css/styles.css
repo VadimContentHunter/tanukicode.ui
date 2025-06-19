@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* ===================== */
 :root {
   --radius-base: 12px;
   --radius-banner: 24px;
@@ -9,6 +10,7 @@
   --color-ui-muted: rgba(31, 33, 40, 0.0784313725);
   --color-white: #FFFFFF;
   --color-bg-base: #F7F9FD;
+  --color-bg-base-opacity: rgba(247, 249, 253, 0.92);
   --color-ui-active: #191B21;
   --color-positive: #4FBF67;
   --color-negative: #E32D2D;
@@ -17,6 +19,63 @@
   --font-size-base: 16px;
   --font-weight-medium: 500;
   --global-padding-side: 26px;
+}
+
+:root[data-theme=dark] {
+  --color-primary: #3772FF;
+  --color-inactive: #777E90;
+  --color-bg-light: #242731;
+  --color-ui-muted: rgba(73, 78, 106, 0.2);
+  --color-ui-active: #ffffff;
+  --color-white: #242731;
+  --color-bg-base: #1f2128;
+  --color-bg-base-opacity: rgba(31, 33, 40, 0.92);
+  --color-primary-hover: #195AF5;
+  --color-positive: #4FBF67;
+  --color-negative: #E32D2D;
+  --color-shadow: rgba(0, 0, 0, 0.5019607843);
+  --color-overlay-dark: rgba(0, 0, 0, 0.6392156863);
+}
+
+[data-theme=dark] .asset-items .view-asset {
+  background: linear-gradient(180deg, rgba(31, 33, 40, 0) 0%, #1f2128 100%);
+}
+[data-theme=dark] .button-accent {
+  color: #fff;
+}
+[data-theme=dark] .referrals-setting .content-invite h2 {
+  color: #fff;
+}
+[data-theme=dark] .referrals-setting .content-invite h3 {
+  color: #fff;
+}
+[data-theme=dark] .referrals-setting .content-invite code {
+  color: #fff !important;
+}
+[data-theme=dark] .content-container > header.main-header .additional-nav ul > li:hover {
+  cursor: pointer;
+}
+[data-theme=dark] .content-container > header.main-header .additional-nav ul > li:hover .icon-sun {
+  background-image: url(/icons/sun-white.svg);
+}
+[data-theme=dark] .content-container > header.main-header .additional-nav ul > li:hover .icon-lang {
+  background-image: url(/icons/lang-white.svg);
+}
+[data-theme=dark] .content-container > header.main-header .additional-nav ul > li:hover .icon-deposit {
+  background-image: url(/icons/deposit-white.svg);
+}
+[data-theme=dark] .icon-deposit {
+  background-image: url("/icons/deposit-white.svg");
+}
+[data-theme=dark] .block-information .main-list .light-ben {
+  display: none !important;
+}
+[data-theme=dark] .block-information .main-list .has-light {
+  display: flex !important;
+}
+[data-theme=dark] .auth-info h2,
+[data-theme=dark] .auth-info p {
+  color: #fff !important;
 }
 
 .icon {
@@ -92,6 +151,10 @@
 
 /************** icon-deposit **************/
 .icon-deposit {
+  background-image: url("/icons/deposit.svg");
+}
+
+.icon-deposit-white {
   background-image: url("/icons/deposit.svg");
 }
 
@@ -234,7 +297,7 @@
 }
 .button-muted:hover {
   cursor: pointer;
-  background-color: rgba(131.338028169, 137.5211267606, 159.161971831, 0.0784313725);
+  background-color: var(--color-bg-base-opacity);
 }
 
 .button-active {
@@ -354,6 +417,7 @@
   position: relative;
 }
 .form-item-select .default-select .head-select {
+  cursor: pointer;
   position: relative;
   min-height: 53px;
   display: flex;
@@ -510,12 +574,6 @@
   gap: 56px;
   transition: width 0.3s ease;
 }
-.main-nav.no-active {
-  pointer-events: none;
-}
-.main-nav.no-active .header-nav {
-  pointer-events: all;
-}
 .main-nav .main-nav-menus {
   display: flex;
   flex-direction: column;
@@ -663,8 +721,8 @@
   padding: 32px 0px;
   position: sticky;
   top: 0;
-  z-index: 10;
-  background-color: rgba(247, 249, 253, 0.92);
+  z-index: 50;
+  background-color: var(--color-bg-base-opacity);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   display: flex;
@@ -791,6 +849,7 @@ footer .footer-information .information-table > p {
   line-height: 24px;
   text-align: center;
   margin-bottom: 24px;
+  color: var(--color-inactive);
 }
 footer .footer-information .information-table > form {
   padding: 5px;
@@ -810,6 +869,9 @@ footer .footer-information .information-table > form > input {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
+}
+footer .footer-information .message-footer {
+  color: var(--color-inactive);
 }
 
 .primary-balance {
@@ -1100,7 +1162,7 @@ footer .footer-information .information-table > form > input {
   pointer-events: all;
   cursor: pointer;
   border-radius: 100px;
-  background-color: rgb(227.8, 229.2, 232.8);
+  background-color: var(--color-bg-base-opacity);
   background-size: 24px 24px;
   width: 32px;
   height: 32px;
@@ -1779,7 +1841,7 @@ footer .footer-information .information-table > form > input {
 .referrals-setting .total-invited h2 {
   font-style: normal;
   font-size: 20px;
-  line-height: 120%;
+  line-height: auto;
   color: var(--color-ui-active);
   font-weight: 700;
 }
@@ -1931,12 +1993,16 @@ footer .footer-information .information-table > form > input {
 @media screen and (max-width: 1144px) {
   .no-active {
     background: none;
+    pointer-events: none;
   }
   .no-active::before {
     display: none !important;
   }
   .no-active .main-nav-menus {
     display: none !important;
+  }
+  .no-active .header-nav {
+    pointer-events: all;
   }
   .main-nav.collapse {
     flex: 1;
@@ -2207,7 +2273,7 @@ footer .footer-information .information-table > form > input {
   }
   .referrals-setting h2 {
     font-size: 16px !important;
-    line-height: 120% !important;
+    line-height: 20px !important;
   }
   .referrals-setting p {
     font-size: 14px !important;

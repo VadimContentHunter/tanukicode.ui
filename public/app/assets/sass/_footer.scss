@@ -89,6 +89,7 @@ footer .footer-information {
             line-height: 24px;
             text-align: center;
             margin-bottom: 24px;
+            color: var(--color-inactive);
         }
 
         &>form {
@@ -112,5 +113,9 @@ footer .footer-information {
                 font-size: 16px;
             }
         }
+    }
+
+    .message-footer {
+        color: var(--color-inactive);
     }
 }

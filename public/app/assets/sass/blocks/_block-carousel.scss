@@ -31,7 +31,8 @@
         cursor: pointer;
 
         border-radius: 100px;
-        background-color: color.scale($color-inactive, $lightness: 80%);
+        // background-color: color.scale($color-inactive, $lightness: 80%);
+        background-color: var(--color-bg-base-opacity);
         background-size: 24px 24px;
         width: 32px;
         height: 32px;

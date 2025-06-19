@@ -1,47 +1,3 @@
-$radius-base: 12px;
-$radius-banner: 24px; // радиус для баннеров и больших блоков
-
-$color-primary: #3772FF; // основной цвет (акценты, активные элементы)
-$color-inactive: #777E90; // базовый цвет текста (неактивный)
-$color-bg-light: #E0E9FD; // светлый фон (для активных или других блоков)
-$color-ui-muted: #1f212814; // цвет разделителей (для границ, линий и т.д.)
-$color-ui-active: #191B21; // цвет активных элементов интерфейса (например, при наведении)
-$color-white: #FFFFFF; // белый цвет (для фона, кнопок и т.д.)
-$color-bg-base: #F7F9FD; // основной цвет фона
-$color-primary-hover: #195AF5; // цвет при наведении на активные элементы
-$color-positive: #4FBF67; // цвет для положительных значений (например, доход)
-$color-negative: #E32D2D; // цвет для отрицательных значений (например, убыток)
-$color-shadow: #1f1f1f3d; // цвет тени (для теней, например, у кнопок)
-$color-overlay-dark: #191b21a3; // темный оверлей (для затемнения фона при открытии модальных окон)
-
-$font-size-base: 16px;
-$font-weight-medium: 500;
-
-$global-padding-side: 26px; // отступы по бокам для контента
-
-:root {
-    --radius-base: #{$radius-base};
-    --radius-banner: #{$radius-banner};
-
-    --color-primary: #{$color-primary};
-    --color-primary-hover: #{$color-primary-hover};
-    --color-inactive: #{$color-inactive};
-    --color-bg-light: #{$color-bg-light};
-    --color-ui-muted: #{$color-ui-muted};
-    --color-white: #{$color-white};
-    --color-bg-base: #{$color-bg-base};
-    --color-ui-active: #{$color-ui-active};
-    --color-positive: #{$color-positive};
-    --color-negative: #{$color-negative};
-    --color-shadow: #{$color-shadow};
-    --color-overlay-dark: #{$color-overlay-dark};
-
-    --font-size-base: #{$font-size-base};
-    --font-weight-medium: #{$font-weight-medium};
-
-    --global-padding-side: #{$global-padding-side};
-}
-
 @mixin icon-active($selector, $url) {
     #{$selector} {
         background-image: url(#{$url});
@@ -87,4 +43,150 @@ $global-padding-side: 26px; // отступы по бокам для конте�
     gap: $gap;
     justify-content: $justify;
     align-items: $align;
+}
+
+
+
+$radius-base: 12px;
+$radius-banner: 24px; // радиус для баннеров и больших блоков
+
+$color-primary: #3772FF; // основной цвет (акценты, активные элементы)
+$color-inactive: #777E90; // базовый цвет текста (неактивный)
+$color-bg-light: #E0E9FD; // светлый фон (для активных или других блоков)
+$color-ui-muted: #1f212814; // цвет разделителей (для границ, линий и т.д.)
+$color-ui-active: #191B21; // цвет активных элементов интерфейса (например, при наведении)
+$color-white: #FFFFFF; // подсветка, выделение с помощью фона для фона, кнопок и т.д.
+$color-bg-base: #F7F9FD; // основной цвет фона
+$color-bg-base-opacity: rgba(247, 249, 253, 0.92);
+$color-primary-hover: #195AF5; // цвет при наведении на активные элементы
+$color-positive: #4FBF67; // цвет для положительных значений (например, доход)
+$color-negative: #E32D2D; // цвет для отрицательных значений (например, убыток)
+$color-shadow: #1f1f1f3d; // цвет тени (для теней, например, у кнопок)
+$color-overlay-dark: #191b21a3; // темный оверлей (для затемнения фона при открытии модальных окон)
+
+$font-size-base: 16px;
+$font-weight-medium: 500;
+
+$global-padding-side: 26px; // отступы по бокам для контента
+
+
+/* ===================== */
+$dark-color-primary: #3772FF; // акценты, активные элементы (тот же синий)
+$dark-color-inactive: #777E90; // более светлый, но приглушённый для неактивного текста
+$dark-color-bg-light: #242731; // светлый фон для блоков на тёмном фоне
+$dark-color-ui-muted: #494E6A33; // полупрозрачный для линий и разделителей
+$dark-color-ui-active: #ffffff; // цвет активных элементов интерфейса (навигация, ховер)
+$dark-color-white: #242731; // не чистый белый, а светлый фон для выделения
+$dark-color-bg-base: #1f2128; // основной тёмный фон
+$dark-color-bg-base-opacity: rgb(31 33 40 / 92%);
+$dark-color-primary-hover: #195AF5; // цвет при наведении (темнее синего)
+$dark-color-positive: #4FBF67; // зелёный для положительных значений
+$dark-color-negative: #E32D2D; // красный для отрицательных значений
+$dark-color-shadow: #00000080; // мягкая тень для кнопок и элементов
+$dark-color-overlay-dark: #000000a3; // тёмный оверлей для модальных окон
+
+
+:root {
+    --radius-base: #{$radius-base};
+    --radius-banner: #{$radius-banner};
+
+    --color-primary: #{$color-primary};
+    --color-primary-hover: #{$color-primary-hover};
+    --color-inactive: #{$color-inactive};
+    --color-bg-light: #{$color-bg-light};
+    --color-ui-muted: #{$color-ui-muted};
+    --color-white: #{$color-white};
+    --color-bg-base: #{$color-bg-base};
+    --color-bg-base-opacity: #{$color-bg-base-opacity};
+    --color-ui-active: #{$color-ui-active};
+    --color-positive: #{$color-positive};
+    --color-negative: #{$color-negative};
+    --color-shadow: #{$color-shadow};
+    --color-overlay-dark: #{$color-overlay-dark};
+
+    --font-size-base: #{$font-size-base};
+    --font-weight-medium: #{$font-weight-medium};
+
+    --global-padding-side: #{$global-padding-side};
+}
+
+:root[data-theme="dark"] {
+    --color-primary: #{$dark-color-primary};
+    --color-inactive: #{$dark-color-inactive};
+    --color-bg-light: #{$dark-color-bg-light};
+    --color-ui-muted: #{$dark-color-ui-muted};
+    --color-ui-active: #{$dark-color-ui-active};
+    --color-white: #{$dark-color-white};
+    --color-bg-base: #{$dark-color-bg-base};
+    --color-bg-base-opacity: #{$dark-color-bg-base-opacity};
+    --color-primary-hover: #{$dark-color-primary-hover};
+    --color-positive: #{$dark-color-positive};
+    --color-negative: #{$dark-color-negative};
+    --color-shadow: #{$dark-color-shadow};
+    --color-overlay-dark: #{$dark-color-overlay-dark};
+}
+
+
+$active-icons: (
+    '.icon-sun': '/icons/sun-white.svg',
+    '.icon-lang': '/icons/lang-white.svg',
+    '.icon-deposit': '/icons/deposit-white.svg',
+);
+
+[data-theme="dark"] {
+    .asset-items .view-asset {
+        background: linear-gradient(180deg, rgba(31, 33, 40, 0) 0%, #1f2128 100%);
+    }
+
+    .button-accent {
+        color: #fff
+    }
+
+    .referrals-setting .content-invite {
+        h2 {
+            color: #fff;
+        }
+
+        h3 {
+            color: #fff;
+        }
+
+        code {
+            color: #fff !important;
+        }
+    }
+
+    .content-container>header.main-header .additional-nav {
+        ul>li:hover {
+            & {
+                cursor: pointer;
+                @include generate-active-icons($active-icons);
+            }
+        }
+    }
+
+    .icon-deposit {
+        background-image: url('/icons/deposit-white.svg');
+    }
+
+    .block-information {
+        .main-list {
+            .light-ben {
+                display: none !important;
+            }
+
+            .has-light {
+                display: flex !important;
+            }
+        }
+    }
+
+
+    .auth-info {
+
+        h2,
+        p {
+            color: #fff !important;
+        }
+    }
 }

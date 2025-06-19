@@ -4,6 +4,7 @@
 @media screen and (max-width: 1144px) {
     .no-active {
         background: none;
+        pointer-events: none;
 
         &::before {
             display: none !important;
@@ -11,6 +12,10 @@
 
         .main-nav-menus {
             display: none !important;
+        }
+
+        .header-nav {
+            pointer-events: all;
         }
 
     }

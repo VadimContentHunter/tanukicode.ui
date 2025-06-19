@@ -183,4 +183,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     new Carousel('.block-carousel');
+    new ThemeSwitcher(['#nav-main-menu .header-mobile-vers .icon-sun', '.main-header .icon-sun']);
 });

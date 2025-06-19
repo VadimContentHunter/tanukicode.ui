@@ -74,7 +74,8 @@
 
     &:hover {
         cursor: pointer;
-        background-color: color.scale($color-ui-muted, $lightness: 50%);
+        // background-color: color.scale($color-ui-muted, $lightness: 50%);
+        background-color: var(--color-bg-base-opacity);
     }
 }
 

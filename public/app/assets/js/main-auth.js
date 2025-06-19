@@ -13,4 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
             applyLanguageContent(json, lang);
         },
     });
+
+    new ThemeSwitcher(['.head-auth-info .icon-sun-white']);
 });
